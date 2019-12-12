@@ -1,42 +1,75 @@
-# swagger_client.MountsApi
+# nodeum_sdk.MountsApi
 
-All URIs are relative to *https://localhost/api/v2*
+All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**index_mounts**](MountsApi.md#index_mounts) | **GET** /mounts | List all mounted storages
+[**index_mounts**](MountsApi.md#index_mounts) | **GET** /mounts | List all mounted storages.
 
 
 # **index_mounts**
 > MountCollection index_mounts()
 
-List all mounted storages
+List all mounted storages.
 
 **API Key Scope**: mounts / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.MountsApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.MountsApi(nodeum_sdk.ApiClient(configuration))
 
 try:
-    # List all mounted storages
+    # List all mounted storages.
+    api_response = api_instance.index_mounts()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling MountsApi->index_mounts: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.MountsApi(nodeum_sdk.ApiClient(configuration))
+
+try:
+    # List all mounted storages.
     api_response = api_instance.index_mounts()
     pprint(api_response)
 except ApiException as e:
@@ -56,8 +89,13 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of mounted storages. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

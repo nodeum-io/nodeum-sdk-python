@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**nas** | [**list[Nas]**](Nas.md) |  | [optional] 
+**count** | **int** |  | [optional] [readonly] 
+**nas** | [**list[Nas]**](Nas.md) |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

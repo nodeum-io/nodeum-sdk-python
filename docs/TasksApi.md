@@ -1,6 +1,6 @@
-# swagger_client.TasksApi
+# nodeum_sdk.TasksApi
 
-All URIs are relative to *https://localhost/api/v2*
+All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,26 +19,60 @@ Creates a new task.
 **API Key Scope**: tasks / create
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TasksApi(swagger_client.ApiClient(configuration))
-task_body = swagger_client.Task() # Task | 
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
+task_body = nodeum_sdk.Task() # Task | 
+
+try:
+    # Creates a new task.
+    api_response = api_instance.create_task(task_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TasksApi->create_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
+task_body = nodeum_sdk.Task() # Task | 
 
 try:
     # Creates a new task.
@@ -67,6 +101,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | A specific task. |  -  |
+**422** | The received resource was not correctly formatted. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **destroy_task**
@@ -77,25 +117,58 @@ Destroys a specific task.
 **API Key Scope**: tasks / destroy
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TasksApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+try:
+    # Destroys a specific task.
+    api_instance.destroy_task(task_id)
+except ApiException as e:
+    print("Exception when calling TasksApi->destroy_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 
 try:
@@ -121,8 +194,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Task destroyed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -134,25 +212,78 @@ Lists all tasks.
 **API Key Scope**: tasks / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TasksApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
+id = 'id_example' # str | Filter on id (optional)
+name = 'name_example' # str | Filter on name (optional)
+comment = 'comment_example' # str | Filter on comment (optional)
+type = 'type_example' # str | Filter on type (optional)
+priority = 'priority_example' # str | Filter on priority (optional)
+conflict_resolution = 'conflict_resolution_example' # str | Filter on conflict resolution (optional)
+action = 'action_example' # str | Filter on action (optional)
+activate = 'activate_example' # str | Filter on activate (optional)
+creation_date = 'creation_date_example' # str | Filter on creation date (optional)
+creation_username = 'creation_username_example' # str | Filter on creation username (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+modification_username = 'modification_username_example' # str | Filter on modification username (optional)
+job_started = 'job_started_example' # str | Filter on job started (optional)
+job_finished = 'job_finished_example' # str | Filter on job finished (optional)
+status = 'status_example' # str | Filter on status (optional)
+processed_size = 'processed_size_example' # str | Filter on processed size (optional)
+to_process_size = 'to_process_size_example' # str | Filter on to process size (optional)
+
+try:
+    # Lists all tasks.
+    api_response = api_instance.index_tasks(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, type=type, priority=priority, conflict_resolution=conflict_resolution, action=action, activate=activate, creation_date=creation_date, creation_username=creation_username, modification_date=modification_date, modification_username=modification_username, job_started=job_started, job_finished=job_finished, status=status, processed_size=processed_size, to_process_size=to_process_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TasksApi->index_tasks: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -217,8 +348,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of tasks. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -230,25 +366,59 @@ Displays a specific task.
 **API Key Scope**: tasks / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TasksApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+try:
+    # Displays a specific task.
+    api_response = api_instance.show_task(task_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TasksApi->show_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 
 try:
@@ -275,8 +445,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific task. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -288,27 +463,62 @@ Updates a specific task.
 **API Key Scope**: tasks / update
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TasksApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
-task_body = swagger_client.Task() # Task | 
+task_body = nodeum_sdk.Task() # Task | 
+
+try:
+    # Updates a specific task.
+    api_response = api_instance.update_task(task_id, task_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TasksApi->update_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TasksApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+task_body = nodeum_sdk.Task() # Task | 
 
 try:
     # Updates a specific task.
@@ -337,6 +547,12 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific task. |  -  |
+**422** | The received resource was not correctly formatted. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

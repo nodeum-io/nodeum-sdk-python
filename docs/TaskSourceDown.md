@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**file** | **object** |  | [optional] 
-**import_file** | **object** |  | [optional] 
+**id** | **int** |  | [optional] [readonly] 
+**file** | [**NodeumFile**](NodeumFile.md) |  | [optional] 
+**import_file** | [**ImportFile**](ImportFile.md) |  | [optional] 
 **tape_id** | **int** |  | [optional] 
 **tape_pool_id** | **int** |  | [optional] 
 **cloud_pool_id** | **int** |  | [optional] 

@@ -1,5 +1,6 @@
 # GreaterThan
 
+Attribute must be greater than %{count}
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

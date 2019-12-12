@@ -1,5 +1,6 @@
 # OccurrenceLessThan
 
+Must have less than %{count} occurrences (currently have %{value})
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,6 @@
-# swagger_client.UsersApi
+# nodeum_sdk.UsersApi
 
-All URIs are relative to *https://localhost/api/v2*
+All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,26 +19,60 @@ Creates a new API Key for current user.
 **API Key Scope**: api_keys / create
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.UsersApi(swagger_client.ApiClient(configuration))
-api_key_body = swagger_client.ApiKeyFull() # ApiKeyFull | 
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
+api_key_body = nodeum_sdk.ApiKeyFull() # ApiKeyFull | 
+
+try:
+    # Creates a new API Key for current user.
+    api_response = api_instance.create_api_key(api_key_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->create_api_key: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
+api_key_body = nodeum_sdk.ApiKeyFull() # ApiKeyFull | 
 
 try:
     # Creates a new API Key for current user.
@@ -67,6 +101,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | A specific file. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **destroy_api_key**
@@ -77,25 +116,58 @@ Destroys a specific API Key.
 **API Key Scope**: api_keys / destroy
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.UsersApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
+api_key_id = 56 # int | Numeric ID of API Key.
+
+try:
+    # Destroys a specific API Key.
+    api_instance.destroy_api_key(api_key_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->destroy_api_key: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
 api_key_id = 56 # int | Numeric ID of API Key.
 
 try:
@@ -121,8 +193,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | API Key destroyed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -134,25 +211,60 @@ Lists all API keys of current user.
 **API Key Scope**: api_keys / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.UsersApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+
+try:
+    # Lists all API keys of current user.
+    api_response = api_instance.index_api_keys(limit=limit, offset=offset)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->index_api_keys: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 
@@ -181,8 +293,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of API Keys. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -194,25 +311,59 @@ Displays a specific API Key with its scopes.
 **API Key Scope**: api_keys / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.UsersApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
+api_key_id = 56 # int | Numeric ID of API Key.
+
+try:
+    # Displays a specific API Key with its scopes.
+    api_response = api_instance.show_api_key(api_key_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->show_api_key: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
 api_key_id = 56 # int | Numeric ID of API Key.
 
 try:
@@ -239,8 +390,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -252,27 +408,62 @@ Updates a specific API Key.
 **API Key Scope**: api_keys / update
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.UsersApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
 api_key_id = 56 # int | Numeric ID of API Key.
-api_key_body = swagger_client.ApiKeyFull() # ApiKeyFull | 
+api_key_body = nodeum_sdk.ApiKeyFull() # ApiKeyFull | 
+
+try:
+    # Updates a specific API Key.
+    api_response = api_instance.update_api_key(api_key_id, api_key_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->update_api_key: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.UsersApi(nodeum_sdk.ApiClient(configuration))
+api_key_id = 56 # int | Numeric ID of API Key.
+api_key_body = nodeum_sdk.ApiKeyFull() # ApiKeyFull | 
 
 try:
     # Updates a specific API Key.
@@ -301,6 +492,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

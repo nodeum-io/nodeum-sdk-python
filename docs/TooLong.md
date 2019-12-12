@@ -1,5 +1,6 @@
 # TooLong
 
+Attribute is too long (maximum is %{count} characters)
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,6 @@
-# swagger_client.CloudConnectorsApi
+# nodeum_sdk.CloudConnectorsApi
 
-All URIs are relative to *https://localhost/api/v2*
+All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,26 +21,60 @@ Creates a new cloud connector.
 **API Key Scope**: cloud_connectors / create
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.CloudConnectorsApi(swagger_client.ApiClient(configuration))
-cloud_connector_body = swagger_client.CloudConnector() # CloudConnector | 
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+cloud_connector_body = nodeum_sdk.CloudConnector() # CloudConnector | 
+
+try:
+    # Creates a new cloud connector.
+    api_response = api_instance.create_cloud_connector(cloud_connector_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CloudConnectorsApi->create_cloud_connector: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+cloud_connector_body = nodeum_sdk.CloudConnector() # CloudConnector | 
 
 try:
     # Creates a new cloud connector.
@@ -69,6 +103,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | A specific cloud connector. |  -  |
+**422** | The received resource was not correctly formatted. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **destroy_cloud_connector**
@@ -79,25 +119,58 @@ Destroys a specific cloud connector.
 **API Key Scope**: cloud_connectors / destroy
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.CloudConnectorsApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+try:
+    # Destroys a specific cloud connector.
+    api_instance.destroy_cloud_connector(cloud_connector_id)
+except ApiException as e:
+    print("Exception when calling CloudConnectorsApi->destroy_cloud_connector: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
 cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 
 try:
@@ -123,8 +196,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Cloud connector destroyed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -136,25 +214,68 @@ Lists all cloud connectors.
 **API Key Scope**: cloud_connectors / index   Optional API Key Explicit Scope: cloud_connectors / get_secret_key
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.CloudConnectorsApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
+id = 'id_example' # str | Filter on id (optional)
+name = 'name_example' # str | Filter on name (optional)
+url = 'url_example' # str | Filter on url (optional)
+url_proxy = 'url_proxy_example' # str | Filter on url proxy (optional)
+provider = 'provider_example' # str | Filter on provider (optional)
+region = 'region_example' # str | Filter on region (optional)
+access_key = 'access_key_example' # str | Filter on access key (optional)
+
+try:
+    # Lists all cloud connectors.
+    api_response = api_instance.index_cloud_connectors(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, url=url, url_proxy=url_proxy, provider=provider, region=region, access_key=access_key)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CloudConnectorsApi->index_cloud_connectors: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -199,8 +320,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of cloud connectors. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -212,25 +338,59 @@ Displays a specific cloud connector.
 **API Key Scope**: cloud_connectors / show   Optional API Key Explicit Scope: cloud_connectors / get_secret_key
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.CloudConnectorsApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+try:
+    # Displays a specific cloud connector.
+    api_response = api_instance.show_cloud_connector(cloud_connector_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CloudConnectorsApi->show_cloud_connector: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
 cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 
 try:
@@ -257,8 +417,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific cloud connector. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -270,26 +435,60 @@ Test an unsaved cloud connector.
 **API Key Scope**: cloud_connectors / test
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.CloudConnectorsApi(swagger_client.ApiClient(configuration))
-cloud_connector_body = swagger_client.CloudConnector() # CloudConnector | 
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+cloud_connector_body = nodeum_sdk.CloudConnector() # CloudConnector | 
+
+try:
+    # Test an unsaved cloud connector.
+    api_response = api_instance.test_cloud_connector(cloud_connector_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CloudConnectorsApi->test_cloud_connector: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+cloud_connector_body = nodeum_sdk.CloudConnector() # CloudConnector | 
 
 try:
     # Test an unsaved cloud connector.
@@ -316,7 +515,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, queued, working, failed
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | An active job that may be queued, working, completed or failed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -328,25 +532,59 @@ Check result of cloud connector test job.
 **API Key Scope**: cloud_connectors / test
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.CloudConnectorsApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+job_id = 'job_id_example' # str | ID of active job (optional)
+
+try:
+    # Check result of cloud connector test job.
+    api_response = api_instance.test_result_cloud_connector(job_id=job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CloudConnectorsApi->test_result_cloud_connector: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
 job_id = 'job_id_example' # str | ID of active job (optional)
 
 try:
@@ -373,8 +611,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, queued, working, failed, 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Simple list of cloud buckets. |  -  |
+**202** | An active job that may be queued, working, completed or failed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -386,27 +630,62 @@ Updates a specific cloud connector.
 **API Key Scope**: cloud_connectors / update
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.CloudConnectorsApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
 cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
-cloud_connector_body = swagger_client.CloudConnector() # CloudConnector | 
+cloud_connector_body = nodeum_sdk.CloudConnector() # CloudConnector | 
+
+try:
+    # Updates a specific cloud connector.
+    api_response = api_instance.update_cloud_connector(cloud_connector_id, cloud_connector_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CloudConnectorsApi->update_cloud_connector: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.CloudConnectorsApi(nodeum_sdk.ApiClient(configuration))
+cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+cloud_connector_body = nodeum_sdk.CloudConnector() # CloudConnector | 
 
 try:
     # Updates a specific cloud connector.
@@ -435,6 +714,12 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific cloud connector. |  -  |
+**422** | The received resource was not correctly formatted. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,6 +1,6 @@
-# swagger_client.FilesApi
+# nodeum_sdk.FilesApi
 
-All URIs are relative to *https://localhost/api/v2*
+All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -38,25 +38,71 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children(file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -107,8 +153,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -120,25 +171,72 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+cloud_pool_id = 'cloud_pool_id_example' # str | Numeric ID or name of cloud pool.
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children_by_cloud_pool(cloud_pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children_by_cloud_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 cloud_pool_id = 'cloud_pool_id_example' # str | Numeric ID or name of cloud pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
@@ -191,8 +289,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -204,25 +307,72 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+container_id = 'container_id_example' # str | Numeric ID or name of container.
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children_by_container(container_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children_by_container: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 container_id = 'container_id_example' # str | Numeric ID or name of container.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
@@ -275,8 +425,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -288,25 +443,72 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+nas_pool_id = 'nas_pool_id_example' # str | Numeric ID or name of NAS pool.
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children_by_nas_pool(nas_pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children_by_nas_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 nas_pool_id = 'nas_pool_id_example' # str | Numeric ID or name of NAS pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
@@ -359,8 +561,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -372,25 +579,72 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+tape_pool_id = 'tape_pool_id_example' # str | Numeric ID, or name of tape pool.
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children_by_tape_pool(tape_pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children_by_tape_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 tape_pool_id = 'tape_pool_id_example' # str | Numeric ID, or name of tape pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
@@ -443,8 +697,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -456,25 +715,72 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children_by_task(task_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children_by_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
@@ -527,8 +833,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -540,26 +851,73 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-task_execution_id = 789 # int | Numeric ID of task execution.
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_execution_id = 56 # int | Numeric ID of task execution.
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children_by_task_execution(task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children_by_task_execution: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_execution_id = 56 # int | Numeric ID of task execution.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -611,8 +969,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -624,27 +987,75 @@ Lists files under a specific folder.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
-task_execution_id = 789 # int | Numeric ID of task execution.
+task_execution_id = 56 # int | Numeric ID of task execution.
+file_parent_id = 56 # int | Numeric ID of parent folder.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files under a specific folder.
+    api_response = api_instance.files_children_by_task_execution_by_task(task_id, task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->files_children_by_task_execution_by_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+task_execution_id = 56 # int | Numeric ID of task execution.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -697,8 +1108,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -710,25 +1126,70 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files(limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -777,8 +1238,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -790,25 +1256,71 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+cloud_pool_id = 'cloud_pool_id_example' # str | Numeric ID or name of cloud pool.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files_by_cloud_pool(cloud_pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files_by_cloud_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 cloud_pool_id = 'cloud_pool_id_example' # str | Numeric ID or name of cloud pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -859,8 +1371,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -872,25 +1389,71 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+container_id = 'container_id_example' # str | Numeric ID or name of container.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files_by_container(container_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files_by_container: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 container_id = 'container_id_example' # str | Numeric ID or name of container.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -941,8 +1504,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -954,25 +1522,71 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+nas_pool_id = 'nas_pool_id_example' # str | Numeric ID or name of NAS pool.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files_by_nas_pool(nas_pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files_by_nas_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 nas_pool_id = 'nas_pool_id_example' # str | Numeric ID or name of NAS pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -1023,8 +1637,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1036,25 +1655,71 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+tape_pool_id = 'tape_pool_id_example' # str | Numeric ID, or name of tape pool.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files_by_tape_pool(tape_pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files_by_tape_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 tape_pool_id = 'tape_pool_id_example' # str | Numeric ID, or name of tape pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -1105,8 +1770,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1118,25 +1788,71 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files_by_task(task_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files_by_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -1187,8 +1903,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1200,26 +1921,72 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-task_execution_id = 789 # int | Numeric ID of task execution.
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_execution_id = 56 # int | Numeric ID of task execution.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files_by_task_execution(task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files_by_task_execution: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_execution_id = 56 # int | Numeric ID of task execution.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1269,8 +2036,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1282,27 +2054,74 @@ Lists files on root.
 **API Key Scope**: files / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
-task_execution_id = 789 # int | Numeric ID of task execution.
+task_execution_id = 56 # int | Numeric ID of task execution.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+file_id = 'file_id_example' # str | Filter on file id (optional)
+name = 'name_example' # str | Filter on name (optional)
+type = 'type_example' # str | Filter on type (optional)
+permission = 'permission_example' # str | Filter on permission (optional)
+size = 'size_example' # str | Filter on size (optional)
+change_date = 'change_date_example' # str | Filter on change date (optional)
+modification_date = 'modification_date_example' # str | Filter on modification date (optional)
+access_date = 'access_date_example' # str | Filter on access date (optional)
+gid = 'gid_example' # str | Filter on gid (optional)
+uid = 'uid_example' # str | Filter on uid (optional)
+
+try:
+    # Lists files on root.
+    api_response = api_instance.index_files_by_task_execution_by_task(task_id, task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->index_files_by_task_execution_by_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+task_execution_id = 56 # int | Numeric ID of task execution.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1353,8 +2172,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1366,25 +2190,59 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file(file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 file_id = 56 # int | Numeric ID of file.
 
 try:
@@ -1411,8 +2269,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1424,25 +2287,60 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+cloud_pool_id = 'cloud_pool_id_example' # str | Numeric ID or name of cloud pool.
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file_by_cloud_pool(cloud_pool_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file_by_cloud_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 cloud_pool_id = 'cloud_pool_id_example' # str | Numeric ID or name of cloud pool.
 file_id = 56 # int | Numeric ID of file.
 
@@ -1471,8 +2369,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1484,25 +2387,60 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+container_id = 'container_id_example' # str | Numeric ID or name of container.
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file_by_container(container_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file_by_container: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 container_id = 'container_id_example' # str | Numeric ID or name of container.
 file_id = 56 # int | Numeric ID of file.
 
@@ -1531,8 +2469,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1544,25 +2487,60 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+nas_pool_id = 'nas_pool_id_example' # str | Numeric ID or name of NAS pool.
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file_by_nas_pool(nas_pool_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file_by_nas_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 nas_pool_id = 'nas_pool_id_example' # str | Numeric ID or name of NAS pool.
 file_id = 56 # int | Numeric ID of file.
 
@@ -1591,8 +2569,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1604,25 +2587,60 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+tape_pool_id = 'tape_pool_id_example' # str | Numeric ID, or name of tape pool.
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file_by_tape_pool(tape_pool_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file_by_tape_pool: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 tape_pool_id = 'tape_pool_id_example' # str | Numeric ID, or name of tape pool.
 file_id = 56 # int | Numeric ID of file.
 
@@ -1651,8 +2669,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1664,25 +2687,60 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file_by_task(task_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file_by_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_id = 56 # int | Numeric ID of file.
 
@@ -1711,8 +2769,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1724,26 +2787,61 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
-task_execution_id = 789 # int | Numeric ID of task execution.
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_execution_id = 56 # int | Numeric ID of task execution.
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file_by_task_execution(task_execution_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file_by_task_execution: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_execution_id = 56 # int | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
 try:
@@ -1771,8 +2869,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1784,27 +2887,63 @@ Displays a specific file.
 **API Key Scope**: files / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.FilesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
-task_execution_id = 789 # int | Numeric ID of task execution.
+task_execution_id = 56 # int | Numeric ID of task execution.
+file_id = 56 # int | Numeric ID of file.
+
+try:
+    # Displays a specific file.
+    api_response = api_instance.show_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FilesApi->show_file_by_task_execution_by_task: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
+task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+task_execution_id = 56 # int | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
 try:
@@ -1833,8 +2972,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

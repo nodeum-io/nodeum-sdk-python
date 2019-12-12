@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**folder** | **object** |  | [optional] 
+**id** | **int** |  | [optional] [readonly] 
+**folder** | [**NodeumFile**](NodeumFile.md) |  | [optional] 
 **tape_id** | **int** |  | [optional] 
 **tape_pool_id** | **int** |  | [optional] 
 **cloud_pool_id** | **int** |  | [optional] 

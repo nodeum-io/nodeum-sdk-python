@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] 
 **url** | **str** |  | [optional] 
 **url_proxy** | **str** |  | [optional] 

@@ -1,6 +1,6 @@
-# swagger_client.TapeDrivesApi
+# nodeum_sdk.TapeDrivesApi
 
-All URIs are relative to *https://localhost/api/v2*
+All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,27 +24,62 @@ Creates a new tape drive.
 **API Key Scope**: tape_drives / create
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
-tape_drive_body = swagger_client.TapeDrive() # TapeDrive | 
+tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
+
+try:
+    # Creates a new tape drive.
+    api_response = api_instance.create_tape_drive_by_tape_library(tape_library_id, tape_drive_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->create_tape_drive_by_tape_library: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
 try:
     # Creates a new tape drive.
@@ -74,6 +109,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | A specific tape drive. |  -  |
+**422** | The received resource was not correctly formatted. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **destroy_tape_drive**
@@ -84,25 +125,58 @@ Destroys a specific tape drive.
 **API Key Scope**: tape_drives / destroy
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+try:
+    # Destroys a specific tape drive.
+    api_instance.destroy_tape_drive(tape_drive_id)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->destroy_tape_drive: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
 try:
@@ -128,8 +202,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Tape drive destroyed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -141,25 +220,59 @@ Destroys a specific tape drive.
 **API Key Scope**: tape_drives / destroy
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+try:
+    # Destroys a specific tape drive.
+    api_instance.destroy_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->destroy_tape_drive_by_tape_library: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
@@ -187,8 +300,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Tape drive destroyed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -200,25 +318,60 @@ Lists tape drives devices.
 **API Key Scope**: tape_drives / devices
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+job_id = 'job_id_example' # str | ID of active job (optional)
+
+try:
+    # Lists tape drives devices.
+    api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id=job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->index_tape_drive_devices: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 job_id = 'job_id_example' # str | ID of active job (optional)
 
@@ -247,8 +400,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, queued, working, failed, 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of tape drives devices. |  -  |
+**202** | An active job that may be queued, working, completed or failed. |  -  |
+**500** | An active job that may be queued, working, completed or failed. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -260,25 +420,86 @@ Lists all tape drives.
 **API Key Scope**: tape_drives / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
+id = 'id_example' # str | Filter on id (optional)
+tape_library_id = 'tape_library_id_example' # str | Filter on tape library id (optional)
+name = 'name_example' # str | Filter on name (optional)
+serial = 'serial_example' # str | Filter on serial (optional)
+comment = 'comment_example' # str | Filter on comment (optional)
+scsi_address = 'scsi_address_example' # str | Filter on scsi address (optional)
+vendor = 'vendor_example' # str | Filter on vendor (optional)
+product = 'product_example' # str | Filter on product (optional)
+firmware = 'firmware_example' # str | Filter on firmware (optional)
+device = 'device_example' # str | Filter on device (optional)
+sgdevice = 'sgdevice_example' # str | Filter on sgdevice (optional)
+libso = 'libso_example' # str | Filter on libso (optional)
+acs = 'acs_example' # str | Filter on acs (optional)
+lsm = 'lsm_example' # str | Filter on lsm (optional)
+panel = 'panel_example' # str | Filter on panel (optional)
+transport = 'transport_example' # str | Filter on transport (optional)
+status = 'status_example' # str | Filter on status (optional)
+full = 'full_example' # str | Filter on full (optional)
+mount_count = 'mount_count_example' # str | Filter on mount count (optional)
+use_to = 'use_to_example' # str | Filter on use to (optional)
+use_by = 'use_by_example' # str | Filter on use by (optional)
+use_file_processed_size = 'use_file_processed_size_example' # str | Filter on use file processed size (optional)
+use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on use file size to process (optional)
+use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
+bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
+
+try:
+    # Lists all tape drives.
+    api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->index_tape_drives: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -359,8 +580,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of tape drives. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -372,25 +598,86 @@ Lists all tape drives.
 **API Key Scope**: tape_drives / index
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
+id = 'id_example' # str | Filter on id (optional)
+name = 'name_example' # str | Filter on name (optional)
+serial = 'serial_example' # str | Filter on serial (optional)
+comment = 'comment_example' # str | Filter on comment (optional)
+scsi_address = 'scsi_address_example' # str | Filter on scsi address (optional)
+vendor = 'vendor_example' # str | Filter on vendor (optional)
+product = 'product_example' # str | Filter on product (optional)
+firmware = 'firmware_example' # str | Filter on firmware (optional)
+device = 'device_example' # str | Filter on device (optional)
+sgdevice = 'sgdevice_example' # str | Filter on sgdevice (optional)
+libso = 'libso_example' # str | Filter on libso (optional)
+acs = 'acs_example' # str | Filter on acs (optional)
+lsm = 'lsm_example' # str | Filter on lsm (optional)
+panel = 'panel_example' # str | Filter on panel (optional)
+transport = 'transport_example' # str | Filter on transport (optional)
+status = 'status_example' # str | Filter on status (optional)
+full = 'full_example' # str | Filter on full (optional)
+mount_count = 'mount_count_example' # str | Filter on mount count (optional)
+use_to = 'use_to_example' # str | Filter on use to (optional)
+use_by = 'use_by_example' # str | Filter on use by (optional)
+use_file_processed_size = 'use_file_processed_size_example' # str | Filter on use file processed size (optional)
+use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on use file size to process (optional)
+use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
+bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
+
+try:
+    # Lists all tape drives.
+    api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->index_tape_drives_by_tape_library: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -471,8 +758,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of tape drives. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -484,25 +776,59 @@ Displays a specific tape drive.
 **API Key Scope**: tape_drives / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+try:
+    # Displays a specific tape drive.
+    api_response = api_instance.show_tape_drive(tape_drive_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->show_tape_drive: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
 try:
@@ -529,8 +855,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific tape drive. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -542,25 +873,60 @@ Displays a specific tape drive.
 **API Key Scope**: tape_drives / show
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+try:
+    # Displays a specific tape drive.
+    api_response = api_instance.show_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->show_tape_drive_by_tape_library: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
@@ -589,8 +955,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific tape drive. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -602,27 +973,62 @@ Updates a specific tape drive.
 **API Key Scope**: tape_drives / update
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
-tape_drive_body = swagger_client.TapeDrive() # TapeDrive | 
+tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
+
+try:
+    # Updates a specific tape drive.
+    api_response = api_instance.update_tape_drive(tape_drive_id, tape_drive_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->update_tape_drive: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
 try:
     # Updates a specific tape drive.
@@ -652,6 +1058,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific tape drive. |  -  |
+**422** | The received resource was not correctly formatted. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tape_drive_by_tape_library**
@@ -662,28 +1074,64 @@ Updates a specific tape drive.
 **API Key Scope**: tape_drives / update
 
 ### Example
+
+* Basic Authentication (BasicAuth):
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
 from pprint import pprint
-
+configuration = nodeum_sdk.Configuration()
 # Configure HTTP basic authorization: BasicAuth
-configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
 # Configure API key authorization: BearerAuth
-configuration = swagger_client.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = swagger_client.TapeDrivesApi(swagger_client.ApiClient(configuration))
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
-tape_drive_body = swagger_client.TapeDrive() # TapeDrive | 
+tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
+
+try:
+    # Updates a specific tape drive.
+    api_response = api_instance.update_tape_drive_by_tape_library(tape_library_id, tape_drive_id, tape_drive_body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TapeDrivesApi->update_tape_drive_by_tape_library: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+# Create an instance of the API class
+api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
+tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
 try:
     # Updates a specific tape drive.
@@ -713,6 +1161,12 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A specific tape drive. |  -  |
+**422** | The received resource was not correctly formatted. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
