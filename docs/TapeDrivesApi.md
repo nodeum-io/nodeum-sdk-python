@@ -311,7 +311,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_tape_drive_devices**
-> TapeDriveDeviceCollection index_tape_drive_devices(tape_library_id, job_id=job_id)
+> TapeDriveDeviceCollection index_tape_drive_devices(tape_library_id, job_id)
 
 Lists tape drives devices.
 
@@ -341,11 +341,11 @@ configuration.host = "http://localhost/api/v2"
 # Create an instance of the API class
 api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
-job_id = 'job_id_example' # str | ID of active job (optional)
+job_id = 'job_id_example' # str | ID of active job
 
 try:
     # Lists tape drives devices.
-    api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id=job_id)
+    api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeDrivesApi->index_tape_drive_devices: %s\n" % e)
@@ -373,11 +373,11 @@ configuration.host = "http://localhost/api/v2"
 # Create an instance of the API class
 api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
 tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
-job_id = 'job_id_example' # str | ID of active job (optional)
+job_id = 'job_id_example' # str | ID of active job
 
 try:
     # Lists tape drives devices.
-    api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id=job_id)
+    api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeDrivesApi->index_tape_drive_devices: %s\n" % e)
@@ -388,7 +388,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tape_library_id** | **str**| Numeric ID, serial, or name of tape library. | 
- **job_id** | **str**| ID of active job | [optional] 
+ **job_id** | **str**| ID of active job | 
 
 ### Return type
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_tape_drives**
-> TapeDriveCollection index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+> TapeDriveCollection index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
 
 Lists all tape drives.
 
@@ -466,6 +466,8 @@ full = 'full_example' # str | Filter on full (optional)
 mount_count = 'mount_count_example' # str | Filter on mount count (optional)
 use_to = 'use_to_example' # str | Filter on use to (optional)
 use_by = 'use_by_example' # str | Filter on use by (optional)
+barcode = 'barcode_example' # str | Filter on barcode (optional)
+task_id = 'task_id_example' # str | Filter on task id (optional)
 use_file_processed_size = 'use_file_processed_size_example' # str | Filter on use file processed size (optional)
 use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on use file size to process (optional)
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
@@ -473,7 +475,7 @@ bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
 try:
     # Lists all tape drives.
-    api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+    api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeDrivesApi->index_tape_drives: %s\n" % e)
@@ -524,6 +526,8 @@ full = 'full_example' # str | Filter on full (optional)
 mount_count = 'mount_count_example' # str | Filter on mount count (optional)
 use_to = 'use_to_example' # str | Filter on use to (optional)
 use_by = 'use_by_example' # str | Filter on use by (optional)
+barcode = 'barcode_example' # str | Filter on barcode (optional)
+task_id = 'task_id_example' # str | Filter on task id (optional)
 use_file_processed_size = 'use_file_processed_size_example' # str | Filter on use file processed size (optional)
 use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on use file size to process (optional)
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
@@ -531,7 +535,7 @@ bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
 try:
     # Lists all tape drives.
-    api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+    api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeDrivesApi->index_tape_drives: %s\n" % e)
@@ -565,6 +569,8 @@ Name | Type | Description  | Notes
  **mount_count** | **str**| Filter on mount count | [optional] 
  **use_to** | **str**| Filter on use to | [optional] 
  **use_by** | **str**| Filter on use by | [optional] 
+ **barcode** | **str**| Filter on barcode | [optional] 
+ **task_id** | **str**| Filter on task id | [optional] 
  **use_file_processed_size** | **str**| Filter on use file processed size | [optional] 
  **use_file_size_to_process** | **str**| Filter on use file size to process | [optional] 
  **use_file_name_processed** | **str**| Filter on use file name processed | [optional] 
@@ -591,7 +597,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_tape_drives_by_tape_library**
-> TapeDriveCollection index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+> TapeDriveCollection index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
 
 Lists all tape drives.
 
@@ -644,6 +650,8 @@ full = 'full_example' # str | Filter on full (optional)
 mount_count = 'mount_count_example' # str | Filter on mount count (optional)
 use_to = 'use_to_example' # str | Filter on use to (optional)
 use_by = 'use_by_example' # str | Filter on use by (optional)
+barcode = 'barcode_example' # str | Filter on barcode (optional)
+task_id = 'task_id_example' # str | Filter on task id (optional)
 use_file_processed_size = 'use_file_processed_size_example' # str | Filter on use file processed size (optional)
 use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on use file size to process (optional)
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
@@ -651,7 +659,7 @@ bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
 try:
     # Lists all tape drives.
-    api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+    api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeDrivesApi->index_tape_drives_by_tape_library: %s\n" % e)
@@ -702,6 +710,8 @@ full = 'full_example' # str | Filter on full (optional)
 mount_count = 'mount_count_example' # str | Filter on mount count (optional)
 use_to = 'use_to_example' # str | Filter on use to (optional)
 use_by = 'use_by_example' # str | Filter on use by (optional)
+barcode = 'barcode_example' # str | Filter on barcode (optional)
+task_id = 'task_id_example' # str | Filter on task id (optional)
 use_file_processed_size = 'use_file_processed_size_example' # str | Filter on use file processed size (optional)
 use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on use file size to process (optional)
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
@@ -709,7 +719,7 @@ bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
 try:
     # Lists all tape drives.
-    api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+    api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeDrivesApi->index_tape_drives_by_tape_library: %s\n" % e)
@@ -743,6 +753,8 @@ Name | Type | Description  | Notes
  **mount_count** | **str**| Filter on mount count | [optional] 
  **use_to** | **str**| Filter on use to | [optional] 
  **use_by** | **str**| Filter on use by | [optional] 
+ **barcode** | **str**| Filter on barcode | [optional] 
+ **task_id** | **str**| Filter on task id | [optional] 
  **use_file_processed_size** | **str**| Filter on use file processed size | [optional] 
  **use_file_size_to_process** | **str**| Filter on use file size to process | [optional] 
  **use_file_name_processed** | **str**| Filter on use file name processed | [optional] 

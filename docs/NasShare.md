@@ -5,7 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **nas_id** | **int** |  | [optional] [readonly] 
-**nas_pool_id** | **int** |  | [optional] [readonly] 
+**pool_id** | **int** |  | [optional] [readonly] 
+**name** | **str** |  | [optional] 
 **path** | **str** |  | [optional] 
 **options** | **str** |  | [optional] 
 **username** | **str** |  | [optional] 

@@ -211,11 +211,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_task_destinations**
-> TaskDestinationCollection index_task_destinations(task_id)
+> TaskDestinationCollection index_task_destinations(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, folder_id=folder_id, tape_id=tape_id, pool_id=pool_id)
 
 Lists all task destinations.
 
-Filter and pagination parameters are not available for this API.  **API Key Scope**: task_destinations / index
+**API Key Scope**: task_destinations / index
 
 ### Example
 
@@ -241,10 +241,17 @@ configuration.host = "http://localhost/api/v2"
 # Create an instance of the API class
 api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
+id = 'id_example' # str | Filter on id (optional)
+folder_id = 'folder_id_example' # str | Filter on folder id (optional)
+tape_id = 'tape_id_example' # str | Filter on tape id (optional)
+pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
 try:
     # Lists all task destinations.
-    api_response = api_instance.index_task_destinations(task_id)
+    api_response = api_instance.index_task_destinations(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, folder_id=folder_id, tape_id=tape_id, pool_id=pool_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskDestinationsApi->index_task_destinations: %s\n" % e)
@@ -272,10 +279,17 @@ configuration.host = "http://localhost/api/v2"
 # Create an instance of the API class
 api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
 task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+limit = 56 # int | The number of items to display for pagination. (optional)
+offset = 56 # int | The number of items to skip for pagination. (optional)
+sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
+id = 'id_example' # str | Filter on id (optional)
+folder_id = 'folder_id_example' # str | Filter on folder id (optional)
+tape_id = 'tape_id_example' # str | Filter on tape id (optional)
+pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
 try:
     # Lists all task destinations.
-    api_response = api_instance.index_task_destinations(task_id)
+    api_response = api_instance.index_task_destinations(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, folder_id=folder_id, tape_id=tape_id, pool_id=pool_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskDestinationsApi->index_task_destinations: %s\n" % e)
@@ -286,6 +300,13 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **task_id** | **str**| Numeric ID or name of task. Task names are not unique, it&#39;s recommanded to use numeric ID. | 
+ **limit** | **int**| The number of items to display for pagination. | [optional] 
+ **offset** | **int**| The number of items to skip for pagination. | [optional] 
+ **sort_by** | [**list[str]**](str.md)| Sort results by attribute.  Can sort on multiple attributes, separated by &#x60;|&#x60;. Order direction can be suffixing the attribute by either &#x60;:asc&#x60; (default) or &#x60;:desc&#x60;. | [optional] 
+ **id** | **str**| Filter on id | [optional] 
+ **folder_id** | **str**| Filter on folder id | [optional] 
+ **tape_id** | **str**| Filter on tape id | [optional] 
+ **pool_id** | **str**| Filter on a pool id | [optional] 
 
 ### Return type
 

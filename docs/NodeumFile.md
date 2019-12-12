@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] [readonly] 
 **parent** | **int** |  | [optional] [readonly] 
+**primary_id** | **int** |  | [optional] [readonly] 
 **type** | **str** |  | [optional] [readonly] 
 **permission** | **int** |  | [optional] [readonly] 
 **size** | **int** |  | [optional] [readonly] 

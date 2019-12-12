@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**create_task_metadatum**](TaskMetadataApi.md#create_task_metadatum) | **POST** /tasks/{task_id}/task_metadata | Creates a new task metadatum.
 [**destroy_task_metadatum**](TaskMetadataApi.md#destroy_task_metadatum) | **DELETE** /tasks/{task_id}/task_metadata/{task_metadatum_id} | Destroys a specific task metadatum.
 [**index_task_metadata**](TaskMetadataApi.md#index_task_metadata) | **GET** /tasks/{task_id}/task_metadata | Lists all task metadata.
-[**show_task_metadat**](TaskMetadataApi.md#show_task_metadat) | **GET** /tasks/{task_id}/task_metadata/{task_metadatum_id} | Displays a specific task metadatum.
+[**show_task_metadatum**](TaskMetadataApi.md#show_task_metadatum) | **GET** /tasks/{task_id}/task_metadata/{task_metadatum_id} | Displays a specific task metadatum.
 [**update_task_metadatum**](TaskMetadataApi.md#update_task_metadatum) | **PUT** /tasks/{task_id}/task_metadata/{task_metadatum_id} | Updates a specific task metadatum.
 
 
@@ -325,8 +325,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **show_task_metadat**
-> TaskMetadatum show_task_metadat(task_id, task_metadatum_id)
+# **show_task_metadatum**
+> TaskMetadatum show_task_metadatum(task_id, task_metadatum_id)
 
 Displays a specific task metadatum.
 
@@ -360,10 +360,10 @@ task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 
 try:
     # Displays a specific task metadatum.
-    api_response = api_instance.show_task_metadat(task_id, task_metadatum_id)
+    api_response = api_instance.show_task_metadatum(task_id, task_metadatum_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TaskMetadataApi->show_task_metadat: %s\n" % e)
+    print("Exception when calling TaskMetadataApi->show_task_metadatum: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -392,10 +392,10 @@ task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 
 try:
     # Displays a specific task metadatum.
-    api_response = api_instance.show_task_metadat(task_id, task_metadatum_id)
+    api_response = api_instance.show_task_metadatum(task_id, task_metadatum_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TaskMetadataApi->show_task_metadat: %s\n" % e)
+    print("Exception when calling TaskMetadataApi->show_task_metadatum: %s\n" % e)
 ```
 
 ### Parameters

@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **mount_count** | **int** |  | [optional] [readonly] 
 **use_to** | **str** |  | [optional] [readonly] 
 **use_by** | **str** |  | [optional] [readonly] 
+**barcode** | **str** |  | [optional] [readonly] 
+**task_id** | **int** |  | [optional] [readonly] 
 **use_file_processed_size** | **int** |  | [optional] [readonly] 
 **use_file_size_to_process** | **int** |  | [optional] [readonly] 
 **use_file_name_processed** | **str** |  | [optional] [readonly] 

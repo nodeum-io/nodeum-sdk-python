@@ -211,7 +211,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_task_sources**
-> TaskSourceCollection index_task_sources(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, file_id=file_id, import_file_id=import_file_id, tape_id=tape_id, tape_pool_id=tape_pool_id, cloud_pool_id=cloud_pool_id, nas_pool_id=nas_pool_id)
+> TaskSourceCollection index_task_sources(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, file_id=file_id, import_file_id=import_file_id, tape_id=tape_id, pool_id=pool_id)
 
 Lists all task sources.
 
@@ -248,13 +248,11 @@ id = 'id_example' # str | Filter on id (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
 import_file_id = 'import_file_id_example' # str | Filter on import file id (optional)
 tape_id = 'tape_id_example' # str | Filter on tape id (optional)
-tape_pool_id = 'tape_pool_id_example' # str | Filter on tape pool id (optional)
-cloud_pool_id = 'cloud_pool_id_example' # str | Filter on cloud pool id (optional)
-nas_pool_id = 'nas_pool_id_example' # str | Filter on NAS pool id (optional)
+pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
 try:
     # Lists all task sources.
-    api_response = api_instance.index_task_sources(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, file_id=file_id, import_file_id=import_file_id, tape_id=tape_id, tape_pool_id=tape_pool_id, cloud_pool_id=cloud_pool_id, nas_pool_id=nas_pool_id)
+    api_response = api_instance.index_task_sources(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, file_id=file_id, import_file_id=import_file_id, tape_id=tape_id, pool_id=pool_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskSourcesApi->index_task_sources: %s\n" % e)
@@ -289,13 +287,11 @@ id = 'id_example' # str | Filter on id (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
 import_file_id = 'import_file_id_example' # str | Filter on import file id (optional)
 tape_id = 'tape_id_example' # str | Filter on tape id (optional)
-tape_pool_id = 'tape_pool_id_example' # str | Filter on tape pool id (optional)
-cloud_pool_id = 'cloud_pool_id_example' # str | Filter on cloud pool id (optional)
-nas_pool_id = 'nas_pool_id_example' # str | Filter on NAS pool id (optional)
+pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
 try:
     # Lists all task sources.
-    api_response = api_instance.index_task_sources(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, file_id=file_id, import_file_id=import_file_id, tape_id=tape_id, tape_pool_id=tape_pool_id, cloud_pool_id=cloud_pool_id, nas_pool_id=nas_pool_id)
+    api_response = api_instance.index_task_sources(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, file_id=file_id, import_file_id=import_file_id, tape_id=tape_id, pool_id=pool_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskSourcesApi->index_task_sources: %s\n" % e)
@@ -313,9 +309,7 @@ Name | Type | Description  | Notes
  **file_id** | **str**| Filter on file id | [optional] 
  **import_file_id** | **str**| Filter on import file id | [optional] 
  **tape_id** | **str**| Filter on tape id | [optional] 
- **tape_pool_id** | **str**| Filter on tape pool id | [optional] 
- **cloud_pool_id** | **str**| Filter on cloud pool id | [optional] 
- **nas_pool_id** | **str**| Filter on NAS pool id | [optional] 
+ **pool_id** | **str**| Filter on a pool id | [optional] 
 
 ### Return type
 

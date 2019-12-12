@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_tape_library_devices**
-> TapeLibraryDeviceCollection index_tape_library_devices(job_id=job_id)
+> TapeLibraryDeviceCollection index_tape_library_devices(job_id)
 
 Lists tape libraries devices.
 
@@ -389,11 +389,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "http://localhost/api/v2"
 # Create an instance of the API class
 api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-job_id = 'job_id_example' # str | ID of active job (optional)
+job_id = 'job_id_example' # str | ID of active job
 
 try:
     # Lists tape libraries devices.
-    api_response = api_instance.index_tape_library_devices(job_id=job_id)
+    api_response = api_instance.index_tape_library_devices(job_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeLibrariesApi->index_tape_library_devices: %s\n" % e)
@@ -420,11 +420,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 configuration.host = "http://localhost/api/v2"
 # Create an instance of the API class
 api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-job_id = 'job_id_example' # str | ID of active job (optional)
+job_id = 'job_id_example' # str | ID of active job
 
 try:
     # Lists tape libraries devices.
-    api_response = api_instance.index_tape_library_devices(job_id=job_id)
+    api_response = api_instance.index_tape_library_devices(job_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TapeLibrariesApi->index_tape_library_devices: %s\n" % e)
@@ -434,7 +434,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job_id** | **str**| ID of active job | [optional] 
+ **job_id** | **str**| ID of active job | 
 
 ### Return type
 

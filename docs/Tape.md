@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **tape_library_id** | **int** |  | [optional] [readonly] 
-**tape_pool_id** | **int** |  | [optional] [readonly] 
+**pool_id** | **int** |  | [optional] [readonly] 
 **barcode** | **str** |  | [optional] [readonly] 
 **location** | **str** |  | [optional] [readonly] 
 **type** | **str** |  | [optional] [readonly] 
