@@ -41,18 +41,18 @@ class AttributeError(object):
     }
 
     discriminator_value_class_map = {
-        'less_than': 'LessThan',
         'greater_than': 'GreaterThan',
         'occurrence_less_than_or_equal_to': 'OccurrenceLessThanOrEqualTo',
         'frozen': 'Frozen',
         'occurrence_less_than': 'OccurrenceLessThan',
         'too_short': 'TooShort',
         'greater_than_or_equal_to': 'GreaterThanOrEqualTo',
+        'taken': 'Taken',
+        'less_than': 'LessThan',
         'invalid': 'Invalid',
         'blank': 'Blank',
         'less_than_or_equal_to': 'LessThanOrEqualTo',
         'too_long': 'TooLong',
-        'taken': 'Taken',
         'quota_on_cache': 'QuotaOnCache'
     }
 

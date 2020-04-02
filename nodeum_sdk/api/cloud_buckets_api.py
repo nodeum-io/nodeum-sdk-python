@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from nodeum_sdk.api_client import ApiClient
-from nodeum_sdk.exceptions import (
+from nodeum_sdk.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -104,11 +104,25 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['limit', 'offset', 'sort_by', 'id', 'cloud_connector_id', 'pool_id', 'name', 'location', 'price']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'cloud_connector_id',
+            'pool_id',
+            'name',
+            'location',
+            'price'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -241,11 +255,25 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id', 'limit', 'offset', 'sort_by', 'id', 'pool_id', 'name', 'location', 'price']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id',
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'pool_id',
+            'name',
+            'location',
+            'price'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -382,11 +410,25 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'limit', 'offset', 'sort_by', 'id', 'cloud_connector_id', 'name', 'location', 'price']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'cloud_connector_id',
+            'name',
+            'location',
+            'price'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -507,11 +549,17 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_bucket_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_bucket_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -617,11 +665,18 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id', 'cloud_bucket_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id',
+            'cloud_bucket_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -733,11 +788,18 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'cloud_bucket_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'cloud_bucket_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -847,11 +909,17 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_bucket_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_bucket_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -957,11 +1025,18 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id', 'cloud_bucket_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id',
+            'cloud_bucket_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1073,11 +1148,18 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'cloud_bucket_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'cloud_bucket_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1187,11 +1269,17 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1297,11 +1385,18 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id', 'job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id',
+            'job_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1413,11 +1508,18 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_bucket_id', 'cloud_bucket_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_bucket_id',
+            'cloud_bucket_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1535,11 +1637,19 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id', 'cloud_bucket_id', 'cloud_bucket_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id',
+            'cloud_bucket_id',
+            'cloud_bucket_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1663,11 +1773,19 @@ class CloudBucketsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'cloud_bucket_id', 'cloud_bucket_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'cloud_bucket_id',
+            'cloud_bucket_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:

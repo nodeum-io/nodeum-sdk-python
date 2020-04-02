@@ -37,8 +37,8 @@ class CloudBucket(object):
         'cloud_connector_id': 'int',
         'pool_id': 'int',
         'name': 'str',
-        'files_count': 'int',
-        'files_size': 'int',
+        'file_count': 'int',
+        'file_size_sum': 'int',
         'location': 'str',
         'price': 'str'
     }
@@ -48,13 +48,13 @@ class CloudBucket(object):
         'cloud_connector_id': 'cloud_connector_id',
         'pool_id': 'pool_id',
         'name': 'name',
-        'files_count': 'files_count',
-        'files_size': 'files_size',
+        'file_count': 'file_count',
+        'file_size_sum': 'file_size_sum',
         'location': 'location',
         'price': 'price'
     }
 
-    def __init__(self, id=None, cloud_connector_id=None, pool_id=None, name=None, files_count=None, files_size=None, location=None, price=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, cloud_connector_id=None, pool_id=None, name=None, file_count=None, file_size_sum=None, location=None, price=None, local_vars_configuration=None):  # noqa: E501
         """CloudBucket - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,8 +64,8 @@ class CloudBucket(object):
         self._cloud_connector_id = None
         self._pool_id = None
         self._name = None
-        self._files_count = None
-        self._files_size = None
+        self._file_count = None
+        self._file_size_sum = None
         self._location = None
         self._price = None
         self.discriminator = None
@@ -78,10 +78,10 @@ class CloudBucket(object):
             self.pool_id = pool_id
         if name is not None:
             self.name = name
-        if files_count is not None:
-            self.files_count = files_count
-        if files_size is not None:
-            self.files_size = files_size
+        if file_count is not None:
+            self.file_count = file_count
+        if file_size_sum is not None:
+            self.file_size_sum = file_size_sum
         if location is not None:
             self.location = location
         if price is not None:
@@ -172,46 +172,46 @@ class CloudBucket(object):
         self._name = name
 
     @property
-    def files_count(self):
-        """Gets the files_count of this CloudBucket.  # noqa: E501
+    def file_count(self):
+        """Gets the file_count of this CloudBucket.  # noqa: E501
 
 
-        :return: The files_count of this CloudBucket.  # noqa: E501
+        :return: The file_count of this CloudBucket.  # noqa: E501
         :rtype: int
         """
-        return self._files_count
+        return self._file_count
 
-    @files_count.setter
-    def files_count(self, files_count):
-        """Sets the files_count of this CloudBucket.
+    @file_count.setter
+    def file_count(self, file_count):
+        """Sets the file_count of this CloudBucket.
 
 
-        :param files_count: The files_count of this CloudBucket.  # noqa: E501
+        :param file_count: The file_count of this CloudBucket.  # noqa: E501
         :type: int
         """
 
-        self._files_count = files_count
+        self._file_count = file_count
 
     @property
-    def files_size(self):
-        """Gets the files_size of this CloudBucket.  # noqa: E501
+    def file_size_sum(self):
+        """Gets the file_size_sum of this CloudBucket.  # noqa: E501
 
 
-        :return: The files_size of this CloudBucket.  # noqa: E501
+        :return: The file_size_sum of this CloudBucket.  # noqa: E501
         :rtype: int
         """
-        return self._files_size
+        return self._file_size_sum
 
-    @files_size.setter
-    def files_size(self, files_size):
-        """Sets the files_size of this CloudBucket.
+    @file_size_sum.setter
+    def file_size_sum(self, file_size_sum):
+        """Sets the file_size_sum of this CloudBucket.
 
 
-        :param files_size: The files_size of this CloudBucket.  # noqa: E501
+        :param file_size_sum: The file_size_sum of this CloudBucket.  # noqa: E501
         :type: int
         """
 
-        self._files_size = files_size
+        self._file_size_sum = file_size_sum
 
     @property
     def location(self):

@@ -3,13 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**serial** | **str** |  | [optional] [readonly] 
-**scsi_address** | **int** |  | [optional] [readonly] 
-**vendor** | **str** |  | [optional] [readonly] 
-**product** | **str** |  | [optional] [readonly] 
-**firmware** | **str** |  | [optional] [readonly] 
-**device** | **str** | When saved, device may be prefixed by *n* (eg. &#x60;/dev/nst5&#x60;) | [optional] [readonly] 
-**sgdevice** | **str** |  | [optional] [readonly] 
 **id** | **int** |  | [optional] [readonly] 
 **tape_library_id** | **int** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] 

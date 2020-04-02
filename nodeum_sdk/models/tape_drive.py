@@ -33,13 +33,6 @@ class TapeDrive(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'serial': 'str',
-        'scsi_address': 'int',
-        'vendor': 'str',
-        'product': 'str',
-        'firmware': 'str',
-        'device': 'str',
-        'sgdevice': 'str',
         'id': 'int',
         'tape_library_id': 'int',
         'name': 'str',
@@ -63,13 +56,6 @@ class TapeDrive(object):
     }
 
     attribute_map = {
-        'serial': 'serial',
-        'scsi_address': 'scsi_address',
-        'vendor': 'vendor',
-        'product': 'product',
-        'firmware': 'firmware',
-        'device': 'device',
-        'sgdevice': 'sgdevice',
         'id': 'id',
         'tape_library_id': 'tape_library_id',
         'name': 'name',
@@ -92,19 +78,12 @@ class TapeDrive(object):
         'bandwidth': 'bandwidth'
     }
 
-    def __init__(self, serial=None, scsi_address=None, vendor=None, product=None, firmware=None, device=None, sgdevice=None, id=None, tape_library_id=None, name=None, comment=None, libso=None, acs=None, lsm=None, panel=None, transport=None, status=None, full=None, mount_count=None, use_to=None, use_by=None, barcode=None, task_id=None, use_file_processed_size=None, use_file_size_to_process=None, use_file_name_processed=None, bandwidth=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, tape_library_id=None, name=None, comment=None, libso=None, acs=None, lsm=None, panel=None, transport=None, status=None, full=None, mount_count=None, use_to=None, use_by=None, barcode=None, task_id=None, use_file_processed_size=None, use_file_size_to_process=None, use_file_name_processed=None, bandwidth=None, local_vars_configuration=None):  # noqa: E501
         """TapeDrive - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._serial = None
-        self._scsi_address = None
-        self._vendor = None
-        self._product = None
-        self._firmware = None
-        self._device = None
-        self._sgdevice = None
         self._id = None
         self._tape_library_id = None
         self._name = None
@@ -127,20 +106,6 @@ class TapeDrive(object):
         self._bandwidth = None
         self.discriminator = None
 
-        if serial is not None:
-            self.serial = serial
-        if scsi_address is not None:
-            self.scsi_address = scsi_address
-        if vendor is not None:
-            self.vendor = vendor
-        if product is not None:
-            self.product = product
-        if firmware is not None:
-            self.firmware = firmware
-        if device is not None:
-            self.device = device
-        if sgdevice is not None:
-            self.sgdevice = sgdevice
         if id is not None:
             self.id = id
         if tape_library_id is not None:
@@ -181,155 +146,6 @@ class TapeDrive(object):
             self.use_file_name_processed = use_file_name_processed
         if bandwidth is not None:
             self.bandwidth = bandwidth
-
-    @property
-    def serial(self):
-        """Gets the serial of this TapeDrive.  # noqa: E501
-
-
-        :return: The serial of this TapeDrive.  # noqa: E501
-        :rtype: str
-        """
-        return self._serial
-
-    @serial.setter
-    def serial(self, serial):
-        """Sets the serial of this TapeDrive.
-
-
-        :param serial: The serial of this TapeDrive.  # noqa: E501
-        :type: str
-        """
-
-        self._serial = serial
-
-    @property
-    def scsi_address(self):
-        """Gets the scsi_address of this TapeDrive.  # noqa: E501
-
-
-        :return: The scsi_address of this TapeDrive.  # noqa: E501
-        :rtype: int
-        """
-        return self._scsi_address
-
-    @scsi_address.setter
-    def scsi_address(self, scsi_address):
-        """Sets the scsi_address of this TapeDrive.
-
-
-        :param scsi_address: The scsi_address of this TapeDrive.  # noqa: E501
-        :type: int
-        """
-
-        self._scsi_address = scsi_address
-
-    @property
-    def vendor(self):
-        """Gets the vendor of this TapeDrive.  # noqa: E501
-
-
-        :return: The vendor of this TapeDrive.  # noqa: E501
-        :rtype: str
-        """
-        return self._vendor
-
-    @vendor.setter
-    def vendor(self, vendor):
-        """Sets the vendor of this TapeDrive.
-
-
-        :param vendor: The vendor of this TapeDrive.  # noqa: E501
-        :type: str
-        """
-
-        self._vendor = vendor
-
-    @property
-    def product(self):
-        """Gets the product of this TapeDrive.  # noqa: E501
-
-
-        :return: The product of this TapeDrive.  # noqa: E501
-        :rtype: str
-        """
-        return self._product
-
-    @product.setter
-    def product(self, product):
-        """Sets the product of this TapeDrive.
-
-
-        :param product: The product of this TapeDrive.  # noqa: E501
-        :type: str
-        """
-
-        self._product = product
-
-    @property
-    def firmware(self):
-        """Gets the firmware of this TapeDrive.  # noqa: E501
-
-
-        :return: The firmware of this TapeDrive.  # noqa: E501
-        :rtype: str
-        """
-        return self._firmware
-
-    @firmware.setter
-    def firmware(self, firmware):
-        """Sets the firmware of this TapeDrive.
-
-
-        :param firmware: The firmware of this TapeDrive.  # noqa: E501
-        :type: str
-        """
-
-        self._firmware = firmware
-
-    @property
-    def device(self):
-        """Gets the device of this TapeDrive.  # noqa: E501
-
-        When saved, device may be prefixed by *n* (eg. `/dev/nst5`)  # noqa: E501
-
-        :return: The device of this TapeDrive.  # noqa: E501
-        :rtype: str
-        """
-        return self._device
-
-    @device.setter
-    def device(self, device):
-        """Sets the device of this TapeDrive.
-
-        When saved, device may be prefixed by *n* (eg. `/dev/nst5`)  # noqa: E501
-
-        :param device: The device of this TapeDrive.  # noqa: E501
-        :type: str
-        """
-
-        self._device = device
-
-    @property
-    def sgdevice(self):
-        """Gets the sgdevice of this TapeDrive.  # noqa: E501
-
-
-        :return: The sgdevice of this TapeDrive.  # noqa: E501
-        :rtype: str
-        """
-        return self._sgdevice
-
-    @sgdevice.setter
-    def sgdevice(self, sgdevice):
-        """Sets the sgdevice of this TapeDrive.
-
-
-        :param sgdevice: The sgdevice of this TapeDrive.  # noqa: E501
-        :type: str
-        """
-
-        self._sgdevice = sgdevice
 
     @property
     def id(self):

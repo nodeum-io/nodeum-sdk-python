@@ -33,202 +33,34 @@ class PoolUp(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'int',
-        'name': 'str',
-        'comment': 'str',
-        'type': 'str',
-        'content': 'str',
-        'primary_id': 'int',
         'tape_ids': 'list[int]',
         'nas_share_ids': 'list[int]',
         'cloud_bucket_ids': 'list[int]'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
-        'comment': 'comment',
-        'type': 'type',
-        'content': 'content',
-        'primary_id': 'primary_id',
         'tape_ids': 'tape_ids',
         'nas_share_ids': 'nas_share_ids',
         'cloud_bucket_ids': 'cloud_bucket_ids'
     }
 
-    def __init__(self, id=None, name=None, comment=None, type=None, content=None, primary_id=None, tape_ids=None, nas_share_ids=None, cloud_bucket_ids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, tape_ids=None, nas_share_ids=None, cloud_bucket_ids=None, local_vars_configuration=None):  # noqa: E501
         """PoolUp - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
-        self._name = None
-        self._comment = None
-        self._type = None
-        self._content = None
-        self._primary_id = None
         self._tape_ids = None
         self._nas_share_ids = None
         self._cloud_bucket_ids = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if comment is not None:
-            self.comment = comment
-        if type is not None:
-            self.type = type
-        if content is not None:
-            self.content = content
-        if primary_id is not None:
-            self.primary_id = primary_id
         if tape_ids is not None:
             self.tape_ids = tape_ids
         if nas_share_ids is not None:
             self.nas_share_ids = nas_share_ids
         if cloud_bucket_ids is not None:
             self.cloud_bucket_ids = cloud_bucket_ids
-
-    @property
-    def id(self):
-        """Gets the id of this PoolUp.  # noqa: E501
-
-
-        :return: The id of this PoolUp.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PoolUp.
-
-
-        :param id: The id of this PoolUp.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def name(self):
-        """Gets the name of this PoolUp.  # noqa: E501
-
-
-        :return: The name of this PoolUp.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PoolUp.
-
-
-        :param name: The name of this PoolUp.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def comment(self):
-        """Gets the comment of this PoolUp.  # noqa: E501
-
-
-        :return: The comment of this PoolUp.  # noqa: E501
-        :rtype: str
-        """
-        return self._comment
-
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this PoolUp.
-
-
-        :param comment: The comment of this PoolUp.  # noqa: E501
-        :type: str
-        """
-
-        self._comment = comment
-
-    @property
-    def type(self):
-        """Gets the type of this PoolUp.  # noqa: E501
-
-
-        :return: The type of this PoolUp.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this PoolUp.
-
-
-        :param type: The type of this PoolUp.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["active_archive", "offline_archive", "data_exchange", "scratch", "data_enrichment", "primary"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
-
-        self._type = type
-
-    @property
-    def content(self):
-        """Gets the content of this PoolUp.  # noqa: E501
-
-
-        :return: The content of this PoolUp.  # noqa: E501
-        :rtype: str
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this PoolUp.
-
-
-        :param content: The content of this PoolUp.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["tape", "cloud", "nas"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and content not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `content` ({0}), must be one of {1}"  # noqa: E501
-                .format(content, allowed_values)
-            )
-
-        self._content = content
-
-    @property
-    def primary_id(self):
-        """Gets the primary_id of this PoolUp.  # noqa: E501
-
-
-        :return: The primary_id of this PoolUp.  # noqa: E501
-        :rtype: int
-        """
-        return self._primary_id
-
-    @primary_id.setter
-    def primary_id(self, primary_id):
-        """Sets the primary_id of this PoolUp.
-
-
-        :param primary_id: The primary_id of this PoolUp.  # noqa: E501
-        :type: int
-        """
-
-        self._primary_id = primary_id
 
     @property
     def tape_ids(self):

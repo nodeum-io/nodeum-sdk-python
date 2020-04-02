@@ -39,17 +39,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_body = nodeum_sdk.TaskDestinationUp() # TaskDestinationUp | 
 
-try:
-    # Creates a new task destination.
-    api_response = api_instance.create_task_destination(task_id, task_destination_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->create_task_destination: %s\n" % e)
+    try:
+        # Creates a new task destination.
+        api_response = api_instance.create_task_destination(task_id, task_destination_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->create_task_destination: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -71,17 +74,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_body = nodeum_sdk.TaskDestinationUp() # TaskDestinationUp | 
 
-try:
-    # Creates a new task destination.
-    api_response = api_instance.create_task_destination(task_id, task_destination_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->create_task_destination: %s\n" % e)
+    try:
+        # Creates a new task destination.
+        api_response = api_instance.create_task_destination(task_id, task_destination_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->create_task_destination: %s\n" % e)
 ```
 
 ### Parameters
@@ -140,16 +146,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_id = 56 # int | Numeric ID of task destination.
 
-try:
-    # Destroys a specific task destination.
-    api_instance.destroy_task_destination(task_id, task_destination_id)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->destroy_task_destination: %s\n" % e)
+    try:
+        # Destroys a specific task destination.
+        api_instance.destroy_task_destination(task_id, task_destination_id)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->destroy_task_destination: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -171,16 +180,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_id = 56 # int | Numeric ID of task destination.
 
-try:
-    # Destroys a specific task destination.
-    api_instance.destroy_task_destination(task_id, task_destination_id)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->destroy_task_destination: %s\n" % e)
+    try:
+        # Destroys a specific task destination.
+        api_instance.destroy_task_destination(task_id, task_destination_id)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->destroy_task_destination: %s\n" % e)
 ```
 
 ### Parameters
@@ -238,9 +250,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -249,12 +264,12 @@ folder_id = 'folder_id_example' # str | Filter on folder id (optional)
 tape_id = 'tape_id_example' # str | Filter on tape id (optional)
 pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
-try:
-    # Lists all task destinations.
-    api_response = api_instance.index_task_destinations(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, folder_id=folder_id, tape_id=tape_id, pool_id=pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->index_task_destinations: %s\n" % e)
+    try:
+        # Lists all task destinations.
+        api_response = api_instance.index_task_destinations(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, folder_id=folder_id, tape_id=tape_id, pool_id=pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->index_task_destinations: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -276,9 +291,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -287,12 +305,12 @@ folder_id = 'folder_id_example' # str | Filter on folder id (optional)
 tape_id = 'tape_id_example' # str | Filter on tape id (optional)
 pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
-try:
-    # Lists all task destinations.
-    api_response = api_instance.index_task_destinations(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, folder_id=folder_id, tape_id=tape_id, pool_id=pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->index_task_destinations: %s\n" % e)
+    try:
+        # Lists all task destinations.
+        api_response = api_instance.index_task_destinations(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, folder_id=folder_id, tape_id=tape_id, pool_id=pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->index_task_destinations: %s\n" % e)
 ```
 
 ### Parameters
@@ -356,17 +374,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_id = 56 # int | Numeric ID of task destination.
 
-try:
-    # Displays a specific task destination.
-    api_response = api_instance.show_task_destination(task_id, task_destination_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->show_task_destination: %s\n" % e)
+    try:
+        # Displays a specific task destination.
+        api_response = api_instance.show_task_destination(task_id, task_destination_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->show_task_destination: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -388,17 +409,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_id = 56 # int | Numeric ID of task destination.
 
-try:
-    # Displays a specific task destination.
-    api_response = api_instance.show_task_destination(task_id, task_destination_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->show_task_destination: %s\n" % e)
+    try:
+        # Displays a specific task destination.
+        api_response = api_instance.show_task_destination(task_id, task_destination_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->show_task_destination: %s\n" % e)
 ```
 
 ### Parameters
@@ -456,18 +480,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_id = 56 # int | Numeric ID of task destination.
 task_destination_body = nodeum_sdk.TaskDestinationUp() # TaskDestinationUp | 
 
-try:
-    # Updates a specific task destination.
-    api_response = api_instance.update_task_destination(task_id, task_destination_id, task_destination_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->update_task_destination: %s\n" % e)
+    try:
+        # Updates a specific task destination.
+        api_response = api_instance.update_task_destination(task_id, task_destination_id, task_destination_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->update_task_destination: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -489,18 +516,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskDestinationsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskDestinationsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_destination_id = 56 # int | Numeric ID of task destination.
 task_destination_body = nodeum_sdk.TaskDestinationUp() # TaskDestinationUp | 
 
-try:
-    # Updates a specific task destination.
-    api_response = api_instance.update_task_destination(task_id, task_destination_id, task_destination_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskDestinationsApi->update_task_destination: %s\n" % e)
+    try:
+        # Updates a specific task destination.
+        api_response = api_instance.update_task_destination(task_id, task_destination_id, task_destination_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskDestinationsApi->update_task_destination: %s\n" % e)
 ```
 
 ### Parameters

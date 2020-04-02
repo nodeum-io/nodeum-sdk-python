@@ -44,16 +44,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_body = nodeum_sdk.Container() # Container | 
 
-try:
-    # Creates a new container.
-    api_response = api_instance.create_container(container_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->create_container: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_body = nodeum_sdk.Container() # Container | 
+
+    try:
+        # Creates a new container.
+        api_response = api_instance.create_container(container_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->create_container: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -75,16 +78,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_body = nodeum_sdk.Container() # Container | 
 
-try:
-    # Creates a new container.
-    api_response = api_instance.create_container(container_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->create_container: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_body = nodeum_sdk.Container() # Container | 
+
+    try:
+        # Creates a new container.
+        api_response = api_instance.create_container(container_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->create_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -142,17 +148,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_body = nodeum_sdk.ContainerPrivilege() # ContainerPrivilege | 
 
-try:
-    # Creates a new privilege on the container.
-    api_response = api_instance.create_container_privilege(container_id, container_privilege_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->create_container_privilege: %s\n" % e)
+    try:
+        # Creates a new privilege on the container.
+        api_response = api_instance.create_container_privilege(container_id, container_privilege_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->create_container_privilege: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -174,17 +183,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_body = nodeum_sdk.ContainerPrivilege() # ContainerPrivilege | 
 
-try:
-    # Creates a new privilege on the container.
-    api_response = api_instance.create_container_privilege(container_id, container_privilege_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->create_container_privilege: %s\n" % e)
+    try:
+        # Creates a new privilege on the container.
+        api_response = api_instance.create_container_privilege(container_id, container_privilege_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->create_container_privilege: %s\n" % e)
 ```
 
 ### Parameters
@@ -243,15 +255,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
 
-try:
-    # Destroys a specific container.
-    api_instance.destroy_container(container_id)
-except ApiException as e:
-    print("Exception when calling ContainersApi->destroy_container: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+    try:
+        # Destroys a specific container.
+        api_instance.destroy_container(container_id)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->destroy_container: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -273,15 +288,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
 
-try:
-    # Destroys a specific container.
-    api_instance.destroy_container(container_id)
-except ApiException as e:
-    print("Exception when calling ContainersApi->destroy_container: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+    try:
+        # Destroys a specific container.
+        api_instance.destroy_container(container_id)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->destroy_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -338,16 +356,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_id = 56 # int | Numeric ID of container privilege.
 
-try:
-    # Destroys a specific privilege.
-    api_instance.destroy_container_privilege(container_id, container_privilege_id)
-except ApiException as e:
-    print("Exception when calling ContainersApi->destroy_container_privilege: %s\n" % e)
+    try:
+        # Destroys a specific privilege.
+        api_instance.destroy_container_privilege(container_id, container_privilege_id)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->destroy_container_privilege: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -369,16 +390,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_id = 56 # int | Numeric ID of container privilege.
 
-try:
-    # Destroys a specific privilege.
-    api_instance.destroy_container_privilege(container_id, container_privilege_id)
-except ApiException as e:
-    print("Exception when calling ContainersApi->destroy_container_privilege: %s\n" % e)
+    try:
+        # Destroys a specific privilege.
+        api_instance.destroy_container_privilege(container_id, container_privilege_id)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->destroy_container_privilege: %s\n" % e)
 ```
 
 ### Parameters
@@ -436,9 +460,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -447,12 +474,12 @@ name = 'name_example' # str | Filter on name (optional)
 privilege = 'privilege_example' # str | Filter on privilege (optional)
 type = 'type_example' # str | Filter on type (optional)
 
-try:
-    # Lists all privilege on the container.
-    api_response = api_instance.index_container_privileges(container_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, privilege=privilege, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->index_container_privileges: %s\n" % e)
+    try:
+        # Lists all privilege on the container.
+        api_response = api_instance.index_container_privileges(container_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, privilege=privilege, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->index_container_privileges: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -474,9 +501,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -485,12 +515,12 @@ name = 'name_example' # str | Filter on name (optional)
 privilege = 'privilege_example' # str | Filter on privilege (optional)
 type = 'type_example' # str | Filter on type (optional)
 
-try:
-    # Lists all privilege on the container.
-    api_response = api_instance.index_container_privileges(container_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, privilege=privilege, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->index_container_privileges: %s\n" % e)
+    try:
+        # Lists all privilege on the container.
+        api_response = api_instance.index_container_privileges(container_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, privilege=privilege, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->index_container_privileges: %s\n" % e)
 ```
 
 ### Parameters
@@ -554,9 +584,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -570,12 +603,12 @@ stat_size_on_cache = 'stat_size_on_cache_example' # str | Filter on stat size on
 guest_right = 'guest_right_example' # str | Filter on guest right (optional)
 last_update = 'last_update_example' # str | Filter on last update (optional)
 
-try:
-    # Lists all containers.
-    api_response = api_instance.index_containers(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, quota_total_size=quota_total_size, quota_on_cache=quota_on_cache, stat_total_files=stat_total_files, stat_total_size=stat_total_size, stat_size_on_cache=stat_size_on_cache, guest_right=guest_right, last_update=last_update)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->index_containers: %s\n" % e)
+    try:
+        # Lists all containers.
+        api_response = api_instance.index_containers(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, quota_total_size=quota_total_size, quota_on_cache=quota_on_cache, stat_total_files=stat_total_files, stat_total_size=stat_total_size, stat_size_on_cache=stat_size_on_cache, guest_right=guest_right, last_update=last_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->index_containers: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -597,9 +630,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -613,12 +649,12 @@ stat_size_on_cache = 'stat_size_on_cache_example' # str | Filter on stat size on
 guest_right = 'guest_right_example' # str | Filter on guest right (optional)
 last_update = 'last_update_example' # str | Filter on last update (optional)
 
-try:
-    # Lists all containers.
-    api_response = api_instance.index_containers(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, quota_total_size=quota_total_size, quota_on_cache=quota_on_cache, stat_total_files=stat_total_files, stat_total_size=stat_total_size, stat_size_on_cache=stat_size_on_cache, guest_right=guest_right, last_update=last_update)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->index_containers: %s\n" % e)
+    try:
+        # Lists all containers.
+        api_response = api_instance.index_containers(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, quota_total_size=quota_total_size, quota_on_cache=quota_on_cache, stat_total_files=stat_total_files, stat_total_size=stat_total_size, stat_size_on_cache=stat_size_on_cache, guest_right=guest_right, last_update=last_update)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->index_containers: %s\n" % e)
 ```
 
 ### Parameters
@@ -687,16 +723,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
 
-try:
-    # Displays a specific container.
-    api_response = api_instance.show_container(container_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->show_container: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+    try:
+        # Displays a specific container.
+        api_response = api_instance.show_container(container_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->show_container: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -718,16 +757,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
 
-try:
-    # Displays a specific container.
-    api_response = api_instance.show_container(container_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->show_container: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+    try:
+        # Displays a specific container.
+        api_response = api_instance.show_container(container_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->show_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -784,17 +826,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_id = 56 # int | Numeric ID of container privilege.
 
-try:
-    # Displays a specific privilege.
-    api_response = api_instance.show_container_privilege(container_id, container_privilege_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->show_container_privilege: %s\n" % e)
+    try:
+        # Displays a specific privilege.
+        api_response = api_instance.show_container_privilege(container_id, container_privilege_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->show_container_privilege: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -816,17 +861,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_id = 56 # int | Numeric ID of container privilege.
 
-try:
-    # Displays a specific privilege.
-    api_response = api_instance.show_container_privilege(container_id, container_privilege_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->show_container_privilege: %s\n" % e)
+    try:
+        # Displays a specific privilege.
+        api_response = api_instance.show_container_privilege(container_id, container_privilege_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->show_container_privilege: %s\n" % e)
 ```
 
 ### Parameters
@@ -884,17 +932,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_body = nodeum_sdk.Container() # Container | 
 
-try:
-    # Updates a specific container.
-    api_response = api_instance.update_container(container_id, container_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->update_container: %s\n" % e)
+    try:
+        # Updates a specific container.
+        api_response = api_instance.update_container(container_id, container_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->update_container: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -916,17 +967,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_body = nodeum_sdk.Container() # Container | 
 
-try:
-    # Updates a specific container.
-    api_response = api_instance.update_container(container_id, container_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->update_container: %s\n" % e)
+    try:
+        # Updates a specific container.
+        api_response = api_instance.update_container(container_id, container_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->update_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -985,18 +1039,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_id = 56 # int | Numeric ID of container privilege.
 container_privilege_body = nodeum_sdk.ContainerPrivilege() # ContainerPrivilege | 
 
-try:
-    # Updates a specific privilege.
-    api_response = api_instance.update_container_privilege(container_id, container_privilege_id, container_privilege_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->update_container_privilege: %s\n" % e)
+    try:
+        # Updates a specific privilege.
+        api_response = api_instance.update_container_privilege(container_id, container_privilege_id, container_privilege_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->update_container_privilege: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1018,18 +1075,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.ContainersApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.ContainersApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 container_privilege_id = 56 # int | Numeric ID of container privilege.
 container_privilege_body = nodeum_sdk.ContainerPrivilege() # ContainerPrivilege | 
 
-try:
-    # Updates a specific privilege.
-    api_response = api_instance.update_container_privilege(container_id, container_privilege_id, container_privilege_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContainersApi->update_container_privilege: %s\n" % e)
+    try:
+        # Updates a specific privilege.
+        api_response = api_instance.update_container_privilege(container_id, container_privilege_id, container_privilege_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ContainersApi->update_container_privilege: %s\n" % e)
 ```
 
 ### Parameters

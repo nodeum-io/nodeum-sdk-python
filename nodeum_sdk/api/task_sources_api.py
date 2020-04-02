@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from nodeum_sdk.api_client import ApiClient
-from nodeum_sdk.exceptions import (
+from nodeum_sdk.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -90,11 +90,18 @@ class TaskSourcesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_source_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_source_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -210,11 +217,18 @@ class TaskSourcesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_source_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_source_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -336,11 +350,25 @@ class TaskSourcesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'limit', 'offset', 'sort_by', 'id', 'file_id', 'import_file_id', 'tape_id', 'pool_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'file_id',
+            'import_file_id',
+            'tape_id',
+            'pool_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -463,11 +491,18 @@ class TaskSourcesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_source_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_source_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -581,11 +616,19 @@ class TaskSourcesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_source_id', 'task_source_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_source_id',
+            'task_source_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:

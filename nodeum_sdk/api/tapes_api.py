@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from nodeum_sdk.api_client import ApiClient
-from nodeum_sdk.exceptions import (
+from nodeum_sdk.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -90,11 +90,18 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['limit', 'offset']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'limit',
+            'offset'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -250,11 +257,44 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['limit', 'offset', 'sort_by', 'id', 'tape_library_id', 'pool_id', 'barcode', 'location', 'type', 'locked', 'scratch', 'cleaning', 'write_protect', 'mounted', 'ejected', 'known', 'mount_count', 'date_in', 'date_move', 'free', 'max', 'last_size_update', 'last_maintenance', 'last_repack', 'repack_status', 'hash', 'force_import_type', 'need_to_check']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'tape_library_id',
+            'pool_id',
+            'barcode',
+            'location',
+            'type',
+            'locked',
+            'scratch',
+            'cleaning',
+            'write_protect',
+            'mounted',
+            'ejected',
+            'known',
+            'mount_count',
+            'date_in',
+            'date_move',
+            'free',
+            'max',
+            'last_size_update',
+            'last_maintenance',
+            'last_repack',
+            'repack_status',
+            'hash',
+            'force_import_type',
+            'need_to_check'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -463,11 +503,44 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'limit', 'offset', 'sort_by', 'id', 'tape_library_id', 'barcode', 'location', 'type', 'locked', 'scratch', 'cleaning', 'write_protect', 'mounted', 'ejected', 'known', 'mount_count', 'date_in', 'date_move', 'free', 'max', 'last_size_update', 'last_maintenance', 'last_repack', 'repack_status', 'hash', 'force_import_type', 'need_to_check']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'tape_library_id',
+            'barcode',
+            'location',
+            'type',
+            'locked',
+            'scratch',
+            'cleaning',
+            'write_protect',
+            'mounted',
+            'ejected',
+            'known',
+            'mount_count',
+            'date_in',
+            'date_move',
+            'free',
+            'max',
+            'last_size_update',
+            'last_maintenance',
+            'last_repack',
+            'repack_status',
+            'hash',
+            'force_import_type',
+            'need_to_check'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -680,11 +753,44 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['tape_library_id', 'limit', 'offset', 'sort_by', 'id', 'pool_id', 'barcode', 'location', 'type', 'locked', 'scratch', 'cleaning', 'write_protect', 'mounted', 'ejected', 'known', 'mount_count', 'date_in', 'date_move', 'free', 'max', 'last_size_update', 'last_maintenance', 'last_repack', 'repack_status', 'hash', 'force_import_type', 'need_to_check']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'tape_library_id',
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'pool_id',
+            'barcode',
+            'location',
+            'type',
+            'locked',
+            'scratch',
+            'cleaning',
+            'write_protect',
+            'mounted',
+            'ejected',
+            'known',
+            'mount_count',
+            'date_in',
+            'date_move',
+            'free',
+            'max',
+            'last_size_update',
+            'last_maintenance',
+            'last_repack',
+            'repack_status',
+            'hash',
+            'force_import_type',
+            'need_to_check'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -843,11 +949,17 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -953,11 +1065,18 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1069,11 +1188,18 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['tape_library_id', 'tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'tape_library_id',
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1183,11 +1309,17 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1293,11 +1425,18 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1409,11 +1548,18 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['tape_library_id', 'tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'tape_library_id',
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1523,11 +1669,17 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1633,11 +1785,18 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1749,11 +1908,18 @@ class TapesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['tape_library_id', 'tape_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'tape_library_id',
+            'tape_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:

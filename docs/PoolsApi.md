@@ -47,16 +47,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_body = nodeum_sdk.PoolUp() # PoolUp | 
 
-try:
-    # Creates a new pool.
-    api_response = api_instance.create_pool(pool_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->create_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_body = nodeum_sdk.PoolUp() # PoolUp | 
+
+    try:
+        # Creates a new pool.
+        api_response = api_instance.create_pool(pool_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->create_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -78,16 +81,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_body = nodeum_sdk.PoolUp() # PoolUp | 
 
-try:
-    # Creates a new pool.
-    api_response = api_instance.create_pool(pool_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->create_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_body = nodeum_sdk.PoolUp() # PoolUp | 
+
+    try:
+        # Creates a new pool.
+        api_response = api_instance.create_pool(pool_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->create_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -145,17 +151,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 primary_scan_body = nodeum_sdk.PrimaryScan() # PrimaryScan | 
 
-try:
-    # Set a new primary pool scan option.
-    api_response = api_instance.create_primary_scan(pool_id, primary_scan_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->create_primary_scan: %s\n" % e)
+    try:
+        # Set a new primary pool scan option.
+        api_response = api_instance.create_primary_scan(pool_id, primary_scan_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->create_primary_scan: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -177,17 +186,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 primary_scan_body = nodeum_sdk.PrimaryScan() # PrimaryScan | 
 
-try:
-    # Set a new primary pool scan option.
-    api_response = api_instance.create_primary_scan(pool_id, primary_scan_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->create_primary_scan: %s\n" % e)
+    try:
+        # Set a new primary pool scan option.
+        api_response = api_instance.create_primary_scan(pool_id, primary_scan_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->create_primary_scan: %s\n" % e)
 ```
 
 ### Parameters
@@ -246,15 +258,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Destroys a specific tape pool.
-    api_instance.destroy_pool(pool_id)
-except ApiException as e:
-    print("Exception when calling PoolsApi->destroy_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Destroys a specific tape pool.
+        api_instance.destroy_pool(pool_id)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->destroy_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -276,15 +291,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Destroys a specific tape pool.
-    api_instance.destroy_pool(pool_id)
-except ApiException as e:
-    print("Exception when calling PoolsApi->destroy_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Destroys a specific tape pool.
+        api_instance.destroy_pool(pool_id)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->destroy_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -341,15 +359,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Disable the primary pool scan.
-    api_instance.destroy_primary_scan(pool_id)
-except ApiException as e:
-    print("Exception when calling PoolsApi->destroy_primary_scan: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Disable the primary pool scan.
+        api_instance.destroy_primary_scan(pool_id)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->destroy_primary_scan: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -371,15 +392,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Disable the primary pool scan.
-    api_instance.destroy_primary_scan(pool_id)
-except ApiException as e:
-    print("Exception when calling PoolsApi->destroy_primary_scan: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Disable the primary pool scan.
+        api_instance.destroy_primary_scan(pool_id)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->destroy_primary_scan: %s\n" % e)
 ```
 
 ### Parameters
@@ -436,9 +460,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -448,12 +475,12 @@ type = 'type_example' # str | Filter on type (optional)
 content = 'content_example' # str | Filter on content (optional)
 primary_id = 'primary_id_example' # str | Filter on primary id (optional)
 
-try:
-    # Lists all pools.
-    api_response = api_instance.index_pools(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, type=type, content=content, primary_id=primary_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->index_pools: %s\n" % e)
+    try:
+        # Lists all pools.
+        api_response = api_instance.index_pools(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, type=type, content=content, primary_id=primary_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->index_pools: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -475,9 +502,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -487,12 +517,12 @@ type = 'type_example' # str | Filter on type (optional)
 content = 'content_example' # str | Filter on content (optional)
 primary_id = 'primary_id_example' # str | Filter on primary id (optional)
 
-try:
-    # Lists all pools.
-    api_response = api_instance.index_pools(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, type=type, content=content, primary_id=primary_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->index_pools: %s\n" % e)
+    try:
+        # Lists all pools.
+        api_response = api_instance.index_pools(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, type=type, content=content, primary_id=primary_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->index_pools: %s\n" % e)
 ```
 
 ### Parameters
@@ -557,16 +587,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Mount Pool.
-    api_response = api_instance.mount_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->mount_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Mount Pool.
+        api_response = api_instance.mount_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->mount_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -588,16 +621,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Mount Pool.
-    api_response = api_instance.mount_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->mount_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Mount Pool.
+        api_response = api_instance.mount_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->mount_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -655,16 +691,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Get mount status of Pool.
-    api_response = api_instance.mount_status_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->mount_status_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Get mount status of Pool.
+        api_response = api_instance.mount_status_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->mount_status_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -686,16 +725,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Get mount status of Pool.
-    api_response = api_instance.mount_status_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->mount_status_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Get mount status of Pool.
+        api_response = api_instance.mount_status_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->mount_status_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -753,16 +795,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Displays a specific pool.
-    api_response = api_instance.show_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->show_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Displays a specific pool.
+        api_response = api_instance.show_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->show_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -784,16 +829,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Displays a specific pool.
-    api_response = api_instance.show_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->show_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Displays a specific pool.
+        api_response = api_instance.show_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->show_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -850,16 +898,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Displays the primary pool scan status.
-    api_response = api_instance.show_primary_scan(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->show_primary_scan: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Displays the primary pool scan status.
+        api_response = api_instance.show_primary_scan(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->show_primary_scan: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -881,16 +932,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Displays the primary pool scan status.
-    api_response = api_instance.show_primary_scan(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->show_primary_scan: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Displays the primary pool scan status.
+        api_response = api_instance.show_primary_scan(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->show_primary_scan: %s\n" % e)
 ```
 
 ### Parameters
@@ -947,16 +1001,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 tx = 56 # int | New transaction number.
 
-try:
-    # Synchronize a primary after a scan (for internal use only).
-    api_instance.sync_primary_pool(pool_id, tx)
-except ApiException as e:
-    print("Exception when calling PoolsApi->sync_primary_pool: %s\n" % e)
+    try:
+        # Synchronize a primary after a scan (for internal use only).
+        api_instance.sync_primary_pool(pool_id, tx)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->sync_primary_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -978,16 +1035,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 tx = 56 # int | New transaction number.
 
-try:
-    # Synchronize a primary after a scan (for internal use only).
-    api_instance.sync_primary_pool(pool_id, tx)
-except ApiException as e:
-    print("Exception when calling PoolsApi->sync_primary_pool: %s\n" % e)
+    try:
+        # Synchronize a primary after a scan (for internal use only).
+        api_instance.sync_primary_pool(pool_id, tx)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->sync_primary_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1045,16 +1105,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Unmount Pool.
-    api_response = api_instance.unmount_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->unmount_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Unmount Pool.
+        api_response = api_instance.unmount_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->unmount_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1076,16 +1139,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 
-try:
-    # Unmount Pool.
-    api_response = api_instance.unmount_pool(pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->unmount_pool: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+    try:
+        # Unmount Pool.
+        api_response = api_instance.unmount_pool(pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->unmount_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1143,17 +1209,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 pool_body = nodeum_sdk.PoolUp() # PoolUp | 
 
-try:
-    # Updates a specific pool.
-    api_response = api_instance.update_pool(pool_id, pool_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->update_pool: %s\n" % e)
+    try:
+        # Updates a specific pool.
+        api_response = api_instance.update_pool(pool_id, pool_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->update_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1175,17 +1244,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 pool_body = nodeum_sdk.PoolUp() # PoolUp | 
 
-try:
-    # Updates a specific pool.
-    api_response = api_instance.update_pool(pool_id, pool_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->update_pool: %s\n" % e)
+    try:
+        # Updates a specific pool.
+        api_response = api_instance.update_pool(pool_id, pool_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->update_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1244,17 +1316,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 primary_scan_body = nodeum_sdk.PrimaryScan() # PrimaryScan | 
 
-try:
-    # Updates the existing primary pool scan option.
-    api_response = api_instance.update_primary_scan(pool_id, primary_scan_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->update_primary_scan: %s\n" % e)
+    try:
+        # Updates the existing primary pool scan option.
+        api_response = api_instance.update_primary_scan(pool_id, primary_scan_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->update_primary_scan: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1276,17 +1351,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.PoolsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.PoolsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 primary_scan_body = nodeum_sdk.PrimaryScan() # PrimaryScan | 
 
-try:
-    # Updates the existing primary pool scan option.
-    api_response = api_instance.update_primary_scan(pool_id, primary_scan_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoolsApi->update_primary_scan: %s\n" % e)
+    try:
+        # Updates the existing primary pool scan option.
+        api_response = api_instance.update_primary_scan(pool_id, primary_scan_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PoolsApi->update_primary_scan: %s\n" % e)
 ```
 
 ### Parameters

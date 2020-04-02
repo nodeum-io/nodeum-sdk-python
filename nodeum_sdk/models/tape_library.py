@@ -33,17 +33,6 @@ class TapeLibrary(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'serial': 'str',
-        'protocol': 'str',
-        'vendor': 'str',
-        'product': 'str',
-        'firmware': 'str',
-        'device': 'str',
-        'acs': 'int',
-        'storage_slots': 'int',
-        'storage_slots_address': 'int',
-        'io_slots': 'int',
-        'io_slots_address': 'int',
         'id': 'int',
         'name': 'str',
         'comment': 'str',
@@ -53,17 +42,6 @@ class TapeLibrary(object):
     }
 
     attribute_map = {
-        'serial': 'serial',
-        'protocol': 'protocol',
-        'vendor': 'vendor',
-        'product': 'product',
-        'firmware': 'firmware',
-        'device': 'device',
-        'acs': 'acs',
-        'storage_slots': 'storage_slots',
-        'storage_slots_address': 'storage_slots_address',
-        'io_slots': 'io_slots',
-        'io_slots_address': 'io_slots_address',
         'id': 'id',
         'name': 'name',
         'comment': 'comment',
@@ -72,23 +50,12 @@ class TapeLibrary(object):
         'price': 'price'
     }
 
-    def __init__(self, serial=None, protocol=None, vendor=None, product=None, firmware=None, device=None, acs=None, storage_slots=None, storage_slots_address=None, io_slots=None, io_slots_address=None, id=None, name=None, comment=None, libso=None, status=None, price=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, comment=None, libso=None, status=None, price=None, local_vars_configuration=None):  # noqa: E501
         """TapeLibrary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._serial = None
-        self._protocol = None
-        self._vendor = None
-        self._product = None
-        self._firmware = None
-        self._device = None
-        self._acs = None
-        self._storage_slots = None
-        self._storage_slots_address = None
-        self._io_slots = None
-        self._io_slots_address = None
         self._id = None
         self._name = None
         self._comment = None
@@ -97,28 +64,6 @@ class TapeLibrary(object):
         self._price = None
         self.discriminator = None
 
-        if serial is not None:
-            self.serial = serial
-        if protocol is not None:
-            self.protocol = protocol
-        if vendor is not None:
-            self.vendor = vendor
-        if product is not None:
-            self.product = product
-        if firmware is not None:
-            self.firmware = firmware
-        if device is not None:
-            self.device = device
-        if acs is not None:
-            self.acs = acs
-        if storage_slots is not None:
-            self.storage_slots = storage_slots
-        if storage_slots_address is not None:
-            self.storage_slots_address = storage_slots_address
-        if io_slots is not None:
-            self.io_slots = io_slots
-        if io_slots_address is not None:
-            self.io_slots_address = io_slots_address
         if id is not None:
             self.id = id
         if name is not None:
@@ -131,243 +76,6 @@ class TapeLibrary(object):
             self.status = status
         if price is not None:
             self.price = price
-
-    @property
-    def serial(self):
-        """Gets the serial of this TapeLibrary.  # noqa: E501
-
-
-        :return: The serial of this TapeLibrary.  # noqa: E501
-        :rtype: str
-        """
-        return self._serial
-
-    @serial.setter
-    def serial(self, serial):
-        """Sets the serial of this TapeLibrary.
-
-
-        :param serial: The serial of this TapeLibrary.  # noqa: E501
-        :type: str
-        """
-
-        self._serial = serial
-
-    @property
-    def protocol(self):
-        """Gets the protocol of this TapeLibrary.  # noqa: E501
-
-
-        :return: The protocol of this TapeLibrary.  # noqa: E501
-        :rtype: str
-        """
-        return self._protocol
-
-    @protocol.setter
-    def protocol(self, protocol):
-        """Sets the protocol of this TapeLibrary.
-
-
-        :param protocol: The protocol of this TapeLibrary.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["scsi", "acsls"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and protocol not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `protocol` ({0}), must be one of {1}"  # noqa: E501
-                .format(protocol, allowed_values)
-            )
-
-        self._protocol = protocol
-
-    @property
-    def vendor(self):
-        """Gets the vendor of this TapeLibrary.  # noqa: E501
-
-
-        :return: The vendor of this TapeLibrary.  # noqa: E501
-        :rtype: str
-        """
-        return self._vendor
-
-    @vendor.setter
-    def vendor(self, vendor):
-        """Sets the vendor of this TapeLibrary.
-
-
-        :param vendor: The vendor of this TapeLibrary.  # noqa: E501
-        :type: str
-        """
-
-        self._vendor = vendor
-
-    @property
-    def product(self):
-        """Gets the product of this TapeLibrary.  # noqa: E501
-
-
-        :return: The product of this TapeLibrary.  # noqa: E501
-        :rtype: str
-        """
-        return self._product
-
-    @product.setter
-    def product(self, product):
-        """Sets the product of this TapeLibrary.
-
-
-        :param product: The product of this TapeLibrary.  # noqa: E501
-        :type: str
-        """
-
-        self._product = product
-
-    @property
-    def firmware(self):
-        """Gets the firmware of this TapeLibrary.  # noqa: E501
-
-
-        :return: The firmware of this TapeLibrary.  # noqa: E501
-        :rtype: str
-        """
-        return self._firmware
-
-    @firmware.setter
-    def firmware(self, firmware):
-        """Sets the firmware of this TapeLibrary.
-
-
-        :param firmware: The firmware of this TapeLibrary.  # noqa: E501
-        :type: str
-        """
-
-        self._firmware = firmware
-
-    @property
-    def device(self):
-        """Gets the device of this TapeLibrary.  # noqa: E501
-
-
-        :return: The device of this TapeLibrary.  # noqa: E501
-        :rtype: str
-        """
-        return self._device
-
-    @device.setter
-    def device(self, device):
-        """Sets the device of this TapeLibrary.
-
-
-        :param device: The device of this TapeLibrary.  # noqa: E501
-        :type: str
-        """
-
-        self._device = device
-
-    @property
-    def acs(self):
-        """Gets the acs of this TapeLibrary.  # noqa: E501
-
-
-        :return: The acs of this TapeLibrary.  # noqa: E501
-        :rtype: int
-        """
-        return self._acs
-
-    @acs.setter
-    def acs(self, acs):
-        """Sets the acs of this TapeLibrary.
-
-
-        :param acs: The acs of this TapeLibrary.  # noqa: E501
-        :type: int
-        """
-
-        self._acs = acs
-
-    @property
-    def storage_slots(self):
-        """Gets the storage_slots of this TapeLibrary.  # noqa: E501
-
-
-        :return: The storage_slots of this TapeLibrary.  # noqa: E501
-        :rtype: int
-        """
-        return self._storage_slots
-
-    @storage_slots.setter
-    def storage_slots(self, storage_slots):
-        """Sets the storage_slots of this TapeLibrary.
-
-
-        :param storage_slots: The storage_slots of this TapeLibrary.  # noqa: E501
-        :type: int
-        """
-
-        self._storage_slots = storage_slots
-
-    @property
-    def storage_slots_address(self):
-        """Gets the storage_slots_address of this TapeLibrary.  # noqa: E501
-
-
-        :return: The storage_slots_address of this TapeLibrary.  # noqa: E501
-        :rtype: int
-        """
-        return self._storage_slots_address
-
-    @storage_slots_address.setter
-    def storage_slots_address(self, storage_slots_address):
-        """Sets the storage_slots_address of this TapeLibrary.
-
-
-        :param storage_slots_address: The storage_slots_address of this TapeLibrary.  # noqa: E501
-        :type: int
-        """
-
-        self._storage_slots_address = storage_slots_address
-
-    @property
-    def io_slots(self):
-        """Gets the io_slots of this TapeLibrary.  # noqa: E501
-
-
-        :return: The io_slots of this TapeLibrary.  # noqa: E501
-        :rtype: int
-        """
-        return self._io_slots
-
-    @io_slots.setter
-    def io_slots(self, io_slots):
-        """Sets the io_slots of this TapeLibrary.
-
-
-        :param io_slots: The io_slots of this TapeLibrary.  # noqa: E501
-        :type: int
-        """
-
-        self._io_slots = io_slots
-
-    @property
-    def io_slots_address(self):
-        """Gets the io_slots_address of this TapeLibrary.  # noqa: E501
-
-
-        :return: The io_slots_address of this TapeLibrary.  # noqa: E501
-        :rtype: int
-        """
-        return self._io_slots_address
-
-    @io_slots_address.setter
-    def io_slots_address(self, io_slots_address):
-        """Sets the io_slots_address of this TapeLibrary.
-
-
-        :param io_slots_address: The io_slots_address of this TapeLibrary.  # noqa: E501
-        :type: int
-        """
-
-        self._io_slots_address = io_slots_address
 
     @property
     def id(self):

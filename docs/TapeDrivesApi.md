@@ -44,17 +44,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
-try:
-    # Creates a new tape drive.
-    api_response = api_instance.create_tape_drive_by_tape_library(tape_library_id, tape_drive_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->create_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Creates a new tape drive.
+        api_response = api_instance.create_tape_drive_by_tape_library(tape_library_id, tape_drive_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->create_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -76,17 +79,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
-try:
-    # Creates a new tape drive.
-    api_response = api_instance.create_tape_drive_by_tape_library(tape_library_id, tape_drive_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->create_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Creates a new tape drive.
+        api_response = api_instance.create_tape_drive_by_tape_library(tape_library_id, tape_drive_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->create_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -145,15 +151,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Destroys a specific tape drive.
-    api_instance.destroy_tape_drive(tape_drive_id)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->destroy_tape_drive: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+    try:
+        # Destroys a specific tape drive.
+        api_instance.destroy_tape_drive(tape_drive_id)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->destroy_tape_drive: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -175,15 +184,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Destroys a specific tape drive.
-    api_instance.destroy_tape_drive(tape_drive_id)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->destroy_tape_drive: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+    try:
+        # Destroys a specific tape drive.
+        api_instance.destroy_tape_drive(tape_drive_id)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->destroy_tape_drive: %s\n" % e)
 ```
 
 ### Parameters
@@ -240,16 +252,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Destroys a specific tape drive.
-    api_instance.destroy_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->destroy_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Destroys a specific tape drive.
+        api_instance.destroy_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->destroy_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -271,16 +286,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Destroys a specific tape drive.
-    api_instance.destroy_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->destroy_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Destroys a specific tape drive.
+        api_instance.destroy_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->destroy_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -338,17 +356,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Lists tape drives devices.
-    api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->index_tape_drive_devices: %s\n" % e)
+    try:
+        # Lists tape drives devices.
+        api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->index_tape_drive_devices: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -370,17 +391,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Lists tape drives devices.
-    api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->index_tape_drive_devices: %s\n" % e)
+    try:
+        # Lists tape drives devices.
+        api_response = api_instance.index_tape_drive_devices(tape_library_id, job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->index_tape_drive_devices: %s\n" % e)
 ```
 
 ### Parameters
@@ -440,9 +464,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -473,12 +500,12 @@ use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on 
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all tape drives.
-    api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->index_tape_drives: %s\n" % e)
+    try:
+        # Lists all tape drives.
+        api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->index_tape_drives: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -500,9 +527,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -533,12 +563,12 @@ use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on 
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all tape drives.
-    api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->index_tape_drives: %s\n" % e)
+    try:
+        # Lists all tape drives.
+        api_response = api_instance.index_tape_drives(limit=limit, offset=offset, sort_by=sort_by, id=id, tape_library_id=tape_library_id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->index_tape_drives: %s\n" % e)
 ```
 
 ### Parameters
@@ -624,9 +654,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -657,12 +690,12 @@ use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on 
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all tape drives.
-    api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->index_tape_drives_by_tape_library: %s\n" % e)
+    try:
+        # Lists all tape drives.
+        api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->index_tape_drives_by_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -684,9 +717,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -717,12 +753,12 @@ use_file_size_to_process = 'use_file_size_to_process_example' # str | Filter on 
 use_file_name_processed = 'use_file_name_processed_example' # str | Filter on use file name processed (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all tape drives.
-    api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->index_tape_drives_by_tape_library: %s\n" % e)
+    try:
+        # Lists all tape drives.
+        api_response = api_instance.index_tape_drives_by_tape_library(tape_library_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, scsi_address=scsi_address, vendor=vendor, product=product, firmware=firmware, device=device, sgdevice=sgdevice, libso=libso, acs=acs, lsm=lsm, panel=panel, transport=transport, status=status, full=full, mount_count=mount_count, use_to=use_to, use_by=use_by, barcode=barcode, task_id=task_id, use_file_processed_size=use_file_processed_size, use_file_size_to_process=use_file_size_to_process, use_file_name_processed=use_file_name_processed, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->index_tape_drives_by_tape_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -808,16 +844,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Displays a specific tape drive.
-    api_response = api_instance.show_tape_drive(tape_drive_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->show_tape_drive: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+    try:
+        # Displays a specific tape drive.
+        api_response = api_instance.show_tape_drive(tape_drive_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->show_tape_drive: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -839,16 +878,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Displays a specific tape drive.
-    api_response = api_instance.show_tape_drive(tape_drive_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->show_tape_drive: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+    try:
+        # Displays a specific tape drive.
+        api_response = api_instance.show_tape_drive(tape_drive_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->show_tape_drive: %s\n" % e)
 ```
 
 ### Parameters
@@ -905,17 +947,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Displays a specific tape drive.
-    api_response = api_instance.show_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->show_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Displays a specific tape drive.
+        api_response = api_instance.show_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->show_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -937,17 +982,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 
-try:
-    # Displays a specific tape drive.
-    api_response = api_instance.show_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->show_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Displays a specific tape drive.
+        api_response = api_instance.show_tape_drive_by_tape_library(tape_library_id, tape_drive_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->show_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -1005,17 +1053,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
-try:
-    # Updates a specific tape drive.
-    api_response = api_instance.update_tape_drive(tape_drive_id, tape_drive_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->update_tape_drive: %s\n" % e)
+    try:
+        # Updates a specific tape drive.
+        api_response = api_instance.update_tape_drive(tape_drive_id, tape_drive_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->update_tape_drive: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1037,17 +1088,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
-try:
-    # Updates a specific tape drive.
-    api_response = api_instance.update_tape_drive(tape_drive_id, tape_drive_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->update_tape_drive: %s\n" % e)
+    try:
+        # Updates a specific tape drive.
+        api_response = api_instance.update_tape_drive(tape_drive_id, tape_drive_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->update_tape_drive: %s\n" % e)
 ```
 
 ### Parameters
@@ -1106,18 +1160,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
-try:
-    # Updates a specific tape drive.
-    api_response = api_instance.update_tape_drive_by_tape_library(tape_library_id, tape_drive_id, tape_drive_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->update_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Updates a specific tape drive.
+        api_response = api_instance.update_tape_drive_by_tape_library(tape_library_id, tape_drive_id, tape_drive_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->update_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1139,18 +1196,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeDrivesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeDrivesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_drive_id = 'tape_drive_id_example' # str | Numeric ID, serial, or name of tape drive.
 tape_drive_body = nodeum_sdk.TapeDrive() # TapeDrive | 
 
-try:
-    # Updates a specific tape drive.
-    api_response = api_instance.update_tape_drive_by_tape_library(tape_library_id, tape_drive_id, tape_drive_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeDrivesApi->update_tape_drive_by_tape_library: %s\n" % e)
+    try:
+        # Updates a specific tape drive.
+        api_response = api_instance.update_tape_drive_by_tape_library(tape_library_id, tape_drive_id, tape_drive_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeDrivesApi->update_tape_drive_by_tape_library: %s\n" % e)
 ```
 
 ### Parameters

@@ -218,7 +218,7 @@ class TaskExecution(object):
         :param workflow_type: The workflow_type of this TaskExecution.  # noqa: E501
         :type: str
         """
-        allowed_values = ["active_archive", "offline_archive", "data_exchange", "maintenance", "data_enrichment"]  # noqa: E501
+        allowed_values = ["active_archive", "offline_archive", "data_exchange", "data_migration", "maintenance", "data_enrichment"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and workflow_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `workflow_type` ({0}), must be one of {1}"  # noqa: E501

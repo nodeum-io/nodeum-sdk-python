@@ -48,9 +48,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -60,12 +63,12 @@ name = 'name_example' # str | Filter on name (optional)
 location = 'location_example' # str | Filter on location (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all cloud buckets.
-    api_response = api_instance.index_cloud_buckets(limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, pool_id=pool_id, name=name, location=location, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->index_cloud_buckets: %s\n" % e)
+    try:
+        # Lists all cloud buckets.
+        api_response = api_instance.index_cloud_buckets(limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, pool_id=pool_id, name=name, location=location, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->index_cloud_buckets: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -87,9 +90,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -99,12 +105,12 @@ name = 'name_example' # str | Filter on name (optional)
 location = 'location_example' # str | Filter on location (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all cloud buckets.
-    api_response = api_instance.index_cloud_buckets(limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, pool_id=pool_id, name=name, location=location, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->index_cloud_buckets: %s\n" % e)
+    try:
+        # Lists all cloud buckets.
+        api_response = api_instance.index_cloud_buckets(limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, pool_id=pool_id, name=name, location=location, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->index_cloud_buckets: %s\n" % e)
 ```
 
 ### Parameters
@@ -169,9 +175,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -181,12 +190,12 @@ name = 'name_example' # str | Filter on name (optional)
 location = 'location_example' # str | Filter on location (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all cloud buckets.
-    api_response = api_instance.index_cloud_buckets_by_cloud_connector(cloud_connector_id, limit=limit, offset=offset, sort_by=sort_by, id=id, pool_id=pool_id, name=name, location=location, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_cloud_connector: %s\n" % e)
+    try:
+        # Lists all cloud buckets.
+        api_response = api_instance.index_cloud_buckets_by_cloud_connector(cloud_connector_id, limit=limit, offset=offset, sort_by=sort_by, id=id, pool_id=pool_id, name=name, location=location, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_cloud_connector: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -208,9 +217,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -220,12 +232,12 @@ name = 'name_example' # str | Filter on name (optional)
 location = 'location_example' # str | Filter on location (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all cloud buckets.
-    api_response = api_instance.index_cloud_buckets_by_cloud_connector(cloud_connector_id, limit=limit, offset=offset, sort_by=sort_by, id=id, pool_id=pool_id, name=name, location=location, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_cloud_connector: %s\n" % e)
+    try:
+        # Lists all cloud buckets.
+        api_response = api_instance.index_cloud_buckets_by_cloud_connector(cloud_connector_id, limit=limit, offset=offset, sort_by=sort_by, id=id, pool_id=pool_id, name=name, location=location, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_cloud_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -290,9 +302,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -302,12 +317,12 @@ name = 'name_example' # str | Filter on name (optional)
 location = 'location_example' # str | Filter on location (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all cloud buckets from pool.
-    api_response = api_instance.index_cloud_buckets_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, name=name, location=location, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_pool: %s\n" % e)
+    try:
+        # Lists all cloud buckets from pool.
+        api_response = api_instance.index_cloud_buckets_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, name=name, location=location, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -329,9 +344,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -341,12 +359,12 @@ name = 'name_example' # str | Filter on name (optional)
 location = 'location_example' # str | Filter on location (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all cloud buckets from pool.
-    api_response = api_instance.index_cloud_buckets_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, name=name, location=location, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_pool: %s\n" % e)
+    try:
+        # Lists all cloud buckets from pool.
+        api_response = api_instance.index_cloud_buckets_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, cloud_connector_id=cloud_connector_id, name=name, location=location, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->index_cloud_buckets_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -411,16 +429,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Get mount status of Cloud bucket.
-    api_response = api_instance.mount_status_cloud_bucket(cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+
+    try:
+        # Get mount status of Cloud bucket.
+        api_response = api_instance.mount_status_cloud_bucket(cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -442,16 +463,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Get mount status of Cloud bucket.
-    api_response = api_instance.mount_status_cloud_bucket(cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+
+    try:
+        # Get mount status of Cloud bucket.
+        api_response = api_instance.mount_status_cloud_bucket(cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket: %s\n" % e)
 ```
 
 ### Parameters
@@ -509,17 +533,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Get mount status of Cloud bucket.
-    api_response = api_instance.mount_status_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_cloud_connector: %s\n" % e)
+    try:
+        # Get mount status of Cloud bucket.
+        api_response = api_instance.mount_status_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_cloud_connector: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -541,17 +568,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Get mount status of Cloud bucket.
-    api_response = api_instance.mount_status_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_cloud_connector: %s\n" % e)
+    try:
+        # Get mount status of Cloud bucket.
+        api_response = api_instance.mount_status_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_cloud_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -610,17 +640,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Get mount status of Cloud bucket.
-    api_response = api_instance.mount_status_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_pool: %s\n" % e)
+    try:
+        # Get mount status of Cloud bucket.
+        api_response = api_instance.mount_status_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -642,17 +675,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Get mount status of Cloud bucket.
-    api_response = api_instance.mount_status_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_pool: %s\n" % e)
+    try:
+        # Get mount status of Cloud bucket.
+        api_response = api_instance.mount_status_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->mount_status_cloud_bucket_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -711,16 +747,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Displays a specific cloud bucket.
-    api_response = api_instance.show_cloud_bucket(cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->show_cloud_bucket: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+
+    try:
+        # Displays a specific cloud bucket.
+        api_response = api_instance.show_cloud_bucket(cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->show_cloud_bucket: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -742,16 +781,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Displays a specific cloud bucket.
-    api_response = api_instance.show_cloud_bucket(cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->show_cloud_bucket: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+
+    try:
+        # Displays a specific cloud bucket.
+        api_response = api_instance.show_cloud_bucket(cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->show_cloud_bucket: %s\n" % e)
 ```
 
 ### Parameters
@@ -809,17 +851,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Displays a specific cloud bucket.
-    api_response = api_instance.show_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_cloud_connector: %s\n" % e)
+    try:
+        # Displays a specific cloud bucket.
+        api_response = api_instance.show_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_cloud_connector: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -841,17 +886,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Displays a specific cloud bucket.
-    api_response = api_instance.show_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_cloud_connector: %s\n" % e)
+    try:
+        # Displays a specific cloud bucket.
+        api_response = api_instance.show_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_cloud_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -910,17 +958,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Displays a specific cloud bucket.
-    api_response = api_instance.show_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_pool: %s\n" % e)
+    try:
+        # Displays a specific cloud bucket.
+        api_response = api_instance.show_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -942,17 +993,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 
-try:
-    # Displays a specific cloud bucket.
-    api_response = api_instance.show_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_pool: %s\n" % e)
+    try:
+        # Displays a specific cloud bucket.
+        api_response = api_instance.show_cloud_bucket_by_pool(pool_id, cloud_bucket_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->show_cloud_bucket_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1011,16 +1065,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 
-try:
-    # Synchronize internal cloud buckets with their remote equivalent.
-    api_response = api_instance.sync_cloud_buckets(cloud_connector_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->sync_cloud_buckets: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+    try:
+        # Synchronize internal cloud buckets with their remote equivalent.
+        api_response = api_instance.sync_cloud_buckets(cloud_connector_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->sync_cloud_buckets: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1042,16 +1099,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 
-try:
-    # Synchronize internal cloud buckets with their remote equivalent.
-    api_response = api_instance.sync_cloud_buckets(cloud_connector_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->sync_cloud_buckets: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+    try:
+        # Synchronize internal cloud buckets with their remote equivalent.
+        api_response = api_instance.sync_cloud_buckets(cloud_connector_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->sync_cloud_buckets: %s\n" % e)
 ```
 
 ### Parameters
@@ -1108,17 +1168,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Check result of cloud connector sync job.
-    api_response = api_instance.sync_result_cloud_buckets(cloud_connector_id, job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->sync_result_cloud_buckets: %s\n" % e)
+    try:
+        # Check result of cloud connector sync job.
+        api_response = api_instance.sync_result_cloud_buckets(cloud_connector_id, job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->sync_result_cloud_buckets: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1140,17 +1203,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Check result of cloud connector sync job.
-    api_response = api_instance.sync_result_cloud_buckets(cloud_connector_id, job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->sync_result_cloud_buckets: %s\n" % e)
+    try:
+        # Check result of cloud connector sync job.
+        api_response = api_instance.sync_result_cloud_buckets(cloud_connector_id, job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->sync_result_cloud_buckets: %s\n" % e)
 ```
 
 ### Parameters
@@ -1209,17 +1275,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 cloud_bucket_body = nodeum_sdk.CloudBucket() # CloudBucket | 
 
-try:
-    # Updates a specific cloud bucket.
-    api_response = api_instance.update_cloud_bucket(cloud_bucket_id, cloud_bucket_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->update_cloud_bucket: %s\n" % e)
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_cloud_bucket(cloud_bucket_id, cloud_bucket_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_cloud_bucket: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1241,17 +1310,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 cloud_bucket_body = nodeum_sdk.CloudBucket() # CloudBucket | 
 
-try:
-    # Updates a specific cloud bucket.
-    api_response = api_instance.update_cloud_bucket(cloud_bucket_id, cloud_bucket_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->update_cloud_bucket: %s\n" % e)
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_cloud_bucket(cloud_bucket_id, cloud_bucket_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_cloud_bucket: %s\n" % e)
 ```
 
 ### Parameters
@@ -1310,18 +1382,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 cloud_bucket_body = nodeum_sdk.CloudBucket() # CloudBucket | 
 
-try:
-    # Updates a specific cloud bucket.
-    api_response = api_instance.update_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id, cloud_bucket_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_cloud_connector: %s\n" % e)
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id, cloud_bucket_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_cloud_connector: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1343,18 +1418,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_connector_id = 'cloud_connector_id_example' # str | Numeric ID or name of cloud connector.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 cloud_bucket_body = nodeum_sdk.CloudBucket() # CloudBucket | 
 
-try:
-    # Updates a specific cloud bucket.
-    api_response = api_instance.update_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id, cloud_bucket_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_cloud_connector: %s\n" % e)
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_cloud_bucket_by_cloud_connector(cloud_connector_id, cloud_bucket_id, cloud_bucket_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_cloud_connector: %s\n" % e)
 ```
 
 ### Parameters
@@ -1414,18 +1492,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 cloud_bucket_body = nodeum_sdk.CloudBucket() # CloudBucket | 
 
-try:
-    # Updates a specific cloud bucket.
-    api_response = api_instance.update_cloud_bucket_by_pool(pool_id, cloud_bucket_id, cloud_bucket_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_pool: %s\n" % e)
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_cloud_bucket_by_pool(pool_id, cloud_bucket_id, cloud_bucket_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1447,18 +1528,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.CloudBucketsApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
 cloud_bucket_body = nodeum_sdk.CloudBucket() # CloudBucket | 
 
-try:
-    # Updates a specific cloud bucket.
-    api_response = api_instance.update_cloud_bucket_by_pool(pool_id, cloud_bucket_id, cloud_bucket_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_pool: %s\n" % e)
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_cloud_bucket_by_pool(pool_id, cloud_bucket_id, cloud_bucket_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_cloud_bucket_by_pool: %s\n" % e)
 ```
 
 ### Parameters

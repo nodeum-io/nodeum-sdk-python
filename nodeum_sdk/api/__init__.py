@@ -11,6 +11,7 @@ from nodeum_sdk.api.mounts_api import MountsApi
 from nodeum_sdk.api.nas_api import NasApi
 from nodeum_sdk.api.nas_shares_api import NasSharesApi
 from nodeum_sdk.api.pools_api import PoolsApi
+from nodeum_sdk.api.statistics_api import StatisticsApi
 from nodeum_sdk.api.systems_api import SystemsApi
 from nodeum_sdk.api.tape_drives_api import TapeDrivesApi
 from nodeum_sdk.api.tape_libraries_api import TapeLibrariesApi

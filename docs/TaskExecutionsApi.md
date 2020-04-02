@@ -38,9 +38,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 complete_list = True # bool | If `false`, only includes the last correct execution of a task. (optional) (default to True)
@@ -65,12 +68,12 @@ finalized_files = 'finalized_files_example' # str | Filter on finalized files (o
 estimation_time = 'estimation_time_example' # str | Filter on estimation time (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all task executions.
-    api_response = api_instance.index_task_executions(limit=limit, offset=offset, sort_by=sort_by, complete_list=complete_list, id=id, task_id=task_id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, creation_date=creation_date, modification_date=modification_date, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->index_task_executions: %s\n" % e)
+    try:
+        # Lists all task executions.
+        api_response = api_instance.index_task_executions(limit=limit, offset=offset, sort_by=sort_by, complete_list=complete_list, id=id, task_id=task_id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, creation_date=creation_date, modification_date=modification_date, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->index_task_executions: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -92,9 +95,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 complete_list = True # bool | If `false`, only includes the last correct execution of a task. (optional) (default to True)
@@ -119,12 +125,12 @@ finalized_files = 'finalized_files_example' # str | Filter on finalized files (o
 estimation_time = 'estimation_time_example' # str | Filter on estimation time (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all task executions.
-    api_response = api_instance.index_task_executions(limit=limit, offset=offset, sort_by=sort_by, complete_list=complete_list, id=id, task_id=task_id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, creation_date=creation_date, modification_date=modification_date, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->index_task_executions: %s\n" % e)
+    try:
+        # Lists all task executions.
+        api_response = api_instance.index_task_executions(limit=limit, offset=offset, sort_by=sort_by, complete_list=complete_list, id=id, task_id=task_id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, creation_date=creation_date, modification_date=modification_date, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->index_task_executions: %s\n" % e)
 ```
 
 ### Parameters
@@ -204,9 +210,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Filter on task id (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    task_id = 'task_id_example' # str | Filter on task id (optional)
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -228,12 +237,12 @@ finalized_files = 'finalized_files_example' # str | Filter on finalized files (o
 estimation_time = 'estimation_time_example' # str | Filter on estimation time (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all task executions.
-    api_response = api_instance.index_task_executions_by_task(task_id=task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->index_task_executions_by_task: %s\n" % e)
+    try:
+        # Lists all task executions.
+        api_response = api_instance.index_task_executions_by_task(task_id=task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->index_task_executions_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -255,9 +264,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Filter on task id (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    task_id = 'task_id_example' # str | Filter on task id (optional)
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -279,12 +291,12 @@ finalized_files = 'finalized_files_example' # str | Filter on finalized files (o
 estimation_time = 'estimation_time_example' # str | Filter on estimation time (optional)
 bandwidth = 'bandwidth_example' # str | Filter on bandwidth (optional)
 
-try:
-    # Lists all task executions.
-    api_response = api_instance.index_task_executions_by_task(task_id=task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->index_task_executions_by_task: %s\n" % e)
+    try:
+        # Lists all task executions.
+        api_response = api_instance.index_task_executions_by_task(task_id=task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, workflow_type=workflow_type, workflow_action=workflow_action, source_type=source_type, destination_type=destination_type, status=status, log_time=log_time, job_started=job_started, job_finished=job_finished, to_process_size=to_process_size, processed_size=processed_size, to_process_files=to_process_files, processed_files=processed_files, finalized_files=finalized_files, estimation_time=estimation_time, bandwidth=bandwidth)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->index_task_executions_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -361,16 +373,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 
-try:
-    # Displays a specific task execution.
-    api_response = api_instance.show_task_execution(task_execution_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->show_task_execution: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+    try:
+        # Displays a specific task execution.
+        api_response = api_instance.show_task_execution(task_execution_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->show_task_execution: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -392,16 +407,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 
-try:
-    # Displays a specific task execution.
-    api_response = api_instance.show_task_execution(task_execution_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->show_task_execution: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+    try:
+        # Displays a specific task execution.
+        api_response = api_instance.show_task_execution(task_execution_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->show_task_execution: %s\n" % e)
 ```
 
 ### Parameters
@@ -459,17 +477,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 
-try:
-    # Displays a specific task execution.
-    api_response = api_instance.show_task_execution_by_task(task_id, task_execution_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->show_task_execution_by_task: %s\n" % e)
+    try:
+        # Displays a specific task execution.
+        api_response = api_instance.show_task_execution_by_task(task_id, task_execution_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->show_task_execution_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -491,17 +512,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskExecutionsApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskExecutionsApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 
-try:
-    # Displays a specific task execution.
-    api_response = api_instance.show_task_execution_by_task(task_id, task_execution_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskExecutionsApi->show_task_execution_by_task: %s\n" % e)
+    try:
+        # Displays a specific task execution.
+        api_response = api_instance.show_task_execution_by_task(task_id, task_execution_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskExecutionsApi->show_task_execution_by_task: %s\n" % e)
 ```
 
 ### Parameters

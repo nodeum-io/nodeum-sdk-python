@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from nodeum_sdk.api_client import ApiClient
-from nodeum_sdk.exceptions import (
+from nodeum_sdk.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -88,11 +88,17 @@ class CloudConnectorsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -200,11 +206,17 @@ class CloudConnectorsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -322,11 +334,26 @@ class CloudConnectorsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['limit', 'offset', 'sort_by', 'id', 'name', 'url', 'url_proxy', 'provider', 'region', 'access_key']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'limit',
+            'offset',
+            'sort_by',
+            'id',
+            'name',
+            'url',
+            'url_proxy',
+            'provider',
+            'region',
+            'access_key'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -445,11 +472,17 @@ class CloudConnectorsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -553,11 +586,17 @@ class CloudConnectorsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -665,11 +704,17 @@ class CloudConnectorsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['job_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'job_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -775,11 +820,18 @@ class CloudConnectorsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['cloud_connector_id', 'cloud_connector_body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'cloud_connector_id',
+            'cloud_connector_body'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:

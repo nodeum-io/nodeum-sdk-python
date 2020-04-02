@@ -62,9 +62,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-file_parent_id = 56 # int | Numeric ID of parent folder.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -78,12 +81,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children(file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children(file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -105,9 +108,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-file_parent_id = 56 # int | Numeric ID of parent folder.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -121,12 +127,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children(file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children(file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children: %s\n" % e)
 ```
 
 ### Parameters
@@ -195,9 +201,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -212,12 +221,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_container(container_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_container: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_container(container_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_container: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -239,9 +248,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -256,12 +268,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_container(container_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_container: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_container(container_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -331,9 +343,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -348,12 +363,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_pool: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -375,9 +390,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -392,12 +410,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_pool: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -467,9 +485,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -484,12 +505,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_task(task_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_task: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_task(task_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -511,9 +532,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -528,12 +552,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_task(task_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_task: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_task(task_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -603,9 +627,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -620,12 +647,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_task_execution(task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_task_execution: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_task_execution(task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_task_execution: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -647,9 +674,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -664,12 +694,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_task_execution(task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_task_execution: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_task_execution(task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_task_execution: %s\n" % e)
 ```
 
 ### Parameters
@@ -739,9 +769,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
@@ -757,12 +790,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_task_execution_by_task(task_id, task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_task_execution_by_task(task_id, task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_task_execution_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -784,9 +817,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
@@ -802,12 +838,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder.
-    api_response = api_instance.files_children_by_task_execution_by_task(task_id, task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->files_children_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Lists files under a specific folder.
+        api_response = api_instance.files_children_by_task_execution_by_task(task_id, task_execution_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->files_children_by_task_execution_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -878,9 +914,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -895,12 +934,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder on tape of pools, specific for Data Exchange.
-    api_response = api_instance.import_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->import_files_children_by_pool: %s\n" % e)
+    try:
+        # Lists files under a specific folder on tape of pools, specific for Data Exchange.
+        api_response = api_instance.import_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->import_files_children_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -922,9 +961,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -939,12 +981,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files under a specific folder on tape of pools, specific for Data Exchange.
-    api_response = api_instance.import_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->import_files_children_by_pool: %s\n" % e)
+    try:
+        # Lists files under a specific folder on tape of pools, specific for Data Exchange.
+        api_response = api_instance.import_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->import_files_children_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1014,9 +1056,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
 name = 'name_example' # str | Filter on name (optional)
@@ -1029,12 +1074,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files(limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files(limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1056,9 +1101,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
 name = 'name_example' # str | Filter on name (optional)
@@ -1071,12 +1119,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files(limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files(limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files: %s\n" % e)
 ```
 
 ### Parameters
@@ -1144,9 +1192,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1160,12 +1211,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_container(container_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_container: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_container(container_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_container: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1187,9 +1238,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1203,12 +1257,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_container(container_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_container: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_container(container_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -1277,9 +1331,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1293,12 +1350,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_pool: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1320,9 +1377,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1336,12 +1396,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_pool: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1410,9 +1470,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1426,12 +1489,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_task(task_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_task: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_task(task_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1453,9 +1516,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1469,12 +1535,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_task(task_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_task: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_task(task_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -1543,9 +1609,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1559,12 +1628,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_task_execution(task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_task_execution: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_task_execution(task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_task_execution: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1586,9 +1655,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1602,12 +1674,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_task_execution(task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_task_execution: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_task_execution(task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_task_execution: %s\n" % e)
 ```
 
 ### Parameters
@@ -1676,9 +1748,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -1693,12 +1768,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_task_execution_by_task(task_id, task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_task_execution_by_task(task_id, task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_task_execution_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1720,9 +1795,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -1737,12 +1815,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root.
-    api_response = api_instance.index_files_by_task_execution_by_task(task_id, task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_files_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Lists files on root.
+        api_response = api_instance.index_files_by_task_execution_by_task(task_id, task_execution_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_files_by_task_execution_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -1812,9 +1890,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1828,12 +1909,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root of tape of pools, specific for Data Exchange.
-    api_response = api_instance.index_import_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_import_files_by_pool: %s\n" % e)
+    try:
+        # Lists files on root of tape of pools, specific for Data Exchange.
+        api_response = api_instance.index_import_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_import_files_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1855,9 +1936,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 file_id = 'file_id_example' # str | Filter on file id (optional)
@@ -1871,12 +1955,12 @@ access_date = 'access_date_example' # str | Filter on access date (optional)
 gid = 'gid_example' # str | Filter on gid (optional)
 uid = 'uid_example' # str | Filter on uid (optional)
 
-try:
-    # Lists files on root of tape of pools, specific for Data Exchange.
-    api_response = api_instance.index_import_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_import_files_by_pool: %s\n" % e)
+    try:
+        # Lists files on root of tape of pools, specific for Data Exchange.
+        api_response = api_instance.index_import_files_by_pool(pool_id, limit=limit, offset=offset, file_id=file_id, name=name, type=type, permission=permission, size=size, change_date=change_date, modification_date=modification_date, access_date=access_date, gid=gid, uid=uid)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_import_files_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1945,21 +2029,24 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 name = 'name_example' # str | Filter on name (optional)
 type = 'type_example' # str | Filter on type (optional)
 size = 'size_example' # str | Filter on size (optional)
 
-try:
-    # Lists files on root of tape of pools, specific for Active and Offline.
-    api_response = api_instance.index_on_tapes_files_by_pool(pool_id, limit=limit, offset=offset, name=name, type=type, size=size)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_on_tapes_files_by_pool: %s\n" % e)
+    try:
+        # Lists files on root of tape of pools, specific for Active and Offline.
+        api_response = api_instance.index_on_tapes_files_by_pool(pool_id, limit=limit, offset=offset, name=name, type=type, size=size)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_on_tapes_files_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1981,21 +2068,24 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 name = 'name_example' # str | Filter on name (optional)
 type = 'type_example' # str | Filter on type (optional)
 size = 'size_example' # str | Filter on size (optional)
 
-try:
-    # Lists files on root of tape of pools, specific for Active and Offline.
-    api_response = api_instance.index_on_tapes_files_by_pool(pool_id, limit=limit, offset=offset, name=name, type=type, size=size)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_on_tapes_files_by_pool: %s\n" % e)
+    try:
+        # Lists files on root of tape of pools, specific for Active and Offline.
+        api_response = api_instance.index_on_tapes_files_by_pool(pool_id, limit=limit, offset=offset, name=name, type=type, size=size)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_on_tapes_files_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -2057,17 +2147,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific pool.
-    api_response = api_instance.index_tapes_by_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_pool: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific pool.
+        api_response = api_instance.index_tapes_by_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2089,17 +2182,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific pool.
-    api_response = api_instance.index_tapes_by_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_pool: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific pool.
+        api_response = api_instance.index_tapes_by_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -2157,17 +2253,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific task.
-    api_response = api_instance.index_tapes_by_file_by_task(task_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_task: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific task.
+        api_response = api_instance.index_tapes_by_file_by_task(task_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2189,17 +2288,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific task.
-    api_response = api_instance.index_tapes_by_file_by_task(task_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_task: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific task.
+        api_response = api_instance.index_tapes_by_file_by_task(task_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -2257,17 +2359,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific task.
-    api_response = api_instance.index_tapes_by_file_by_task_execution(task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific task.
+        api_response = api_instance.index_tapes_by_file_by_task_execution(task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2289,17 +2394,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific task.
-    api_response = api_instance.index_tapes_by_file_by_task_execution(task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific task.
+        api_response = api_instance.index_tapes_by_file_by_task_execution(task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution: %s\n" % e)
 ```
 
 ### Parameters
@@ -2357,18 +2465,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific task.
-    api_response = api_instance.index_tapes_by_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific task.
+        api_response = api_instance.index_tapes_by_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2390,18 +2501,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays tapes containing specific file, related to the specific task.
-    api_response = api_instance.index_tapes_by_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Displays tapes containing specific file, related to the specific task.
+        api_response = api_instance.index_tapes_by_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->index_tapes_by_file_by_task_execution_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -2460,9 +2574,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -2470,12 +2587,12 @@ name = 'name_example' # str | Filter on name (optional)
 type = 'type_example' # str | Filter on type (optional)
 size = 'size_example' # str | Filter on size (optional)
 
-try:
-    # Lists files under a specific folder on tape of pools, specific for Active and Offline.
-    api_response = api_instance.on_tapes_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, name=name, type=type, size=size)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->on_tapes_files_children_by_pool: %s\n" % e)
+    try:
+        # Lists files under a specific folder on tape of pools, specific for Active and Offline.
+        api_response = api_instance.on_tapes_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, name=name, type=type, size=size)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->on_tapes_files_children_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2497,9 +2614,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_parent_id = 56 # int | Numeric ID of parent folder.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
@@ -2507,12 +2627,12 @@ name = 'name_example' # str | Filter on name (optional)
 type = 'type_example' # str | Filter on type (optional)
 size = 'size_example' # str | Filter on size (optional)
 
-try:
-    # Lists files under a specific folder on tape of pools, specific for Active and Offline.
-    api_response = api_instance.on_tapes_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, name=name, type=type, size=size)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->on_tapes_files_children_by_pool: %s\n" % e)
+    try:
+        # Lists files under a specific folder on tape of pools, specific for Active and Offline.
+        api_response = api_instance.on_tapes_files_children_by_pool(pool_id, file_parent_id, limit=limit, offset=offset, name=name, type=type, size=size)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->on_tapes_files_children_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -2575,16 +2695,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file(file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    file_id = 56 # int | Numeric ID of file.
+
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file(file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2606,16 +2729,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file(file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    file_id = 56 # int | Numeric ID of file.
+
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file(file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file: %s\n" % e)
 ```
 
 ### Parameters
@@ -2672,17 +2798,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_container(container_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_container: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_container(container_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_container: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2704,17 +2833,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-container_id = 'container_id_example' # str | Numeric ID or name of container.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    container_id = 'container_id_example' # str | Numeric ID or name of container.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_container(container_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_container: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_container(container_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_container: %s\n" % e)
 ```
 
 ### Parameters
@@ -2772,17 +2904,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_pool: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2804,17 +2939,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_pool: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -2872,17 +3010,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_task(task_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_task: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_task(task_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -2904,17 +3045,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_task(task_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_task: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_task(task_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -2972,17 +3116,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_task_execution(task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_task_execution: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_task_execution(task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_task_execution: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -3004,17 +3151,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_task_execution(task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_task_execution: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_task_execution(task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_task_execution: %s\n" % e)
 ```
 
 ### Parameters
@@ -3072,18 +3222,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_task_execution_by_task: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -3105,18 +3258,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_execution_id = 'task_execution_id_example' # str | Numeric ID of task execution.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file.
-    api_response = api_instance.show_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_file_by_task_execution_by_task: %s\n" % e)
+    try:
+        # Displays a specific file.
+        api_response = api_instance.show_file_by_task_execution_by_task(task_id, task_execution_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_file_by_task_execution_by_task: %s\n" % e)
 ```
 
 ### Parameters
@@ -3175,17 +3331,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file on tape of pools, specific for Data Exchange.
-    api_response = api_instance.show_import_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_import_file_by_pool: %s\n" % e)
+    try:
+        # Displays a specific file on tape of pools, specific for Data Exchange.
+        api_response = api_instance.show_import_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_import_file_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -3207,17 +3366,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file on tape of pools, specific for Data Exchange.
-    api_response = api_instance.show_import_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_import_file_by_pool: %s\n" % e)
+    try:
+        # Displays a specific file on tape of pools, specific for Data Exchange.
+        api_response = api_instance.show_import_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_import_file_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -3275,17 +3437,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file on tape of pools, specific for Active and Offline.
-    api_response = api_instance.show_on_tape_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_on_tape_file_by_pool: %s\n" % e)
+    try:
+        # Displays a specific file on tape of pools, specific for Active and Offline.
+        api_response = api_instance.show_on_tape_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_on_tape_file_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -3307,17 +3472,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.FilesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.FilesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 file_id = 56 # int | Numeric ID of file.
 
-try:
-    # Displays a specific file on tape of pools, specific for Active and Offline.
-    api_response = api_instance.show_on_tape_file_by_pool(pool_id, file_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FilesApi->show_on_tape_file_by_pool: %s\n" % e)
+    try:
+        # Displays a specific file on tape of pools, specific for Active and Offline.
+        api_response = api_instance.show_on_tape_file_by_pool(pool_id, file_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling FilesApi->show_on_tape_file_by_pool: %s\n" % e)
 ```
 
 ### Parameters

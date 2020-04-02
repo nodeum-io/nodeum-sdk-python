@@ -39,17 +39,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_schedule_body = nodeum_sdk.TaskSchedule() # TaskSchedule | 
 
-try:
-    # Creates a new task schedule. Only one should be created.
-    api_response = api_instance.create_task_schedule(task_id, task_schedule_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->create_task_schedule: %s\n" % e)
+    try:
+        # Creates a new task schedule. Only one should be created.
+        api_response = api_instance.create_task_schedule(task_id, task_schedule_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->create_task_schedule: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -71,17 +74,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_schedule_body = nodeum_sdk.TaskSchedule() # TaskSchedule | 
 
-try:
-    # Creates a new task schedule. Only one should be created.
-    api_response = api_instance.create_task_schedule(task_id, task_schedule_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->create_task_schedule: %s\n" % e)
+    try:
+        # Creates a new task schedule. Only one should be created.
+        api_response = api_instance.create_task_schedule(task_id, task_schedule_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->create_task_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -140,15 +146,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 
-try:
-    # Destroys the task schedule.
-    api_instance.destroy_task_schedule(task_id)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->destroy_task_schedule: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+    try:
+        # Destroys the task schedule.
+        api_instance.destroy_task_schedule(task_id)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->destroy_task_schedule: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -170,15 +179,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 
-try:
-    # Destroys the task schedule.
-    api_instance.destroy_task_schedule(task_id)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->destroy_task_schedule: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+    try:
+        # Destroys the task schedule.
+        api_instance.destroy_task_schedule(task_id)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->destroy_task_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -235,9 +247,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-with_next = True # bool | Display the next scheduled date, and information about missing executions. (optional) (default to True)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    with_next = True # bool | Display the next scheduled date, and information about missing executions. (optional) (default to True)
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -246,12 +261,12 @@ rrule = 'rrule_example' # str | Filter on RRule of schedule (optional)
 done = 'done_example' # str | Filter on done schedule (optional)
 task_id = 'task_id_example' # str | Filter on task id (optional)
 
-try:
-    # Lists all task schedules.
-    api_response = api_instance.index_task_schedules(with_next=with_next, limit=limit, offset=offset, sort_by=sort_by, id=id, rrule=rrule, done=done, task_id=task_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->index_task_schedules: %s\n" % e)
+    try:
+        # Lists all task schedules.
+        api_response = api_instance.index_task_schedules(with_next=with_next, limit=limit, offset=offset, sort_by=sort_by, id=id, rrule=rrule, done=done, task_id=task_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->index_task_schedules: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -273,9 +288,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-with_next = True # bool | Display the next scheduled date, and information about missing executions. (optional) (default to True)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    with_next = True # bool | Display the next scheduled date, and information about missing executions. (optional) (default to True)
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -284,12 +302,12 @@ rrule = 'rrule_example' # str | Filter on RRule of schedule (optional)
 done = 'done_example' # str | Filter on done schedule (optional)
 task_id = 'task_id_example' # str | Filter on task id (optional)
 
-try:
-    # Lists all task schedules.
-    api_response = api_instance.index_task_schedules(with_next=with_next, limit=limit, offset=offset, sort_by=sort_by, id=id, rrule=rrule, done=done, task_id=task_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->index_task_schedules: %s\n" % e)
+    try:
+        # Lists all task schedules.
+        api_response = api_instance.index_task_schedules(with_next=with_next, limit=limit, offset=offset, sort_by=sort_by, id=id, rrule=rrule, done=done, task_id=task_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->index_task_schedules: %s\n" % e)
 ```
 
 ### Parameters
@@ -353,16 +371,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 
-try:
-    # Displays the task schedule.
-    api_response = api_instance.show_task_schedule(task_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->show_task_schedule: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+    try:
+        # Displays the task schedule.
+        api_response = api_instance.show_task_schedule(task_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->show_task_schedule: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -384,16 +405,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 
-try:
-    # Displays the task schedule.
-    api_response = api_instance.show_task_schedule(task_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->show_task_schedule: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+    try:
+        # Displays the task schedule.
+        api_response = api_instance.show_task_schedule(task_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->show_task_schedule: %s\n" % e)
 ```
 
 ### Parameters
@@ -450,17 +474,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_schedule_body = nodeum_sdk.TaskSchedule() # TaskSchedule | 
 
-try:
-    # Updates the existing task schedule.
-    api_response = api_instance.update_task_schedule(task_id, task_schedule_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->update_task_schedule: %s\n" % e)
+    try:
+        # Updates the existing task schedule.
+        api_response = api_instance.update_task_schedule(task_id, task_schedule_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->update_task_schedule: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -482,17 +509,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskSchedulesApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskSchedulesApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_schedule_body = nodeum_sdk.TaskSchedule() # TaskSchedule | 
 
-try:
-    # Updates the existing task schedule.
-    api_response = api_instance.update_task_schedule(task_id, task_schedule_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskSchedulesApi->update_task_schedule: %s\n" % e)
+    try:
+        # Updates the existing task schedule.
+        api_response = api_instance.update_task_schedule(task_id, task_schedule_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskSchedulesApi->update_task_schedule: %s\n" % e)
 ```
 
 ### Parameters

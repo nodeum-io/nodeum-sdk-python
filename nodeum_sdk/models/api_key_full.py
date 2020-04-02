@@ -33,102 +33,24 @@ class ApiKeyFull(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'int',
-        'key': 'str',
-        'name': 'str',
         'api_key_scopes': 'list[ApiKeyScope]'
     }
 
     attribute_map = {
-        'id': 'id',
-        'key': 'key',
-        'name': 'name',
         'api_key_scopes': 'api_key_scopes'
     }
 
-    def __init__(self, id=None, key=None, name=None, api_key_scopes=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, api_key_scopes=None, local_vars_configuration=None):  # noqa: E501
         """ApiKeyFull - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
-        self._key = None
-        self._name = None
         self._api_key_scopes = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        if key is not None:
-            self.key = key
-        if name is not None:
-            self.name = name
         if api_key_scopes is not None:
             self.api_key_scopes = api_key_scopes
-
-    @property
-    def id(self):
-        """Gets the id of this ApiKeyFull.  # noqa: E501
-
-
-        :return: The id of this ApiKeyFull.  # noqa: E501
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ApiKeyFull.
-
-
-        :param id: The id of this ApiKeyFull.  # noqa: E501
-        :type: int
-        """
-
-        self._id = id
-
-    @property
-    def key(self):
-        """Gets the key of this ApiKeyFull.  # noqa: E501
-
-
-        :return: The key of this ApiKeyFull.  # noqa: E501
-        :rtype: str
-        """
-        return self._key
-
-    @key.setter
-    def key(self, key):
-        """Sets the key of this ApiKeyFull.
-
-
-        :param key: The key of this ApiKeyFull.  # noqa: E501
-        :type: str
-        """
-
-        self._key = key
-
-    @property
-    def name(self):
-        """Gets the name of this ApiKeyFull.  # noqa: E501
-
-
-        :return: The name of this ApiKeyFull.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ApiKeyFull.
-
-
-        :param name: The name of this ApiKeyFull.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     @property
     def api_key_scopes(self):

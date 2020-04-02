@@ -39,17 +39,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_body = nodeum_sdk.TaskMetadatum() # TaskMetadatum | 
 
-try:
-    # Creates a new task metadatum.
-    api_response = api_instance.create_task_metadatum(task_id, task_metadatum_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->create_task_metadatum: %s\n" % e)
+    try:
+        # Creates a new task metadatum.
+        api_response = api_instance.create_task_metadatum(task_id, task_metadatum_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->create_task_metadatum: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -71,17 +74,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_body = nodeum_sdk.TaskMetadatum() # TaskMetadatum | 
 
-try:
-    # Creates a new task metadatum.
-    api_response = api_instance.create_task_metadatum(task_id, task_metadatum_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->create_task_metadatum: %s\n" % e)
+    try:
+        # Creates a new task metadatum.
+        api_response = api_instance.create_task_metadatum(task_id, task_metadatum_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->create_task_metadatum: %s\n" % e)
 ```
 
 ### Parameters
@@ -140,16 +146,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 
-try:
-    # Destroys a specific task metadatum.
-    api_instance.destroy_task_metadatum(task_id, task_metadatum_id)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->destroy_task_metadatum: %s\n" % e)
+    try:
+        # Destroys a specific task metadatum.
+        api_instance.destroy_task_metadatum(task_id, task_metadatum_id)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->destroy_task_metadatum: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -171,16 +180,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 
-try:
-    # Destroys a specific task metadatum.
-    api_instance.destroy_task_metadatum(task_id, task_metadatum_id)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->destroy_task_metadatum: %s\n" % e)
+    try:
+        # Destroys a specific task metadatum.
+        api_instance.destroy_task_metadatum(task_id, task_metadatum_id)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->destroy_task_metadatum: %s\n" % e)
 ```
 
 ### Parameters
@@ -238,9 +250,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -248,12 +263,12 @@ id = 'id_example' # str | Filter on id (optional)
 key = 'key_example' # str | Filter on key (optional)
 value = 'value_example' # str | Filter on value (optional)
 
-try:
-    # Lists all task metadata.
-    api_response = api_instance.index_task_metadata(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, key=key, value=value)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->index_task_metadata: %s\n" % e)
+    try:
+        # Lists all task metadata.
+        api_response = api_instance.index_task_metadata(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, key=key, value=value)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->index_task_metadata: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -275,9 +290,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -285,12 +303,12 @@ id = 'id_example' # str | Filter on id (optional)
 key = 'key_example' # str | Filter on key (optional)
 value = 'value_example' # str | Filter on value (optional)
 
-try:
-    # Lists all task metadata.
-    api_response = api_instance.index_task_metadata(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, key=key, value=value)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->index_task_metadata: %s\n" % e)
+    try:
+        # Lists all task metadata.
+        api_response = api_instance.index_task_metadata(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, key=key, value=value)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->index_task_metadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -353,17 +371,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 
-try:
-    # Displays a specific task metadatum.
-    api_response = api_instance.show_task_metadatum(task_id, task_metadatum_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->show_task_metadatum: %s\n" % e)
+    try:
+        # Displays a specific task metadatum.
+        api_response = api_instance.show_task_metadatum(task_id, task_metadatum_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->show_task_metadatum: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -385,17 +406,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 
-try:
-    # Displays a specific task metadatum.
-    api_response = api_instance.show_task_metadatum(task_id, task_metadatum_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->show_task_metadatum: %s\n" % e)
+    try:
+        # Displays a specific task metadatum.
+        api_response = api_instance.show_task_metadatum(task_id, task_metadatum_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->show_task_metadatum: %s\n" % e)
 ```
 
 ### Parameters
@@ -453,18 +477,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 task_metadatum_body = nodeum_sdk.TaskMetadatum() # TaskMetadatum | 
 
-try:
-    # Updates a specific task metadatum.
-    api_response = api_instance.update_task_metadatum(task_id, task_metadatum_id, task_metadatum_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->update_task_metadatum: %s\n" % e)
+    try:
+        # Updates a specific task metadatum.
+        api_response = api_instance.update_task_metadatum(task_id, task_metadatum_id, task_metadatum_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->update_task_metadatum: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -486,18 +513,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskMetadataApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskMetadataApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_metadatum_id = 56 # int | Numeric ID of task metadatum.
 task_metadatum_body = nodeum_sdk.TaskMetadatum() # TaskMetadatum | 
 
-try:
-    # Updates a specific task metadatum.
-    api_response = api_instance.update_task_metadatum(task_id, task_metadatum_id, task_metadatum_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskMetadataApi->update_task_metadatum: %s\n" % e)
+    try:
+        # Updates a specific task metadatum.
+        api_response = api_instance.update_task_metadatum(task_id, task_metadatum_id, task_metadatum_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskMetadataApi->update_task_metadatum: %s\n" % e)
 ```
 
 ### Parameters

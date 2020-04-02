@@ -39,17 +39,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_body = nodeum_sdk.TaskCallback() # TaskCallback | 
 
-try:
-    # Creates a new task callback.
-    api_response = api_instance.create_task_callback(task_id, task_callback_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->create_task_callback: %s\n" % e)
+    try:
+        # Creates a new task callback.
+        api_response = api_instance.create_task_callback(task_id, task_callback_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->create_task_callback: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -71,17 +74,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_body = nodeum_sdk.TaskCallback() # TaskCallback | 
 
-try:
-    # Creates a new task callback.
-    api_response = api_instance.create_task_callback(task_id, task_callback_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->create_task_callback: %s\n" % e)
+    try:
+        # Creates a new task callback.
+        api_response = api_instance.create_task_callback(task_id, task_callback_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->create_task_callback: %s\n" % e)
 ```
 
 ### Parameters
@@ -140,16 +146,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_id = 56 # int | Numeric ID of task callback.
 
-try:
-    # Destroys a specific task callback.
-    api_instance.destroy_task_callback(task_id, task_callback_id)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->destroy_task_callback: %s\n" % e)
+    try:
+        # Destroys a specific task callback.
+        api_instance.destroy_task_callback(task_id, task_callback_id)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->destroy_task_callback: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -171,16 +180,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_id = 56 # int | Numeric ID of task callback.
 
-try:
-    # Destroys a specific task callback.
-    api_instance.destroy_task_callback(task_id, task_callback_id)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->destroy_task_callback: %s\n" % e)
+    try:
+        # Destroys a specific task callback.
+        api_instance.destroy_task_callback(task_id, task_callback_id)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->destroy_task_callback: %s\n" % e)
 ```
 
 ### Parameters
@@ -238,9 +250,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -248,12 +263,12 @@ id = 'id_example' # str | Filter on id (optional)
 type = 'type_example' # str | Filter on type (optional)
 script = 'script_example' # str | Filter on task callback script (optional)
 
-try:
-    # Lists all task callbacks.
-    api_response = api_instance.index_task_callbacks(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, type=type, script=script)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->index_task_callbacks: %s\n" % e)
+    try:
+        # Lists all task callbacks.
+        api_response = api_instance.index_task_callbacks(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, type=type, script=script)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->index_task_callbacks: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -275,9 +290,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -285,12 +303,12 @@ id = 'id_example' # str | Filter on id (optional)
 type = 'type_example' # str | Filter on type (optional)
 script = 'script_example' # str | Filter on task callback script (optional)
 
-try:
-    # Lists all task callbacks.
-    api_response = api_instance.index_task_callbacks(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, type=type, script=script)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->index_task_callbacks: %s\n" % e)
+    try:
+        # Lists all task callbacks.
+        api_response = api_instance.index_task_callbacks(task_id, limit=limit, offset=offset, sort_by=sort_by, id=id, type=type, script=script)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->index_task_callbacks: %s\n" % e)
 ```
 
 ### Parameters
@@ -353,17 +371,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_id = 56 # int | Numeric ID of task callback.
 
-try:
-    # Displays a specific task callback.
-    api_response = api_instance.show_task_callback(task_id, task_callback_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->show_task_callback: %s\n" % e)
+    try:
+        # Displays a specific task callback.
+        api_response = api_instance.show_task_callback(task_id, task_callback_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->show_task_callback: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -385,17 +406,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_id = 56 # int | Numeric ID of task callback.
 
-try:
-    # Displays a specific task callback.
-    api_response = api_instance.show_task_callback(task_id, task_callback_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->show_task_callback: %s\n" % e)
+    try:
+        # Displays a specific task callback.
+        api_response = api_instance.show_task_callback(task_id, task_callback_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->show_task_callback: %s\n" % e)
 ```
 
 ### Parameters
@@ -453,18 +477,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_id = 56 # int | Numeric ID of task callback.
 task_callback_body = nodeum_sdk.TaskCallback() # TaskCallback | 
 
-try:
-    # Updates a specific task callback.
-    api_response = api_instance.update_task_callback(task_id, task_callback_id, task_callback_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->update_task_callback: %s\n" % e)
+    try:
+        # Updates a specific task callback.
+        api_response = api_instance.update_task_callback(task_id, task_callback_id, task_callback_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->update_task_callback: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -486,18 +513,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TaskCallbacksApi(nodeum_sdk.ApiClient(configuration))
-task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TaskCallbacksApi(api_client)
+    task_id = 'task_id_example' # str | Numeric ID or name of task. Task names are not unique, it's recommanded to use numeric ID.
 task_callback_id = 56 # int | Numeric ID of task callback.
 task_callback_body = nodeum_sdk.TaskCallback() # TaskCallback | 
 
-try:
-    # Updates a specific task callback.
-    api_response = api_instance.update_task_callback(task_id, task_callback_id, task_callback_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TaskCallbacksApi->update_task_callback: %s\n" % e)
+    try:
+        # Updates a specific task callback.
+        api_response = api_instance.update_task_callback(task_id, task_callback_id, task_callback_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TaskCallbacksApi->update_task_callback: %s\n" % e)
 ```
 
 ### Parameters

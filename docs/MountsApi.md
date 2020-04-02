@@ -35,15 +35,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.MountsApi(nodeum_sdk.ApiClient(configuration))
 
-try:
-    # List all mounted storages.
-    api_response = api_instance.index_mounts()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MountsApi->index_mounts: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.MountsApi(api_client)
+    
+    try:
+        # List all mounted storages.
+        api_response = api_instance.index_mounts()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MountsApi->index_mounts: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -65,15 +68,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.MountsApi(nodeum_sdk.ApiClient(configuration))
 
-try:
-    # List all mounted storages.
-    api_response = api_instance.index_mounts()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MountsApi->index_mounts: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.MountsApi(api_client)
+    
+    try:
+        # List all mounted storages.
+        api_response = api_instance.index_mounts()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MountsApi->index_mounts: %s\n" % e)
 ```
 
 ### Parameters

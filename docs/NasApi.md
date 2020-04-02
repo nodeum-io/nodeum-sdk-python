@@ -39,16 +39,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_body = nodeum_sdk.Nas() # Nas | 
 
-try:
-    # Creates a new NAS.
-    api_response = api_instance.create_nas(nas_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->create_nas: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_body = nodeum_sdk.Nas() # Nas | 
+
+    try:
+        # Creates a new NAS.
+        api_response = api_instance.create_nas(nas_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->create_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -70,16 +73,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_body = nodeum_sdk.Nas() # Nas | 
 
-try:
-    # Creates a new NAS.
-    api_response = api_instance.create_nas(nas_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->create_nas: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_body = nodeum_sdk.Nas() # Nas | 
+
+    try:
+        # Creates a new NAS.
+        api_response = api_instance.create_nas(nas_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->create_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -137,15 +143,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 
-try:
-    # Destroys a specific NAS.
-    api_instance.destroy_nas(nas_id)
-except ApiException as e:
-    print("Exception when calling NasApi->destroy_nas: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+    try:
+        # Destroys a specific NAS.
+        api_instance.destroy_nas(nas_id)
+    except ApiException as e:
+        print("Exception when calling NasApi->destroy_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -167,15 +176,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 
-try:
-    # Destroys a specific NAS.
-    api_instance.destroy_nas(nas_id)
-except ApiException as e:
-    print("Exception when calling NasApi->destroy_nas: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+    try:
+        # Destroys a specific NAS.
+        api_instance.destroy_nas(nas_id)
+    except ApiException as e:
+        print("Exception when calling NasApi->destroy_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -232,9 +244,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -244,12 +259,12 @@ host = 'host_example' # str | Filter on host (optional)
 type = 'type_example' # str | Filter on type (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all NAS.
-    api_response = api_instance.index_nas(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, host=host, type=type, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->index_nas: %s\n" % e)
+    try:
+        # Lists all NAS.
+        api_response = api_instance.index_nas(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, host=host, type=type, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->index_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -271,9 +286,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -283,12 +301,12 @@ host = 'host_example' # str | Filter on host (optional)
 type = 'type_example' # str | Filter on type (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all NAS.
-    api_response = api_instance.index_nas(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, host=host, type=type, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->index_nas: %s\n" % e)
+    try:
+        # Lists all NAS.
+        api_response = api_instance.index_nas(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, comment=comment, host=host, type=type, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->index_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -353,16 +371,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 
-try:
-    # Displays a specific NAS.
-    api_response = api_instance.show_nas(nas_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->show_nas: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+    try:
+        # Displays a specific NAS.
+        api_response = api_instance.show_nas(nas_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->show_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -384,16 +405,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 
-try:
-    # Displays a specific NAS.
-    api_response = api_instance.show_nas(nas_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->show_nas: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+    try:
+        # Displays a specific NAS.
+        api_response = api_instance.show_nas(nas_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->show_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -450,17 +474,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_body = nodeum_sdk.Nas() # Nas | 
 
-try:
-    # Updates a specific NAS.
-    api_response = api_instance.update_nas(nas_id, nas_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->update_nas: %s\n" % e)
+    try:
+        # Updates a specific NAS.
+        api_response = api_instance.update_nas(nas_id, nas_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->update_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -482,17 +509,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_body = nodeum_sdk.Nas() # Nas | 
 
-try:
-    # Updates a specific NAS.
-    api_response = api_instance.update_nas(nas_id, nas_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasApi->update_nas: %s\n" % e)
+    try:
+        # Updates a specific NAS.
+        api_response = api_instance.update_nas(nas_id, nas_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasApi->update_nas: %s\n" % e)
 ```
 
 ### Parameters

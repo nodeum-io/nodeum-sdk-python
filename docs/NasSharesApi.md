@@ -52,17 +52,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Creates a new NAS share.
-    api_response = api_instance.create_nas_share_by_nas(nas_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->create_nas_share_by_nas: %s\n" % e)
+    try:
+        # Creates a new NAS share.
+        api_response = api_instance.create_nas_share_by_nas(nas_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->create_nas_share_by_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -84,17 +87,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Creates a new NAS share.
-    api_response = api_instance.create_nas_share_by_nas(nas_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->create_nas_share_by_nas: %s\n" % e)
+    try:
+        # Creates a new NAS share.
+        api_response = api_instance.create_nas_share_by_nas(nas_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->create_nas_share_by_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -153,15 +159,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Destroys a specific NAS share.
-    api_instance.destroy_nas_share(nas_share_id)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->destroy_nas_share: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+    try:
+        # Destroys a specific NAS share.
+        api_instance.destroy_nas_share(nas_share_id)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->destroy_nas_share: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -183,15 +192,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Destroys a specific NAS share.
-    api_instance.destroy_nas_share(nas_share_id)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->destroy_nas_share: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+    try:
+        # Destroys a specific NAS share.
+        api_instance.destroy_nas_share(nas_share_id)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->destroy_nas_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -248,16 +260,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Destroys a specific NAS share.
-    api_instance.destroy_nas_share_by_nas(nas_id, nas_share_id)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->destroy_nas_share_by_nas: %s\n" % e)
+    try:
+        # Destroys a specific NAS share.
+        api_instance.destroy_nas_share_by_nas(nas_id, nas_share_id)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->destroy_nas_share_by_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -279,16 +294,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Destroys a specific NAS share.
-    api_instance.destroy_nas_share_by_nas(nas_id, nas_share_id)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->destroy_nas_share_by_nas: %s\n" % e)
+    try:
+        # Destroys a specific NAS share.
+        api_instance.destroy_nas_share_by_nas(nas_id, nas_share_id)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->destroy_nas_share_by_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -346,16 +364,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Destroys a specific NAS share.
-    api_instance.destroy_nas_share_by_pool(pool_id, nas_share_id)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->destroy_nas_share_by_pool: %s\n" % e)
+    try:
+        # Destroys a specific NAS share.
+        api_instance.destroy_nas_share_by_pool(pool_id, nas_share_id)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->destroy_nas_share_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -377,16 +398,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Destroys a specific NAS share.
-    api_instance.destroy_nas_share_by_pool(pool_id, nas_share_id)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->destroy_nas_share_by_pool: %s\n" % e)
+    try:
+        # Destroys a specific NAS share.
+        api_instance.destroy_nas_share_by_pool(pool_id, nas_share_id)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->destroy_nas_share_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -444,9 +468,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -457,12 +484,12 @@ username = 'username_example' # str | Filter on username (optional)
 nas_id = 'nas_id_example' # str | Filter on NAS id (optional)
 pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
-try:
-    # Lists all NAS shares.
-    api_response = api_instance.index_nas_shares(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id, pool_id=pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->index_nas_shares: %s\n" % e)
+    try:
+        # Lists all NAS shares.
+        api_response = api_instance.index_nas_shares(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id, pool_id=pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->index_nas_shares: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -484,9 +511,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -497,12 +527,12 @@ username = 'username_example' # str | Filter on username (optional)
 nas_id = 'nas_id_example' # str | Filter on NAS id (optional)
 pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
-try:
-    # Lists all NAS shares.
-    api_response = api_instance.index_nas_shares(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id, pool_id=pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->index_nas_shares: %s\n" % e)
+    try:
+        # Lists all NAS shares.
+        api_response = api_instance.index_nas_shares(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id, pool_id=pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->index_nas_shares: %s\n" % e)
 ```
 
 ### Parameters
@@ -568,9 +598,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -581,12 +614,12 @@ options = 'options_example' # str | Filter on options (optional)
 username = 'username_example' # str | Filter on username (optional)
 pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
-try:
-    # Lists all NAS shares.
-    api_response = api_instance.index_nas_shares_by_nas(nas_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, pool_id=pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->index_nas_shares_by_nas: %s\n" % e)
+    try:
+        # Lists all NAS shares.
+        api_response = api_instance.index_nas_shares_by_nas(nas_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, pool_id=pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->index_nas_shares_by_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -608,9 +641,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -621,12 +657,12 @@ options = 'options_example' # str | Filter on options (optional)
 username = 'username_example' # str | Filter on username (optional)
 pool_id = 'pool_id_example' # str | Filter on a pool id (optional)
 
-try:
-    # Lists all NAS shares.
-    api_response = api_instance.index_nas_shares_by_nas(nas_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, pool_id=pool_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->index_nas_shares_by_nas: %s\n" % e)
+    try:
+        # Lists all NAS shares.
+        api_response = api_instance.index_nas_shares_by_nas(nas_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, pool_id=pool_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->index_nas_shares_by_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -692,9 +728,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -705,12 +744,12 @@ options = 'options_example' # str | Filter on options (optional)
 username = 'username_example' # str | Filter on username (optional)
 nas_id = 'nas_id_example' # str | Filter on NAS id (optional)
 
-try:
-    # Lists all NAS shares from pool.
-    api_response = api_instance.index_nas_shares_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->index_nas_shares_by_pool: %s\n" % e)
+    try:
+        # Lists all NAS shares from pool.
+        api_response = api_instance.index_nas_shares_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->index_nas_shares_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -732,9 +771,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
@@ -745,12 +787,12 @@ options = 'options_example' # str | Filter on options (optional)
 username = 'username_example' # str | Filter on username (optional)
 nas_id = 'nas_id_example' # str | Filter on NAS id (optional)
 
-try:
-    # Lists all NAS shares from pool.
-    api_response = api_instance.index_nas_shares_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->index_nas_shares_by_pool: %s\n" % e)
+    try:
+        # Lists all NAS shares from pool.
+        api_response = api_instance.index_nas_shares_by_pool(pool_id, limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, path=path, options=options, username=username, nas_id=nas_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->index_nas_shares_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -816,16 +858,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Get mount status of NAS Share.
-    api_response = api_instance.mount_status_nas_share(nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->mount_status_nas_share: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+    try:
+        # Get mount status of NAS Share.
+        api_response = api_instance.mount_status_nas_share(nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->mount_status_nas_share: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -847,16 +892,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Get mount status of NAS Share.
-    api_response = api_instance.mount_status_nas_share(nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->mount_status_nas_share: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+    try:
+        # Get mount status of NAS Share.
+        api_response = api_instance.mount_status_nas_share(nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->mount_status_nas_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -914,17 +962,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Get mount status of NAS Share.
-    api_response = api_instance.mount_status_nas_share_by_nas(nas_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->mount_status_nas_share_by_nas: %s\n" % e)
+    try:
+        # Get mount status of NAS Share.
+        api_response = api_instance.mount_status_nas_share_by_nas(nas_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->mount_status_nas_share_by_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -946,17 +997,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Get mount status of NAS Share.
-    api_response = api_instance.mount_status_nas_share_by_nas(nas_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->mount_status_nas_share_by_nas: %s\n" % e)
+    try:
+        # Get mount status of NAS Share.
+        api_response = api_instance.mount_status_nas_share_by_nas(nas_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->mount_status_nas_share_by_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -1015,17 +1069,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Get mount status of NAS Share.
-    api_response = api_instance.mount_status_nas_share_by_pool(pool_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->mount_status_nas_share_by_pool: %s\n" % e)
+    try:
+        # Get mount status of NAS Share.
+        api_response = api_instance.mount_status_nas_share_by_pool(pool_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->mount_status_nas_share_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1047,17 +1104,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Get mount status of NAS Share.
-    api_response = api_instance.mount_status_nas_share_by_pool(pool_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->mount_status_nas_share_by_pool: %s\n" % e)
+    try:
+        # Get mount status of NAS Share.
+        api_response = api_instance.mount_status_nas_share_by_pool(pool_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->mount_status_nas_share_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1116,16 +1176,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Displays a specific NAS share.
-    api_response = api_instance.show_nas_share(nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->show_nas_share: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+    try:
+        # Displays a specific NAS share.
+        api_response = api_instance.show_nas_share(nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->show_nas_share: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1147,16 +1210,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Displays a specific NAS share.
-    api_response = api_instance.show_nas_share(nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->show_nas_share: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+    try:
+        # Displays a specific NAS share.
+        api_response = api_instance.show_nas_share(nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->show_nas_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -1213,17 +1279,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Displays a specific NAS share.
-    api_response = api_instance.show_nas_share_by_nas(nas_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->show_nas_share_by_nas: %s\n" % e)
+    try:
+        # Displays a specific NAS share.
+        api_response = api_instance.show_nas_share_by_nas(nas_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->show_nas_share_by_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1245,17 +1314,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Displays a specific NAS share.
-    api_response = api_instance.show_nas_share_by_nas(nas_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->show_nas_share_by_nas: %s\n" % e)
+    try:
+        # Displays a specific NAS share.
+        api_response = api_instance.show_nas_share_by_nas(nas_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->show_nas_share_by_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -1313,17 +1385,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Displays a specific NAS share.
-    api_response = api_instance.show_nas_share_by_pool(pool_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->show_nas_share_by_pool: %s\n" % e)
+    try:
+        # Displays a specific NAS share.
+        api_response = api_instance.show_nas_share_by_pool(pool_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->show_nas_share_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1345,17 +1420,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 
-try:
-    # Displays a specific NAS share.
-    api_response = api_instance.show_nas_share_by_pool(pool_id, nas_share_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->show_nas_share_by_pool: %s\n" % e)
+    try:
+        # Displays a specific NAS share.
+        api_response = api_instance.show_nas_share_by_pool(pool_id, nas_share_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->show_nas_share_by_pool: %s\n" % e)
 ```
 
 ### Parameters
@@ -1413,17 +1491,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Test an unsaved NAS Share.
-    api_response = api_instance.test_nas_share(nas_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->test_nas_share: %s\n" % e)
+    try:
+        # Test an unsaved NAS Share.
+        api_response = api_instance.test_nas_share(nas_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->test_nas_share: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1445,17 +1526,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Test an unsaved NAS Share.
-    api_response = api_instance.test_nas_share(nas_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->test_nas_share: %s\n" % e)
+    try:
+        # Test an unsaved NAS Share.
+        api_response = api_instance.test_nas_share(nas_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->test_nas_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -1513,17 +1597,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Check result of a NAS Share test job.
-    api_response = api_instance.test_result_nas_share(nas_id, job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->test_result_nas_share: %s\n" % e)
+    try:
+        # Check result of a NAS Share test job.
+        api_response = api_instance.test_result_nas_share(nas_id, job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->test_result_nas_share: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1545,17 +1632,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Check result of a NAS Share test job.
-    api_response = api_instance.test_result_nas_share(nas_id, job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->test_result_nas_share: %s\n" % e)
+    try:
+        # Check result of a NAS Share test job.
+        api_response = api_instance.test_result_nas_share(nas_id, job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->test_result_nas_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -1614,17 +1704,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Updates a specific NAS share.
-    api_response = api_instance.update_nas_share(nas_share_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->update_nas_share: %s\n" % e)
+    try:
+        # Updates a specific NAS share.
+        api_response = api_instance.update_nas_share(nas_share_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->update_nas_share: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1646,17 +1739,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Updates a specific NAS share.
-    api_response = api_instance.update_nas_share(nas_share_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->update_nas_share: %s\n" % e)
+    try:
+        # Updates a specific NAS share.
+        api_response = api_instance.update_nas_share(nas_share_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->update_nas_share: %s\n" % e)
 ```
 
 ### Parameters
@@ -1715,18 +1811,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Updates a specific NAS share.
-    api_response = api_instance.update_nas_share_by_nas(nas_id, nas_share_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->update_nas_share_by_nas: %s\n" % e)
+    try:
+        # Updates a specific NAS share.
+        api_response = api_instance.update_nas_share_by_nas(nas_id, nas_share_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->update_nas_share_by_nas: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1748,18 +1847,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    nas_id = 'nas_id_example' # str | Numeric ID or name of NAS.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Updates a specific NAS share.
-    api_response = api_instance.update_nas_share_by_nas(nas_id, nas_share_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->update_nas_share_by_nas: %s\n" % e)
+    try:
+        # Updates a specific NAS share.
+        api_response = api_instance.update_nas_share_by_nas(nas_id, nas_share_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->update_nas_share_by_nas: %s\n" % e)
 ```
 
 ### Parameters
@@ -1819,18 +1921,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Updates a specific NAS share.
-    api_response = api_instance.update_nas_share_by_pool(pool_id, nas_share_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->update_nas_share_by_pool: %s\n" % e)
+    try:
+        # Updates a specific NAS share.
+        api_response = api_instance.update_nas_share_by_pool(pool_id, nas_share_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->update_nas_share_by_pool: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -1852,18 +1957,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.NasSharesApi(nodeum_sdk.ApiClient(configuration))
-pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.NasSharesApi(api_client)
+    pool_id = 'pool_id_example' # str | Numeric ID, or name of pool.
 nas_share_id = 'nas_share_id_example' # str | Numeric ID or name of NAS share.
 nas_share_body = nodeum_sdk.NasShare() # NasShare | 
 
-try:
-    # Updates a specific NAS share.
-    api_response = api_instance.update_nas_share_by_pool(pool_id, nas_share_id, nas_share_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling NasSharesApi->update_nas_share_by_pool: %s\n" % e)
+    try:
+        # Updates a specific NAS share.
+        api_response = api_instance.update_nas_share_by_pool(pool_id, nas_share_id, nas_share_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling NasSharesApi->update_nas_share_by_pool: %s\n" % e)
 ```
 
 ### Parameters

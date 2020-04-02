@@ -40,16 +40,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_body = nodeum_sdk.TapeLibrary() # TapeLibrary | 
 
-try:
-    # Creates a new tape library.
-    api_response = api_instance.create_tape_library(tape_library_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->create_tape_library: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_body = nodeum_sdk.TapeLibrary() # TapeLibrary | 
+
+    try:
+        # Creates a new tape library.
+        api_response = api_instance.create_tape_library(tape_library_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->create_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -71,16 +74,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_body = nodeum_sdk.TapeLibrary() # TapeLibrary | 
 
-try:
-    # Creates a new tape library.
-    api_response = api_instance.create_tape_library(tape_library_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->create_tape_library: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_body = nodeum_sdk.TapeLibrary() # TapeLibrary | 
+
+    try:
+        # Creates a new tape library.
+        api_response = api_instance.create_tape_library(tape_library_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->create_tape_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -138,15 +144,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 
-try:
-    # Destroys a specific tape library.
-    api_instance.destroy_tape_library(tape_library_id)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->destroy_tape_library: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+    try:
+        # Destroys a specific tape library.
+        api_instance.destroy_tape_library(tape_library_id)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->destroy_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -168,15 +177,18 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 
-try:
-    # Destroys a specific tape library.
-    api_instance.destroy_tape_library(tape_library_id)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->destroy_tape_library: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+    try:
+        # Destroys a specific tape library.
+        api_instance.destroy_tape_library(tape_library_id)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->destroy_tape_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -233,9 +245,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -256,12 +271,12 @@ io_slots = 'io_slots_example' # str | Filter on io slots (optional)
 io_slots_address = 'io_slots_address_example' # str | Filter on io slots address (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all tape libraries.
-    api_response = api_instance.index_tape_libraries(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, protocol=protocol, vendor=vendor, product=product, firmware=firmware, device=device, libso=libso, acs=acs, status=status, storage_slots=storage_slots, storage_slots_address=storage_slots_address, io_slots=io_slots, io_slots_address=io_slots_address, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->index_tape_libraries: %s\n" % e)
+    try:
+        # Lists all tape libraries.
+        api_response = api_instance.index_tape_libraries(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, protocol=protocol, vendor=vendor, product=product, firmware=firmware, device=device, libso=libso, acs=acs, status=status, storage_slots=storage_slots, storage_slots_address=storage_slots_address, io_slots=io_slots, io_slots_address=io_slots_address, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->index_tape_libraries: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -283,9 +298,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-limit = 56 # int | The number of items to display for pagination. (optional)
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    limit = 56 # int | The number of items to display for pagination. (optional)
 offset = 56 # int | The number of items to skip for pagination. (optional)
 sort_by = ['sort_by_example'] # list[str] | Sort results by attribute.  Can sort on multiple attributes, separated by `|`. Order direction can be suffixing the attribute by either `:asc` (default) or `:desc`. (optional)
 id = 'id_example' # str | Filter on id (optional)
@@ -306,12 +324,12 @@ io_slots = 'io_slots_example' # str | Filter on io slots (optional)
 io_slots_address = 'io_slots_address_example' # str | Filter on io slots address (optional)
 price = 'price_example' # str | Filter on price (optional)
 
-try:
-    # Lists all tape libraries.
-    api_response = api_instance.index_tape_libraries(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, protocol=protocol, vendor=vendor, product=product, firmware=firmware, device=device, libso=libso, acs=acs, status=status, storage_slots=storage_slots, storage_slots_address=storage_slots_address, io_slots=io_slots, io_slots_address=io_slots_address, price=price)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->index_tape_libraries: %s\n" % e)
+    try:
+        # Lists all tape libraries.
+        api_response = api_instance.index_tape_libraries(limit=limit, offset=offset, sort_by=sort_by, id=id, name=name, serial=serial, comment=comment, protocol=protocol, vendor=vendor, product=product, firmware=firmware, device=device, libso=libso, acs=acs, status=status, storage_slots=storage_slots, storage_slots_address=storage_slots_address, io_slots=io_slots, io_slots_address=io_slots_address, price=price)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->index_tape_libraries: %s\n" % e)
 ```
 
 ### Parameters
@@ -387,16 +405,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Lists tape libraries devices.
-    api_response = api_instance.index_tape_library_devices(job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->index_tape_library_devices: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    job_id = 'job_id_example' # str | ID of active job
+
+    try:
+        # Lists tape libraries devices.
+        api_response = api_instance.index_tape_library_devices(job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->index_tape_library_devices: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -418,16 +439,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-job_id = 'job_id_example' # str | ID of active job
 
-try:
-    # Lists tape libraries devices.
-    api_response = api_instance.index_tape_library_devices(job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->index_tape_library_devices: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    job_id = 'job_id_example' # str | ID of active job
+
+    try:
+        # Lists tape libraries devices.
+        api_response = api_instance.index_tape_library_devices(job_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->index_tape_library_devices: %s\n" % e)
 ```
 
 ### Parameters
@@ -486,16 +510,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 
-try:
-    # Displays a specific tape library.
-    api_response = api_instance.show_tape_library(tape_library_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->show_tape_library: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+    try:
+        # Displays a specific tape library.
+        api_response = api_instance.show_tape_library(tape_library_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->show_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -517,16 +544,19 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 
-try:
-    # Displays a specific tape library.
-    api_response = api_instance.show_tape_library(tape_library_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->show_tape_library: %s\n" % e)
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+    try:
+        # Displays a specific tape library.
+        api_response = api_instance.show_tape_library(tape_library_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->show_tape_library: %s\n" % e)
 ```
 
 ### Parameters
@@ -583,17 +613,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_library_body = nodeum_sdk.TapeLibrary() # TapeLibrary | 
 
-try:
-    # Updates a specific tape library.
-    api_response = api_instance.update_tape_library(tape_library_id, tape_library_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->update_tape_library: %s\n" % e)
+    try:
+        # Updates a specific tape library.
+        api_response = api_instance.update_tape_library(tape_library_id, tape_library_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->update_tape_library: %s\n" % e)
 ```
 
 * Api Key Authentication (BearerAuth):
@@ -615,17 +648,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to http://localhost/api/v2
 configuration.host = "http://localhost/api/v2"
-# Create an instance of the API class
-api_instance = nodeum_sdk.TapeLibrariesApi(nodeum_sdk.ApiClient(configuration))
-tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapeLibrariesApi(api_client)
+    tape_library_id = 'tape_library_id_example' # str | Numeric ID, serial, or name of tape library.
 tape_library_body = nodeum_sdk.TapeLibrary() # TapeLibrary | 
 
-try:
-    # Updates a specific tape library.
-    api_response = api_instance.update_tape_library(tape_library_id, tape_library_body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TapeLibrariesApi->update_tape_library: %s\n" % e)
+    try:
+        # Updates a specific tape library.
+        api_response = api_instance.update_tape_library(tape_library_id, tape_library_body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TapeLibrariesApi->update_tape_library: %s\n" % e)
 ```
 
 ### Parameters

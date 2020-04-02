@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from nodeum_sdk.api_client import ApiClient
-from nodeum_sdk.exceptions import (
+from nodeum_sdk.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -112,11 +112,29 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['file_parent_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'file_parent_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -270,11 +288,30 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['container_id', 'file_parent_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'container_id',
+            'file_parent_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -434,11 +471,30 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'file_parent_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'file_parent_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -598,11 +654,30 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'file_parent_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'file_parent_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -762,11 +837,30 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_execution_id', 'file_parent_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_execution_id',
+            'file_parent_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -928,11 +1022,31 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_execution_id', 'file_parent_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_execution_id',
+            'file_parent_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1098,11 +1212,30 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'file_parent_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'file_parent_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1258,11 +1391,28 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1408,11 +1558,29 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['container_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'container_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1564,11 +1732,29 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1720,11 +1906,29 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -1876,11 +2080,29 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_execution_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_execution_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2034,11 +2256,30 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_execution_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_execution_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2196,11 +2437,29 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'limit', 'offset', 'file_id', 'name', 'type', 'permission', 'size', 'change_date', 'modification_date', 'access_date', 'gid', 'uid']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'limit',
+            'offset',
+            'file_id',
+            'name',
+            'type',
+            'permission',
+            'size',
+            'change_date',
+            'modification_date',
+            'access_date',
+            'gid',
+            'uid'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2338,11 +2597,22 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'limit', 'offset', 'name', 'type', 'size']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'limit',
+            'offset',
+            'name',
+            'type',
+            'size'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2458,11 +2728,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2574,11 +2851,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2690,11 +2974,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_execution_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_execution_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2808,11 +3099,19 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_execution_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_execution_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -2940,11 +3239,23 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'file_parent_id', 'limit', 'offset', 'name', 'type', 'size']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'file_parent_id',
+            'limit',
+            'offset',
+            'name',
+            'type',
+            'size'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3064,11 +3375,17 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3174,11 +3491,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['container_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'container_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3290,11 +3614,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3406,11 +3737,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3522,11 +3860,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_execution_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_execution_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3640,11 +3985,19 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['task_id', 'task_execution_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'task_id',
+            'task_execution_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3762,11 +4115,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -3878,11 +4238,18 @@ class FilesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['pool_id', 'file_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'pool_id',
+            'file_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:

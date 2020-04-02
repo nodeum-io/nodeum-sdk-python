@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **cloud_connector_id** | **int** |  | [optional] [readonly] 
 **pool_id** | **int** |  | [optional] [readonly] 
 **name** | **str** |  | [optional] [readonly] 
-**files_count** | **int** |  | [optional] [readonly] 
-**files_size** | **int** |  | [optional] [readonly] 
+**file_count** | **int** |  | [optional] [readonly] 
+**file_size_sum** | **int** |  | [optional] [readonly] 
 **location** | **str** |  | [optional] [readonly] 
 **price** | **str** |  | [optional] 
 

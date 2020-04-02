@@ -40,7 +40,9 @@ class NasShare(object):
         'path': 'str',
         'options': 'str',
         'username': 'str',
-        'password': 'str'
+        'password': 'str',
+        'file_count': 'int',
+        'file_size_sum': 'int'
     }
 
     attribute_map = {
@@ -51,10 +53,12 @@ class NasShare(object):
         'path': 'path',
         'options': 'options',
         'username': 'username',
-        'password': 'password'
+        'password': 'password',
+        'file_count': 'file_count',
+        'file_size_sum': 'file_size_sum'
     }
 
-    def __init__(self, id=None, nas_id=None, pool_id=None, name=None, path=None, options=None, username=None, password=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, nas_id=None, pool_id=None, name=None, path=None, options=None, username=None, password=None, file_count=None, file_size_sum=None, local_vars_configuration=None):  # noqa: E501
         """NasShare - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +72,8 @@ class NasShare(object):
         self._options = None
         self._username = None
         self._password = None
+        self._file_count = None
+        self._file_size_sum = None
         self.discriminator = None
 
         if id is not None:
@@ -86,6 +92,10 @@ class NasShare(object):
             self.username = username
         if password is not None:
             self.password = password
+        if file_count is not None:
+            self.file_count = file_count
+        if file_size_sum is not None:
+            self.file_size_sum = file_size_sum
 
     @property
     def id(self):
@@ -254,6 +264,48 @@ class NasShare(object):
         """
 
         self._password = password
+
+    @property
+    def file_count(self):
+        """Gets the file_count of this NasShare.  # noqa: E501
+
+
+        :return: The file_count of this NasShare.  # noqa: E501
+        :rtype: int
+        """
+        return self._file_count
+
+    @file_count.setter
+    def file_count(self, file_count):
+        """Sets the file_count of this NasShare.
+
+
+        :param file_count: The file_count of this NasShare.  # noqa: E501
+        :type: int
+        """
+
+        self._file_count = file_count
+
+    @property
+    def file_size_sum(self):
+        """Gets the file_size_sum of this NasShare.  # noqa: E501
+
+
+        :return: The file_size_sum of this NasShare.  # noqa: E501
+        :rtype: int
+        """
+        return self._file_size_sum
+
+    @file_size_sum.setter
+    def file_size_sum(self, file_size_sum):
+        """Sets the file_size_sum of this NasShare.
+
+
+        :param file_size_sum: The file_size_sum of this NasShare.  # noqa: E501
+        :type: int
+        """
+
+        self._file_size_sum = file_size_sum
 
     def to_dict(self):
         """Returns the model properties as a dict"""
