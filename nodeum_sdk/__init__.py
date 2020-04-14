@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.85.0"
+__version__ = "1.85.1"
 
 # import apis into sdk package
 from nodeum_sdk.api.cloud_buckets_api import CloudBucketsApi

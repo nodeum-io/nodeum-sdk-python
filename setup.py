@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "nodeum-sdk"
-VERSION = "1.85.0"
+VERSION = "1.85.1"
 # To install the library, run the following
 #
 # python setup.py install
