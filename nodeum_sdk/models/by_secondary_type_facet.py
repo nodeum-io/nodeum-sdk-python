@@ -34,45 +34,45 @@ class BySecondaryTypeFacet(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'secondary_name': 'BySecondaryBuckets'
+        'sec_pool_name_s': 'ByDateFacetBuckets'
     }
 
     attribute_map = {
-        'secondary_name': 'secondary_name'
+        'sec_pool_name_s': 'sec_pool_name_s'
     }
 
-    def __init__(self, secondary_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, sec_pool_name_s=None, local_vars_configuration=None):  # noqa: E501
         """BySecondaryTypeFacet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._secondary_name = None
+        self._sec_pool_name_s = None
         self.discriminator = None
 
-        if secondary_name is not None:
-            self.secondary_name = secondary_name
+        if sec_pool_name_s is not None:
+            self.sec_pool_name_s = sec_pool_name_s
 
     @property
-    def secondary_name(self):
-        """Gets the secondary_name of this BySecondaryTypeFacet.  # noqa: E501
+    def sec_pool_name_s(self):
+        """Gets the sec_pool_name_s of this BySecondaryTypeFacet.  # noqa: E501
 
 
-        :return: The secondary_name of this BySecondaryTypeFacet.  # noqa: E501
-        :rtype: BySecondaryBuckets
+        :return: The sec_pool_name_s of this BySecondaryTypeFacet.  # noqa: E501
+        :rtype: ByDateFacetBuckets
         """
-        return self._secondary_name
+        return self._sec_pool_name_s
 
-    @secondary_name.setter
-    def secondary_name(self, secondary_name):
-        """Sets the secondary_name of this BySecondaryTypeFacet.
+    @sec_pool_name_s.setter
+    def sec_pool_name_s(self, sec_pool_name_s):
+        """Sets the sec_pool_name_s of this BySecondaryTypeFacet.
 
 
-        :param secondary_name: The secondary_name of this BySecondaryTypeFacet.  # noqa: E501
-        :type: BySecondaryBuckets
+        :param sec_pool_name_s: The sec_pool_name_s of this BySecondaryTypeFacet.  # noqa: E501
+        :type: ByDateFacetBuckets
         """
 
-        self._secondary_name = secondary_name
+        self._sec_pool_name_s = sec_pool_name_s
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,50 +34,55 @@ class FileFacet(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'count': 'int',
-        'file_size_sum': 'int'
+        'files_count': 'int',
+        'file_size_sum': 'int',
+        'cost': 'float'
     }
 
     attribute_map = {
-        'count': 'count',
-        'file_size_sum': 'file_size_sum'
+        'files_count': 'files_count',
+        'file_size_sum': 'file_size_sum',
+        'cost': 'cost'
     }
 
-    def __init__(self, count=None, file_size_sum=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, files_count=None, file_size_sum=None, cost=None, local_vars_configuration=None):  # noqa: E501
         """FileFacet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._count = None
+        self._files_count = None
         self._file_size_sum = None
+        self._cost = None
         self.discriminator = None
 
-        if count is not None:
-            self.count = count
+        if files_count is not None:
+            self.files_count = files_count
         if file_size_sum is not None:
             self.file_size_sum = file_size_sum
+        if cost is not None:
+            self.cost = cost
 
     @property
-    def count(self):
-        """Gets the count of this FileFacet.  # noqa: E501
+    def files_count(self):
+        """Gets the files_count of this FileFacet.  # noqa: E501
 
 
-        :return: The count of this FileFacet.  # noqa: E501
+        :return: The files_count of this FileFacet.  # noqa: E501
         :rtype: int
         """
-        return self._count
+        return self._files_count
 
-    @count.setter
-    def count(self, count):
-        """Sets the count of this FileFacet.
+    @files_count.setter
+    def files_count(self, files_count):
+        """Sets the files_count of this FileFacet.
 
 
-        :param count: The count of this FileFacet.  # noqa: E501
+        :param files_count: The files_count of this FileFacet.  # noqa: E501
         :type: int
         """
 
-        self._count = count
+        self._files_count = files_count
 
     @property
     def file_size_sum(self):
@@ -99,6 +104,27 @@ class FileFacet(object):
         """
 
         self._file_size_sum = file_size_sum
+
+    @property
+    def cost(self):
+        """Gets the cost of this FileFacet.  # noqa: E501
+
+
+        :return: The cost of this FileFacet.  # noqa: E501
+        :rtype: float
+        """
+        return self._cost
+
+    @cost.setter
+    def cost(self, cost):
+        """Sets the cost of this FileFacet.
+
+
+        :param cost: The cost of this FileFacet.  # noqa: E501
+        :type: float
+        """
+
+        self._cost = cost
 
     def to_dict(self):
         """Returns the model properties as a dict"""

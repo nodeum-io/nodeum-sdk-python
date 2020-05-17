@@ -34,45 +34,45 @@ class ByFileExtensionFacetAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'file_extension': 'ByDateFacetBuckets'
+        'file_extension_s': 'ByDateFacetBuckets'
     }
 
     attribute_map = {
-        'file_extension': 'file_extension'
+        'file_extension_s': 'file_extension_s'
     }
 
-    def __init__(self, file_extension=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, file_extension_s=None, local_vars_configuration=None):  # noqa: E501
         """ByFileExtensionFacetAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._file_extension = None
+        self._file_extension_s = None
         self.discriminator = None
 
-        if file_extension is not None:
-            self.file_extension = file_extension
+        if file_extension_s is not None:
+            self.file_extension_s = file_extension_s
 
     @property
-    def file_extension(self):
-        """Gets the file_extension of this ByFileExtensionFacetAllOf.  # noqa: E501
+    def file_extension_s(self):
+        """Gets the file_extension_s of this ByFileExtensionFacetAllOf.  # noqa: E501
 
 
-        :return: The file_extension of this ByFileExtensionFacetAllOf.  # noqa: E501
+        :return: The file_extension_s of this ByFileExtensionFacetAllOf.  # noqa: E501
         :rtype: ByDateFacetBuckets
         """
-        return self._file_extension
+        return self._file_extension_s
 
-    @file_extension.setter
-    def file_extension(self, file_extension):
-        """Sets the file_extension of this ByFileExtensionFacetAllOf.
+    @file_extension_s.setter
+    def file_extension_s(self, file_extension_s):
+        """Sets the file_extension_s of this ByFileExtensionFacetAllOf.
 
 
-        :param file_extension: The file_extension of this ByFileExtensionFacetAllOf.  # noqa: E501
+        :param file_extension_s: The file_extension_s of this ByFileExtensionFacetAllOf.  # noqa: E501
         :type: ByDateFacetBuckets
         """
 
-        self._file_extension = file_extension
+        self._file_extension_s = file_extension_s
 
     def to_dict(self):
         """Returns the model properties as a dict"""

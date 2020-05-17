@@ -34,45 +34,45 @@ class ByGroupOwnerFacet(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'group_owner_id': 'ByDateFacetBuckets'
+        'group_owner_id_l': 'ByDateFacetBuckets'
     }
 
     attribute_map = {
-        'group_owner_id': 'group_owner_id'
+        'group_owner_id_l': 'group_owner_id_l'
     }
 
-    def __init__(self, group_owner_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, group_owner_id_l=None, local_vars_configuration=None):  # noqa: E501
         """ByGroupOwnerFacet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._group_owner_id = None
+        self._group_owner_id_l = None
         self.discriminator = None
 
-        if group_owner_id is not None:
-            self.group_owner_id = group_owner_id
+        if group_owner_id_l is not None:
+            self.group_owner_id_l = group_owner_id_l
 
     @property
-    def group_owner_id(self):
-        """Gets the group_owner_id of this ByGroupOwnerFacet.  # noqa: E501
+    def group_owner_id_l(self):
+        """Gets the group_owner_id_l of this ByGroupOwnerFacet.  # noqa: E501
 
 
-        :return: The group_owner_id of this ByGroupOwnerFacet.  # noqa: E501
+        :return: The group_owner_id_l of this ByGroupOwnerFacet.  # noqa: E501
         :rtype: ByDateFacetBuckets
         """
-        return self._group_owner_id
+        return self._group_owner_id_l
 
-    @group_owner_id.setter
-    def group_owner_id(self, group_owner_id):
-        """Sets the group_owner_id of this ByGroupOwnerFacet.
+    @group_owner_id_l.setter
+    def group_owner_id_l(self, group_owner_id_l):
+        """Sets the group_owner_id_l of this ByGroupOwnerFacet.
 
 
-        :param group_owner_id: The group_owner_id of this ByGroupOwnerFacet.  # noqa: E501
+        :param group_owner_id_l: The group_owner_id_l of this ByGroupOwnerFacet.  # noqa: E501
         :type: ByDateFacetBuckets
         """
 
-        self._group_owner_id = group_owner_id
+        self._group_owner_id_l = group_owner_id_l
 
     def to_dict(self):
         """Returns the model properties as a dict"""

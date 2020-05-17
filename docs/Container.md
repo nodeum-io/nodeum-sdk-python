@@ -9,8 +9,10 @@ Name | Type | Description | Notes
 **quota_total_size** | **int** |  | [optional] 
 **quota_on_cache** | **int** |  | [optional] 
 **stat_total_files** | **int** |  | [optional] [readonly] 
+**only_on_cache_file_count** | **int** |  | [optional] [readonly] 
 **stat_total_size** | **int** |  | [optional] [readonly] 
 **stat_size_on_cache** | **int** |  | [optional] [readonly] 
+**only_on_cache_file_size_sum** | **int** |  | [optional] [readonly] 
 **guest_right** | **str** |  | [optional] 
 **last_update** | **str** |  | [optional] [readonly] 
 

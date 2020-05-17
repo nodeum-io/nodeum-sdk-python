@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**secondary_name** | [**BySecondaryBuckets**](BySecondaryBuckets.md) |  | [optional] 
+**sec_pool_name_s** | [**ByDateFacetBuckets**](ByDateFacetBuckets.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

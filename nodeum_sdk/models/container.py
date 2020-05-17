@@ -40,8 +40,10 @@ class Container(object):
         'quota_total_size': 'int',
         'quota_on_cache': 'int',
         'stat_total_files': 'int',
+        'only_on_cache_file_count': 'int',
         'stat_total_size': 'int',
         'stat_size_on_cache': 'int',
+        'only_on_cache_file_size_sum': 'int',
         'guest_right': 'str',
         'last_update': 'str'
     }
@@ -53,13 +55,15 @@ class Container(object):
         'quota_total_size': 'quota_total_size',
         'quota_on_cache': 'quota_on_cache',
         'stat_total_files': 'stat_total_files',
+        'only_on_cache_file_count': 'only_on_cache_file_count',
         'stat_total_size': 'stat_total_size',
         'stat_size_on_cache': 'stat_size_on_cache',
+        'only_on_cache_file_size_sum': 'only_on_cache_file_size_sum',
         'guest_right': 'guest_right',
         'last_update': 'last_update'
     }
 
-    def __init__(self, id=None, name=None, comment=None, quota_total_size=None, quota_on_cache=None, stat_total_files=None, stat_total_size=None, stat_size_on_cache=None, guest_right=None, last_update=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, comment=None, quota_total_size=None, quota_on_cache=None, stat_total_files=None, only_on_cache_file_count=None, stat_total_size=None, stat_size_on_cache=None, only_on_cache_file_size_sum=None, guest_right=None, last_update=None, local_vars_configuration=None):  # noqa: E501
         """Container - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,8 +75,10 @@ class Container(object):
         self._quota_total_size = None
         self._quota_on_cache = None
         self._stat_total_files = None
+        self._only_on_cache_file_count = None
         self._stat_total_size = None
         self._stat_size_on_cache = None
+        self._only_on_cache_file_size_sum = None
         self._guest_right = None
         self._last_update = None
         self.discriminator = None
@@ -89,10 +95,14 @@ class Container(object):
             self.quota_on_cache = quota_on_cache
         if stat_total_files is not None:
             self.stat_total_files = stat_total_files
+        if only_on_cache_file_count is not None:
+            self.only_on_cache_file_count = only_on_cache_file_count
         if stat_total_size is not None:
             self.stat_total_size = stat_total_size
         if stat_size_on_cache is not None:
             self.stat_size_on_cache = stat_size_on_cache
+        if only_on_cache_file_size_sum is not None:
+            self.only_on_cache_file_size_sum = only_on_cache_file_size_sum
         if guest_right is not None:
             self.guest_right = guest_right
         if last_update is not None:
@@ -225,6 +235,27 @@ class Container(object):
         self._stat_total_files = stat_total_files
 
     @property
+    def only_on_cache_file_count(self):
+        """Gets the only_on_cache_file_count of this Container.  # noqa: E501
+
+
+        :return: The only_on_cache_file_count of this Container.  # noqa: E501
+        :rtype: int
+        """
+        return self._only_on_cache_file_count
+
+    @only_on_cache_file_count.setter
+    def only_on_cache_file_count(self, only_on_cache_file_count):
+        """Sets the only_on_cache_file_count of this Container.
+
+
+        :param only_on_cache_file_count: The only_on_cache_file_count of this Container.  # noqa: E501
+        :type: int
+        """
+
+        self._only_on_cache_file_count = only_on_cache_file_count
+
+    @property
     def stat_total_size(self):
         """Gets the stat_total_size of this Container.  # noqa: E501
 
@@ -265,6 +296,27 @@ class Container(object):
         """
 
         self._stat_size_on_cache = stat_size_on_cache
+
+    @property
+    def only_on_cache_file_size_sum(self):
+        """Gets the only_on_cache_file_size_sum of this Container.  # noqa: E501
+
+
+        :return: The only_on_cache_file_size_sum of this Container.  # noqa: E501
+        :rtype: int
+        """
+        return self._only_on_cache_file_size_sum
+
+    @only_on_cache_file_size_sum.setter
+    def only_on_cache_file_size_sum(self, only_on_cache_file_size_sum):
+        """Sets the only_on_cache_file_size_sum of this Container.
+
+
+        :param only_on_cache_file_size_sum: The only_on_cache_file_size_sum of this Container.  # noqa: E501
+        :type: int
+        """
+
+        self._only_on_cache_file_size_sum = only_on_cache_file_size_sum
 
     @property
     def guest_right(self):

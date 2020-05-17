@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.85.1"
+__version__ = "1.86.0"
 
 # import apis into sdk package
 from nodeum_sdk.api.cloud_buckets_api import CloudBucketsApi
@@ -66,15 +66,32 @@ from nodeum_sdk.models.by_file_extension_facet import ByFileExtensionFacet
 from nodeum_sdk.models.by_file_extension_facet_all_of import ByFileExtensionFacetAllOf
 from nodeum_sdk.models.by_group_owner_facet import ByGroupOwnerFacet
 from nodeum_sdk.models.by_group_owner_facet_all_of import ByGroupOwnerFacetAllOf
+from nodeum_sdk.models.by_primary_cloud_facet import ByPrimaryCloudFacet
+from nodeum_sdk.models.by_primary_cloud_facet_all_of import ByPrimaryCloudFacetAllOf
 from nodeum_sdk.models.by_primary_facet import ByPrimaryFacet
 from nodeum_sdk.models.by_primary_facet_all_of import ByPrimaryFacetAllOf
-from nodeum_sdk.models.by_secondary_bucket import BySecondaryBucket
-from nodeum_sdk.models.by_secondary_bucket_all_of import BySecondaryBucketAllOf
-from nodeum_sdk.models.by_secondary_buckets import BySecondaryBuckets
-from nodeum_sdk.models.by_secondary_facet import BySecondaryFacet
+from nodeum_sdk.models.by_primary_nas_facet import ByPrimaryNasFacet
+from nodeum_sdk.models.by_primary_nas_facet_all_of import ByPrimaryNasFacetAllOf
+from nodeum_sdk.models.by_primary_storage_facet import ByPrimaryStorageFacet
+from nodeum_sdk.models.by_primary_type_facet import ByPrimaryTypeFacet
+from nodeum_sdk.models.by_secondary_cloud_facet import BySecondaryCloudFacet
+from nodeum_sdk.models.by_secondary_cloud_facet_all_of import BySecondaryCloudFacetAllOf
+from nodeum_sdk.models.by_secondary_nas_facet import BySecondaryNasFacet
+from nodeum_sdk.models.by_secondary_nas_facet_all_of import BySecondaryNasFacetAllOf
+from nodeum_sdk.models.by_secondary_storage_facet import BySecondaryStorageFacet
+from nodeum_sdk.models.by_secondary_tape_facet import BySecondaryTapeFacet
+from nodeum_sdk.models.by_secondary_tape_facet_all_of import BySecondaryTapeFacetAllOf
 from nodeum_sdk.models.by_secondary_type_facet import BySecondaryTypeFacet
 from nodeum_sdk.models.by_secondary_type_facet_all_of import BySecondaryTypeFacetAllOf
 from nodeum_sdk.models.by_size_facet import BySizeFacet
+from nodeum_sdk.models.by_task_status_facet import ByTaskStatusFacet
+from nodeum_sdk.models.by_task_status_facet_all_of import ByTaskStatusFacetAllOf
+from nodeum_sdk.models.by_task_storage_facet import ByTaskStorageFacet
+from nodeum_sdk.models.by_task_storage_facet_all_of import ByTaskStorageFacetAllOf
+from nodeum_sdk.models.by_task_workflow_facet import ByTaskWorkflowFacet
+from nodeum_sdk.models.by_task_workflow_facet_all_of import ByTaskWorkflowFacetAllOf
+from nodeum_sdk.models.by_type_facet_bucket import ByTypeFacetBucket
+from nodeum_sdk.models.by_type_facet_buckets import ByTypeFacetBuckets
 from nodeum_sdk.models.by_user_owner_facet import ByUserOwnerFacet
 from nodeum_sdk.models.by_user_owner_facet_all_of import ByUserOwnerFacetAllOf
 from nodeum_sdk.models.cloud_bucket import CloudBucket
@@ -87,8 +104,10 @@ from nodeum_sdk.models.container_collection import ContainerCollection
 from nodeum_sdk.models.container_privilege import ContainerPrivilege
 from nodeum_sdk.models.container_privilege_collection import ContainerPrivilegeCollection
 from nodeum_sdk.models.date_to_file_facets import DateToFileFacets
+from nodeum_sdk.models.default_facet import DefaultFacet
 from nodeum_sdk.models.error import Error
 from nodeum_sdk.models.file_facet import FileFacet
+from nodeum_sdk.models.file_facet_all_of import FileFacetAllOf
 from nodeum_sdk.models.frozen import Frozen
 from nodeum_sdk.models.greater_than import GreaterThan
 from nodeum_sdk.models.greater_than_all_of import GreaterThanAllOf
@@ -126,6 +145,16 @@ from nodeum_sdk.models.quota_on_cache import QuotaOnCache
 from nodeum_sdk.models.reset import Reset
 from nodeum_sdk.models.reset_sections import ResetSections
 from nodeum_sdk.models.size_to_date_facets import SizeToDateFacets
+from nodeum_sdk.models.storage_by_type_facets import StorageByTypeFacets
+from nodeum_sdk.models.storage_cloud_bucket_by_type_facets import StorageCloudBucketByTypeFacets
+from nodeum_sdk.models.storage_cloud_bucket_facets import StorageCloudBucketFacets
+from nodeum_sdk.models.storage_facet import StorageFacet
+from nodeum_sdk.models.storage_nas_share_by_type_facets import StorageNasShareByTypeFacets
+from nodeum_sdk.models.storage_nas_share_facets import StorageNasShareFacets
+from nodeum_sdk.models.storage_pool_by_type_facets import StoragePoolByTypeFacets
+from nodeum_sdk.models.storage_pool_facets import StoragePoolFacets
+from nodeum_sdk.models.storage_tape_by_type_facets import StorageTapeByTypeFacets
+from nodeum_sdk.models.storage_tape_facets import StorageTapeFacets
 from nodeum_sdk.models.system_group import SystemGroup
 from nodeum_sdk.models.system_group_collection import SystemGroupCollection
 from nodeum_sdk.models.system_user import SystemUser
@@ -147,6 +176,9 @@ from nodeum_sdk.models.tape_library_device_collection import TapeLibraryDeviceCo
 from nodeum_sdk.models.tape_stat import TapeStat
 from nodeum_sdk.models.tape_stat_collection import TapeStatCollection
 from nodeum_sdk.models.task import Task
+from nodeum_sdk.models.task_by_workflow_bucket import TaskByWorkflowBucket
+from nodeum_sdk.models.task_by_workflow_bucket_all_of import TaskByWorkflowBucketAllOf
+from nodeum_sdk.models.task_by_workflow_buckets import TaskByWorkflowBuckets
 from nodeum_sdk.models.task_callback import TaskCallback
 from nodeum_sdk.models.task_callback_collection import TaskCallbackCollection
 from nodeum_sdk.models.task_collection import TaskCollection
@@ -155,6 +187,10 @@ from nodeum_sdk.models.task_destination_down import TaskDestinationDown
 from nodeum_sdk.models.task_destination_up import TaskDestinationUp
 from nodeum_sdk.models.task_execution import TaskExecution
 from nodeum_sdk.models.task_execution_collection import TaskExecutionCollection
+from nodeum_sdk.models.task_facet import TaskFacet
+from nodeum_sdk.models.task_facet_all_of import TaskFacetAllOf
+from nodeum_sdk.models.task_facet_bucket import TaskFacetBucket
+from nodeum_sdk.models.task_facet_buckets import TaskFacetBuckets
 from nodeum_sdk.models.task_metadatum import TaskMetadatum
 from nodeum_sdk.models.task_metadatum_collection import TaskMetadatumCollection
 from nodeum_sdk.models.task_option import TaskOption
@@ -168,5 +204,8 @@ from nodeum_sdk.models.too_long import TooLong
 from nodeum_sdk.models.too_long_all_of import TooLongAllOf
 from nodeum_sdk.models.too_short import TooShort
 from nodeum_sdk.models.too_short_all_of import TooShortAllOf
+from nodeum_sdk.models.type_to_primary_facets import TypeToPrimaryFacets
 from nodeum_sdk.models.type_to_secondary_facets import TypeToSecondaryFacets
+from nodeum_sdk.models.user_configuration import UserConfiguration
+from nodeum_sdk.models.user_configuration_collection import UserConfigurationCollection
 

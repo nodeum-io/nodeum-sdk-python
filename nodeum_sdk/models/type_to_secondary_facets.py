@@ -38,6 +38,7 @@ class TypeToSecondaryFacets(object):
         'on_secondary_public_cloud': 'BySecondaryTypeFacet',
         'on_secondary_object_cloud': 'BySecondaryTypeFacet',
         'on_secondary_tape': 'BySecondaryTypeFacet',
+        'on_any_secondary': 'BySecondaryTypeFacet',
         'on_no_secondary': 'BySecondaryTypeFacet'
     }
 
@@ -46,10 +47,11 @@ class TypeToSecondaryFacets(object):
         'on_secondary_public_cloud': 'on_secondary_public_cloud',
         'on_secondary_object_cloud': 'on_secondary_object_cloud',
         'on_secondary_tape': 'on_secondary_tape',
+        'on_any_secondary': 'on_any_secondary',
         'on_no_secondary': 'on_no_secondary'
     }
 
-    def __init__(self, on_secondary_nas=None, on_secondary_public_cloud=None, on_secondary_object_cloud=None, on_secondary_tape=None, on_no_secondary=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, on_secondary_nas=None, on_secondary_public_cloud=None, on_secondary_object_cloud=None, on_secondary_tape=None, on_any_secondary=None, on_no_secondary=None, local_vars_configuration=None):  # noqa: E501
         """TypeToSecondaryFacets - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class TypeToSecondaryFacets(object):
         self._on_secondary_public_cloud = None
         self._on_secondary_object_cloud = None
         self._on_secondary_tape = None
+        self._on_any_secondary = None
         self._on_no_secondary = None
         self.discriminator = None
 
@@ -70,6 +73,8 @@ class TypeToSecondaryFacets(object):
             self.on_secondary_object_cloud = on_secondary_object_cloud
         if on_secondary_tape is not None:
             self.on_secondary_tape = on_secondary_tape
+        if on_any_secondary is not None:
+            self.on_any_secondary = on_any_secondary
         if on_no_secondary is not None:
             self.on_no_secondary = on_no_secondary
 
@@ -156,6 +161,27 @@ class TypeToSecondaryFacets(object):
         """
 
         self._on_secondary_tape = on_secondary_tape
+
+    @property
+    def on_any_secondary(self):
+        """Gets the on_any_secondary of this TypeToSecondaryFacets.  # noqa: E501
+
+
+        :return: The on_any_secondary of this TypeToSecondaryFacets.  # noqa: E501
+        :rtype: BySecondaryTypeFacet
+        """
+        return self._on_any_secondary
+
+    @on_any_secondary.setter
+    def on_any_secondary(self, on_any_secondary):
+        """Sets the on_any_secondary of this TypeToSecondaryFacets.
+
+
+        :param on_any_secondary: The on_any_secondary of this TypeToSecondaryFacets.  # noqa: E501
+        :type: BySecondaryTypeFacet
+        """
+
+        self._on_any_secondary = on_any_secondary
 
     @property
     def on_no_secondary(self):

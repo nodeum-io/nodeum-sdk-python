@@ -37,8 +37,129 @@ class StatisticsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def statistics_by_date(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by date  # noqa: E501
+
+        **API Key Scope**: statistics / by_date  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_date(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: ByDateFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_by_date_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_by_date_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by date  # noqa: E501
+
+        **API Key Scope**: statistics / by_date  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_date_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(ByDateFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq',
+            'date_attr'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_by_date" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+        if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
+            query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/by_date', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ByDateFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def statistics_by_file_extension(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by file extension  # noqa: E501
 
         **API Key Scope**: statistics / by_file_extension  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -48,7 +169,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -64,7 +188,7 @@ class StatisticsApi(object):
         return self.statistics_by_file_extension_with_http_info(**kwargs)  # noqa: E501
 
     def statistics_by_file_extension_with_http_info(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by file extension  # noqa: E501
 
         **API Key Scope**: statistics / by_file_extension  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -74,7 +198,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -93,7 +220,10 @@ class StatisticsApi(object):
 
         all_params = [
             'q',
-            'date_attr'
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
         ]
         all_params.extend(
             [
@@ -120,8 +250,15 @@ class StatisticsApi(object):
         query_params = []
         if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
             query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
         if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
             query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -153,7 +290,7 @@ class StatisticsApi(object):
             collection_formats=collection_formats)
 
     def statistics_by_group_owner(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by owner (group)  # noqa: E501
 
         **API Key Scope**: statistics / by_group_owner  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -163,7 +300,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -179,7 +319,7 @@ class StatisticsApi(object):
         return self.statistics_by_group_owner_with_http_info(**kwargs)  # noqa: E501
 
     def statistics_by_group_owner_with_http_info(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by owner (group)  # noqa: E501
 
         **API Key Scope**: statistics / by_group_owner  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -189,7 +329,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -208,7 +351,10 @@ class StatisticsApi(object):
 
         all_params = [
             'q',
-            'date_attr'
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
         ]
         all_params.extend(
             [
@@ -235,8 +381,15 @@ class StatisticsApi(object):
         query_params = []
         if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
             query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
         if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
             query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -267,8 +420,139 @@ class StatisticsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def statistics_by_primary_cloud(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by primary Cloud  # noqa: E501
+
+        **API Key Scope**: statistics / by_primary_cloud  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_primary_cloud(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: ByPrimaryCloudFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_by_primary_cloud_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_by_primary_cloud_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by primary Cloud  # noqa: E501
+
+        **API Key Scope**: statistics / by_primary_cloud  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_primary_cloud_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(ByPrimaryCloudFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_by_primary_cloud" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+        if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
+            query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/by_primary_cloud', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ByPrimaryCloudFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def statistics_by_primary_name(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by primary storages  # noqa: E501
 
         **API Key Scope**: statistics / by_primary_name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -278,7 +562,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -294,7 +581,7 @@ class StatisticsApi(object):
         return self.statistics_by_primary_name_with_http_info(**kwargs)  # noqa: E501
 
     def statistics_by_primary_name_with_http_info(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by primary storages  # noqa: E501
 
         **API Key Scope**: statistics / by_primary_name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -304,7 +591,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -323,7 +613,10 @@ class StatisticsApi(object):
 
         all_params = [
             'q',
-            'date_attr'
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
         ]
         all_params.extend(
             [
@@ -350,8 +643,15 @@ class StatisticsApi(object):
         query_params = []
         if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
             query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
         if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
             query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -382,18 +682,21 @@ class StatisticsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def statistics_by_secondary_storage(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+    def statistics_by_primary_nas(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by primary NAS  # noqa: E501
 
-        **API Key Scope**: statistics / by_secondary_storage  # noqa: E501
+        **API Key Scope**: statistics / by_primary_nas  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.statistics_by_secondary_storage(async_req=True)
+        >>> thread = api.statistics_by_primary_nas(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -401,25 +704,28 @@ class StatisticsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: BySecondaryFacet
+        :return: ByPrimaryNasFacet
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.statistics_by_secondary_storage_with_http_info(**kwargs)  # noqa: E501
+        return self.statistics_by_primary_nas_with_http_info(**kwargs)  # noqa: E501
 
-    def statistics_by_secondary_storage_with_http_info(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+    def statistics_by_primary_nas_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by primary NAS  # noqa: E501
 
-        **API Key Scope**: statistics / by_secondary_storage  # noqa: E501
+        **API Key Scope**: statistics / by_primary_nas  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.statistics_by_secondary_storage_with_http_info(async_req=True)
+        >>> thread = api.statistics_by_primary_nas_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -429,7 +735,7 @@ class StatisticsApi(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(BySecondaryFacet, status_code(int), headers(HTTPHeaderDict))
+        :return: tuple(ByPrimaryNasFacet, status_code(int), headers(HTTPHeaderDict))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -438,7 +744,534 @@ class StatisticsApi(object):
 
         all_params = [
             'q',
-            'date_attr'
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_by_primary_nas" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+        if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
+            query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/by_primary_nas', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ByPrimaryNasFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_by_primary_storage(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by primary storage  # noqa: E501
+
+        **API Key Scope**: statistics / by_primary_storage  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_primary_storage(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: ByPrimaryStorageFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_by_primary_storage_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_by_primary_storage_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by primary storage  # noqa: E501
+
+        **API Key Scope**: statistics / by_primary_storage  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_primary_storage_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(ByPrimaryStorageFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_by_primary_storage" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+        if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
+            query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/by_primary_storage', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ByPrimaryStorageFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_by_secondary_cloud(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary Cloud  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_cloud  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_cloud(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: BySecondaryCloudFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_by_secondary_cloud_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_by_secondary_cloud_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary Cloud  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_cloud  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_cloud_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(BySecondaryCloudFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_by_secondary_cloud" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+        if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
+            query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/by_secondary_cloud', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BySecondaryCloudFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_by_secondary_nas(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary NAS  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_nas  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_nas(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: BySecondaryNasFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_by_secondary_nas_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_by_secondary_nas_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary NAS  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_nas  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_nas_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(BySecondaryNasFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_by_secondary_nas" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+        if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
+            query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/by_secondary_nas', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BySecondaryNasFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_by_secondary_storage(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary storage  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_storage  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_storage(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: BySecondaryStorageFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_by_secondary_storage_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_by_secondary_storage_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary storage  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_storage  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_storage_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(BySecondaryStorageFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
         ]
         all_params.extend(
             [
@@ -465,8 +1298,15 @@ class StatisticsApi(object):
         query_params = []
         if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
             query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
         if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
             query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -489,7 +1329,138 @@ class StatisticsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BySecondaryFacet',  # noqa: E501
+            response_type='BySecondaryStorageFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_by_secondary_tape(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary Tape  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_tape  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_tape(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: BySecondaryTapeFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_by_secondary_tape_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_by_secondary_tape_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about files, grouped by secondary Tape  # noqa: E501
+
+        **API Key Scope**: statistics / by_secondary_tape  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_by_secondary_tape_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(BySecondaryTapeFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_by_secondary_tape" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+        if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
+            query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/by_secondary_tape', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BySecondaryTapeFacet',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -498,7 +1469,7 @@ class StatisticsApi(object):
             collection_formats=collection_formats)
 
     def statistics_by_size(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by size  # noqa: E501
 
         **API Key Scope**: statistics / by_size  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -508,6 +1479,7 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
@@ -524,7 +1496,7 @@ class StatisticsApi(object):
         return self.statistics_by_size_with_http_info(**kwargs)  # noqa: E501
 
     def statistics_by_size_with_http_info(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by size  # noqa: E501
 
         **API Key Scope**: statistics / by_size  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -534,6 +1506,7 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
         :param _return_http_data_only: response data without head status code
                                        and headers
@@ -553,6 +1526,7 @@ class StatisticsApi(object):
 
         all_params = [
             'q',
+            'fq',
             'date_attr'
         ]
         all_params.extend(
@@ -580,6 +1554,9 @@ class StatisticsApi(object):
         query_params = []
         if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
             query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
         if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
             query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
 
@@ -613,7 +1590,7 @@ class StatisticsApi(object):
             collection_formats=collection_formats)
 
     def statistics_by_user_owner(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by owner (user)  # noqa: E501
 
         **API Key Scope**: statistics / by_user_owner  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -623,7 +1600,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -639,7 +1619,7 @@ class StatisticsApi(object):
         return self.statistics_by_user_owner_with_http_info(**kwargs)  # noqa: E501
 
     def statistics_by_user_owner_with_http_info(self, **kwargs):  # noqa: E501
-        """TODO  # noqa: E501
+        """Get statistics about files, grouped by owner (user)  # noqa: E501
 
         **API Key Scope**: statistics / by_user_owner  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -649,7 +1629,10 @@ class StatisticsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
         :param str date_attr: Type of date to facet on
+        :param str sort: Sort results of facet
+        :param int limit: Limit results of facet
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -668,7 +1651,10 @@ class StatisticsApi(object):
 
         all_params = [
             'q',
-            'date_attr'
+            'fq',
+            'date_attr',
+            'sort',
+            'limit'
         ]
         all_params.extend(
             [
@@ -695,8 +1681,15 @@ class StatisticsApi(object):
         query_params = []
         if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
             query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
         if 'date_attr' in local_var_params and local_var_params['date_attr'] is not None:  # noqa: E501
             query_params.append(('date_attr', local_var_params['date_attr']))  # noqa: E501
+        if 'sort' in local_var_params and local_var_params['sort'] is not None:  # noqa: E501
+            query_params.append(('sort', local_var_params['sort']))  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
 
         header_params = {}
 
@@ -720,6 +1713,470 @@ class StatisticsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ByUserOwnerFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_storage(self, **kwargs):  # noqa: E501
+        """Get statistics about storages, grouped by types  # noqa: E501
+
+        **API Key Scope**: statistics / storages  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_storage(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: StorageFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_storage_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_storage_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about storages, grouped by types  # noqa: E501
+
+        **API Key Scope**: statistics / storages  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_storage_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(StorageFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_storage" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/storage', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='StorageFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_task_by_status(self, **kwargs):  # noqa: E501
+        """Get statistics about tasks executions, grouped by status  # noqa: E501
+
+        **API Key Scope**: statistics / task_by_status  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_task_by_status(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: ByTaskStatusFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_task_by_status_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_task_by_status_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about tasks executions, grouped by status  # noqa: E501
+
+        **API Key Scope**: statistics / task_by_status  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_task_by_status_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(ByTaskStatusFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_task_by_status" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/task_by_status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ByTaskStatusFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_task_by_storage(self, **kwargs):  # noqa: E501
+        """Get statistics about tasks executions, grouped by source and destination  # noqa: E501
+
+        **API Key Scope**: statistics / task_by_storage  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_task_by_storage(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: ByTaskStorageFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_task_by_storage_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_task_by_storage_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about tasks executions, grouped by source and destination  # noqa: E501
+
+        **API Key Scope**: statistics / task_by_storage  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_task_by_storage_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(ByTaskStorageFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_task_by_storage" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/task_by_storage', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ByTaskStorageFacet',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def statistics_task_by_workflow(self, **kwargs):  # noqa: E501
+        """Get statistics about tasks executions, grouped by workflow  # noqa: E501
+
+        **API Key Scope**: statistics / task_by_workflow  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_task_by_workflow(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: ByTaskWorkflowFacet
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.statistics_task_by_workflow_with_http_info(**kwargs)  # noqa: E501
+
+    def statistics_task_by_workflow_with_http_info(self, **kwargs):  # noqa: E501
+        """Get statistics about tasks executions, grouped by workflow  # noqa: E501
+
+        **API Key Scope**: statistics / task_by_workflow  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.statistics_task_by_workflow_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str q: Solr query
+        :param list[str] fq: Solr filter query  Multiple query can be separated by `|`.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(ByTaskWorkflowFacet, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'q',
+            'fq'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method statistics_task_by_workflow" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'fq' in local_var_params and local_var_params['fq'] is not None:  # noqa: E501
+            query_params.append(('fq', local_var_params['fq']))  # noqa: E501
+            collection_formats['fq'] = 'pipe'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['BasicAuth', 'BearerAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/statistics/task_by_workflow', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ByTaskWorkflowFacet',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

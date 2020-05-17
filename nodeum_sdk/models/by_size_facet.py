@@ -35,7 +35,9 @@ class BySizeFacet(object):
     """
     openapi_types = {
         'count': 'int',
+        'files_count': 'int',
         'file_size_sum': 'int',
+        'cost': 'float',
         'less_100_kb': 'ByDateFacet',
         'less_1_mb': 'ByDateFacet',
         'less_10_mb': 'ByDateFacet',
@@ -48,7 +50,9 @@ class BySizeFacet(object):
 
     attribute_map = {
         'count': 'count',
+        'files_count': 'files_count',
         'file_size_sum': 'file_size_sum',
+        'cost': 'cost',
         'less_100_kb': 'less_100_kb',
         'less_1_mb': 'less_1_mb',
         'less_10_mb': 'less_10_mb',
@@ -59,14 +63,16 @@ class BySizeFacet(object):
         'more_100_gb': 'more_100_gb'
     }
 
-    def __init__(self, count=None, file_size_sum=None, less_100_kb=None, less_1_mb=None, less_10_mb=None, less_100_mb=None, less_1_gb=None, less_10_gb=None, less_100_gb=None, more_100_gb=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, count=None, files_count=None, file_size_sum=None, cost=None, less_100_kb=None, less_1_mb=None, less_10_mb=None, less_100_mb=None, less_1_gb=None, less_10_gb=None, less_100_gb=None, more_100_gb=None, local_vars_configuration=None):  # noqa: E501
         """BySizeFacet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._count = None
+        self._files_count = None
         self._file_size_sum = None
+        self._cost = None
         self._less_100_kb = None
         self._less_1_mb = None
         self._less_10_mb = None
@@ -79,8 +85,12 @@ class BySizeFacet(object):
 
         if count is not None:
             self.count = count
+        if files_count is not None:
+            self.files_count = files_count
         if file_size_sum is not None:
             self.file_size_sum = file_size_sum
+        if cost is not None:
+            self.cost = cost
         if less_100_kb is not None:
             self.less_100_kb = less_100_kb
         if less_1_mb is not None:
@@ -120,6 +130,27 @@ class BySizeFacet(object):
         self._count = count
 
     @property
+    def files_count(self):
+        """Gets the files_count of this BySizeFacet.  # noqa: E501
+
+
+        :return: The files_count of this BySizeFacet.  # noqa: E501
+        :rtype: int
+        """
+        return self._files_count
+
+    @files_count.setter
+    def files_count(self, files_count):
+        """Sets the files_count of this BySizeFacet.
+
+
+        :param files_count: The files_count of this BySizeFacet.  # noqa: E501
+        :type: int
+        """
+
+        self._files_count = files_count
+
+    @property
     def file_size_sum(self):
         """Gets the file_size_sum of this BySizeFacet.  # noqa: E501
 
@@ -139,6 +170,27 @@ class BySizeFacet(object):
         """
 
         self._file_size_sum = file_size_sum
+
+    @property
+    def cost(self):
+        """Gets the cost of this BySizeFacet.  # noqa: E501
+
+
+        :return: The cost of this BySizeFacet.  # noqa: E501
+        :rtype: float
+        """
+        return self._cost
+
+    @cost.setter
+    def cost(self, cost):
+        """Sets the cost of this BySizeFacet.
+
+
+        :param cost: The cost of this BySizeFacet.  # noqa: E501
+        :type: float
+        """
+
+        self._cost = cost
 
     @property
     def less_100_kb(self):

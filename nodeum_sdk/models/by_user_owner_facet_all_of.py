@@ -34,45 +34,45 @@ class ByUserOwnerFacetAllOf(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'user_owner_id': 'ByDateFacetBuckets'
+        'user_owner_id_l': 'ByDateFacetBuckets'
     }
 
     attribute_map = {
-        'user_owner_id': 'user_owner_id'
+        'user_owner_id_l': 'user_owner_id_l'
     }
 
-    def __init__(self, user_owner_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, user_owner_id_l=None, local_vars_configuration=None):  # noqa: E501
         """ByUserOwnerFacetAllOf - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._user_owner_id = None
+        self._user_owner_id_l = None
         self.discriminator = None
 
-        if user_owner_id is not None:
-            self.user_owner_id = user_owner_id
+        if user_owner_id_l is not None:
+            self.user_owner_id_l = user_owner_id_l
 
     @property
-    def user_owner_id(self):
-        """Gets the user_owner_id of this ByUserOwnerFacetAllOf.  # noqa: E501
+    def user_owner_id_l(self):
+        """Gets the user_owner_id_l of this ByUserOwnerFacetAllOf.  # noqa: E501
 
 
-        :return: The user_owner_id of this ByUserOwnerFacetAllOf.  # noqa: E501
+        :return: The user_owner_id_l of this ByUserOwnerFacetAllOf.  # noqa: E501
         :rtype: ByDateFacetBuckets
         """
-        return self._user_owner_id
+        return self._user_owner_id_l
 
-    @user_owner_id.setter
-    def user_owner_id(self, user_owner_id):
-        """Sets the user_owner_id of this ByUserOwnerFacetAllOf.
+    @user_owner_id_l.setter
+    def user_owner_id_l(self, user_owner_id_l):
+        """Sets the user_owner_id_l of this ByUserOwnerFacetAllOf.
 
 
-        :param user_owner_id: The user_owner_id of this ByUserOwnerFacetAllOf.  # noqa: E501
+        :param user_owner_id_l: The user_owner_id_l of this ByUserOwnerFacetAllOf.  # noqa: E501
         :type: ByDateFacetBuckets
         """
 
-        self._user_owner_id = user_owner_id
+        self._user_owner_id_l = user_owner_id_l
 
     def to_dict(self):
         """Returns the model properties as a dict"""

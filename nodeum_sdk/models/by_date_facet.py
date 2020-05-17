@@ -35,7 +35,9 @@ class ByDateFacet(object):
     """
     openapi_types = {
         'count': 'int',
+        'files_count': 'int',
         'file_size_sum': 'int',
+        'cost': 'float',
         'in_cache': 'FileFacet',
         'less_1_week': 'FileFacet',
         'less_1_month': 'FileFacet',
@@ -48,7 +50,9 @@ class ByDateFacet(object):
 
     attribute_map = {
         'count': 'count',
+        'files_count': 'files_count',
         'file_size_sum': 'file_size_sum',
+        'cost': 'cost',
         'in_cache': 'in_cache',
         'less_1_week': 'less_1_week',
         'less_1_month': 'less_1_month',
@@ -59,14 +63,16 @@ class ByDateFacet(object):
         'more_2_years': 'more_2_years'
     }
 
-    def __init__(self, count=None, file_size_sum=None, in_cache=None, less_1_week=None, less_1_month=None, less_3_months=None, less_6_months=None, less_1_year=None, less_2_years=None, more_2_years=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, count=None, files_count=None, file_size_sum=None, cost=None, in_cache=None, less_1_week=None, less_1_month=None, less_3_months=None, less_6_months=None, less_1_year=None, less_2_years=None, more_2_years=None, local_vars_configuration=None):  # noqa: E501
         """ByDateFacet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._count = None
+        self._files_count = None
         self._file_size_sum = None
+        self._cost = None
         self._in_cache = None
         self._less_1_week = None
         self._less_1_month = None
@@ -79,8 +85,12 @@ class ByDateFacet(object):
 
         if count is not None:
             self.count = count
+        if files_count is not None:
+            self.files_count = files_count
         if file_size_sum is not None:
             self.file_size_sum = file_size_sum
+        if cost is not None:
+            self.cost = cost
         if in_cache is not None:
             self.in_cache = in_cache
         if less_1_week is not None:
@@ -120,6 +130,27 @@ class ByDateFacet(object):
         self._count = count
 
     @property
+    def files_count(self):
+        """Gets the files_count of this ByDateFacet.  # noqa: E501
+
+
+        :return: The files_count of this ByDateFacet.  # noqa: E501
+        :rtype: int
+        """
+        return self._files_count
+
+    @files_count.setter
+    def files_count(self, files_count):
+        """Sets the files_count of this ByDateFacet.
+
+
+        :param files_count: The files_count of this ByDateFacet.  # noqa: E501
+        :type: int
+        """
+
+        self._files_count = files_count
+
+    @property
     def file_size_sum(self):
         """Gets the file_size_sum of this ByDateFacet.  # noqa: E501
 
@@ -139,6 +170,27 @@ class ByDateFacet(object):
         """
 
         self._file_size_sum = file_size_sum
+
+    @property
+    def cost(self):
+        """Gets the cost of this ByDateFacet.  # noqa: E501
+
+
+        :return: The cost of this ByDateFacet.  # noqa: E501
+        :rtype: float
+        """
+        return self._cost
+
+    @cost.setter
+    def cost(self, cost):
+        """Sets the cost of this ByDateFacet.
+
+
+        :param cost: The cost of this ByDateFacet.  # noqa: E501
+        :type: float
+        """
+
+        self._cost = cost
 
     @property
     def in_cache(self):

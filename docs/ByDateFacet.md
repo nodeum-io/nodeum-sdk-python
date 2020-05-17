@@ -4,7 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
+**files_count** | **int** |  | [optional] 
 **file_size_sum** | **int** |  | [optional] 
+**cost** | **float** |  | [optional] 
 **in_cache** | [**FileFacet**](FileFacet.md) |  | [optional] 
 **less_1_week** | [**FileFacet**](FileFacet.md) |  | [optional] 
 **less_1_month** | [**FileFacet**](FileFacet.md) |  | [optional] 

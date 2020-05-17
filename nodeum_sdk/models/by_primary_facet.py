@@ -34,45 +34,45 @@ class ByPrimaryFacet(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'primary_name': 'ByDateFacetBuckets'
+        'prim_name_s': 'ByDateFacetBuckets'
     }
 
     attribute_map = {
-        'primary_name': 'primary_name'
+        'prim_name_s': 'prim_name_s'
     }
 
-    def __init__(self, primary_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, prim_name_s=None, local_vars_configuration=None):  # noqa: E501
         """ByPrimaryFacet - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._primary_name = None
+        self._prim_name_s = None
         self.discriminator = None
 
-        if primary_name is not None:
-            self.primary_name = primary_name
+        if prim_name_s is not None:
+            self.prim_name_s = prim_name_s
 
     @property
-    def primary_name(self):
-        """Gets the primary_name of this ByPrimaryFacet.  # noqa: E501
+    def prim_name_s(self):
+        """Gets the prim_name_s of this ByPrimaryFacet.  # noqa: E501
 
 
-        :return: The primary_name of this ByPrimaryFacet.  # noqa: E501
+        :return: The prim_name_s of this ByPrimaryFacet.  # noqa: E501
         :rtype: ByDateFacetBuckets
         """
-        return self._primary_name
+        return self._prim_name_s
 
-    @primary_name.setter
-    def primary_name(self, primary_name):
-        """Sets the primary_name of this ByPrimaryFacet.
+    @prim_name_s.setter
+    def prim_name_s(self, prim_name_s):
+        """Sets the prim_name_s of this ByPrimaryFacet.
 
 
-        :param primary_name: The primary_name of this ByPrimaryFacet.  # noqa: E501
+        :param prim_name_s: The prim_name_s of this ByPrimaryFacet.  # noqa: E501
         :type: ByDateFacetBuckets
         """
 
-        self._primary_name = primary_name
+        self._prim_name_s = prim_name_s
 
     def to_dict(self):
         """Returns the model properties as a dict"""
