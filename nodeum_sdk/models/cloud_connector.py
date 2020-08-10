@@ -41,7 +41,8 @@ class CloudConnector(object):
         'provider': 'str',
         'region': 'str',
         'access_key': 'str',
-        'secret_key': 'str'
+        'secret_key': 'str',
+        'options': 'str'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class CloudConnector(object):
         'provider': 'provider',
         'region': 'region',
         'access_key': 'access_key',
-        'secret_key': 'secret_key'
+        'secret_key': 'secret_key',
+        'options': 'options'
     }
 
-    def __init__(self, id=None, name=None, url=None, url_proxy=None, provider=None, region=None, access_key=None, secret_key=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, url=None, url_proxy=None, provider=None, region=None, access_key=None, secret_key=None, options=None, local_vars_configuration=None):  # noqa: E501
         """CloudConnector - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class CloudConnector(object):
         self._region = None
         self._access_key = None
         self._secret_key = None
+        self._options = None
         self.discriminator = None
 
         if id is not None:
@@ -87,6 +90,8 @@ class CloudConnector(object):
             self.access_key = access_key
         if secret_key is not None:
             self.secret_key = secret_key
+        if options is not None:
+            self.options = options
 
     @property
     def id(self):
@@ -190,7 +195,7 @@ class CloudConnector(object):
         :param provider: The provider of this CloudConnector.  # noqa: E501
         :type: str
         """
-        allowed_values = ["generic_s3", "amazon_aws_s3", "cloudian_hyperstore", "scality_ring", "dell_emc_ecs", "azure", "google_cloud_storage", "openstack_swift"]  # noqa: E501
+        allowed_values = ["generic_s3", "amazon_aws_s3", "cloudian_hyperstore", "scality_ring", "dell_emc_ecs", "azure", "google_cloud_storage", "openstack_swift", "wasabi"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and provider not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
@@ -261,6 +266,29 @@ class CloudConnector(object):
         """
 
         self._secret_key = secret_key
+
+    @property
+    def options(self):
+        """Gets the options of this CloudConnector.  # noqa: E501
+
+        S3FS mounting options, separated by comma  # noqa: E501
+
+        :return: The options of this CloudConnector.  # noqa: E501
+        :rtype: str
+        """
+        return self._options
+
+    @options.setter
+    def options(self, options):
+        """Sets the options of this CloudConnector.
+
+        S3FS mounting options, separated by comma  # noqa: E501
+
+        :param options: The options of this CloudConnector.  # noqa: E501
+        :type: str
+        """
+
+        self._options = options
 
     def to_dict(self):
         """Returns the model properties as a dict"""

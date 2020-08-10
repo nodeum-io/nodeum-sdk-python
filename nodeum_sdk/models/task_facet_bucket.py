@@ -41,7 +41,9 @@ class TaskFacetBucket(object):
         'to_process_files_sum': 'int',
         'processed_files_sum': 'int',
         'finalized_files_sum': 'int',
-        'bandwidth_avg': 'int'
+        'bandwidth_avg': 'int',
+        'bandwidth_count': 'int',
+        'tasks_count': 'int'
     }
 
     attribute_map = {
@@ -52,10 +54,12 @@ class TaskFacetBucket(object):
         'to_process_files_sum': 'to_process_files_sum',
         'processed_files_sum': 'processed_files_sum',
         'finalized_files_sum': 'finalized_files_sum',
-        'bandwidth_avg': 'bandwidth_avg'
+        'bandwidth_avg': 'bandwidth_avg',
+        'bandwidth_count': 'bandwidth_count',
+        'tasks_count': 'tasks_count'
     }
 
-    def __init__(self, val=None, count=None, to_process_size_sum=None, processed_size_sum=None, to_process_files_sum=None, processed_files_sum=None, finalized_files_sum=None, bandwidth_avg=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, val=None, count=None, to_process_size_sum=None, processed_size_sum=None, to_process_files_sum=None, processed_files_sum=None, finalized_files_sum=None, bandwidth_avg=None, bandwidth_count=None, tasks_count=None, local_vars_configuration=None):  # noqa: E501
         """TaskFacetBucket - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +73,8 @@ class TaskFacetBucket(object):
         self._processed_files_sum = None
         self._finalized_files_sum = None
         self._bandwidth_avg = None
+        self._bandwidth_count = None
+        self._tasks_count = None
         self.discriminator = None
 
         if val is not None:
@@ -87,6 +93,10 @@ class TaskFacetBucket(object):
             self.finalized_files_sum = finalized_files_sum
         if bandwidth_avg is not None:
             self.bandwidth_avg = bandwidth_avg
+        if bandwidth_count is not None:
+            self.bandwidth_count = bandwidth_count
+        if tasks_count is not None:
+            self.tasks_count = tasks_count
 
     @property
     def val(self):
@@ -255,6 +265,48 @@ class TaskFacetBucket(object):
         """
 
         self._bandwidth_avg = bandwidth_avg
+
+    @property
+    def bandwidth_count(self):
+        """Gets the bandwidth_count of this TaskFacetBucket.  # noqa: E501
+
+
+        :return: The bandwidth_count of this TaskFacetBucket.  # noqa: E501
+        :rtype: int
+        """
+        return self._bandwidth_count
+
+    @bandwidth_count.setter
+    def bandwidth_count(self, bandwidth_count):
+        """Sets the bandwidth_count of this TaskFacetBucket.
+
+
+        :param bandwidth_count: The bandwidth_count of this TaskFacetBucket.  # noqa: E501
+        :type: int
+        """
+
+        self._bandwidth_count = bandwidth_count
+
+    @property
+    def tasks_count(self):
+        """Gets the tasks_count of this TaskFacetBucket.  # noqa: E501
+
+
+        :return: The tasks_count of this TaskFacetBucket.  # noqa: E501
+        :rtype: int
+        """
+        return self._tasks_count
+
+    @tasks_count.setter
+    def tasks_count(self, tasks_count):
+        """Sets the tasks_count of this TaskFacetBucket.
+
+
+        :param tasks_count: The tasks_count of this TaskFacetBucket.  # noqa: E501
+        :type: int
+        """
+
+        self._tasks_count = tasks_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

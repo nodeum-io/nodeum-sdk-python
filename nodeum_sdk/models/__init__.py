@@ -31,6 +31,14 @@ from nodeum_sdk.models.by_file_extension_facet import ByFileExtensionFacet
 from nodeum_sdk.models.by_file_extension_facet_all_of import ByFileExtensionFacetAllOf
 from nodeum_sdk.models.by_group_owner_facet import ByGroupOwnerFacet
 from nodeum_sdk.models.by_group_owner_facet_all_of import ByGroupOwnerFacetAllOf
+from nodeum_sdk.models.by_metadata_bucket import ByMetadataBucket
+from nodeum_sdk.models.by_metadata_bucket_all_of import ByMetadataBucketAllOf
+from nodeum_sdk.models.by_metadata_facet import ByMetadataFacet
+from nodeum_sdk.models.by_metadata_facet_all_of import ByMetadataFacetAllOf
+from nodeum_sdk.models.by_metadata_key_bucket import ByMetadataKeyBucket
+from nodeum_sdk.models.by_metadata_key_bucket_all_of import ByMetadataKeyBucketAllOf
+from nodeum_sdk.models.by_metadata_key_buckets import ByMetadataKeyBuckets
+from nodeum_sdk.models.by_metadata_value_buckets import ByMetadataValueBuckets
 from nodeum_sdk.models.by_primary_cloud_facet import ByPrimaryCloudFacet
 from nodeum_sdk.models.by_primary_cloud_facet_all_of import ByPrimaryCloudFacetAllOf
 from nodeum_sdk.models.by_primary_facet import ByPrimaryFacet
@@ -49,6 +57,8 @@ from nodeum_sdk.models.by_secondary_tape_facet_all_of import BySecondaryTapeFace
 from nodeum_sdk.models.by_secondary_type_facet import BySecondaryTypeFacet
 from nodeum_sdk.models.by_secondary_type_facet_all_of import BySecondaryTypeFacetAllOf
 from nodeum_sdk.models.by_size_facet import BySizeFacet
+from nodeum_sdk.models.by_task_metadata_facet import ByTaskMetadataFacet
+from nodeum_sdk.models.by_task_metadata_facet_all_of import ByTaskMetadataFacetAllOf
 from nodeum_sdk.models.by_task_status_facet import ByTaskStatusFacet
 from nodeum_sdk.models.by_task_status_facet_all_of import ByTaskStatusFacetAllOf
 from nodeum_sdk.models.by_task_storage_facet import ByTaskStorageFacet
@@ -73,6 +83,8 @@ from nodeum_sdk.models.default_facet import DefaultFacet
 from nodeum_sdk.models.error import Error
 from nodeum_sdk.models.file_facet import FileFacet
 from nodeum_sdk.models.file_facet_all_of import FileFacetAllOf
+from nodeum_sdk.models.file_metadata_definition import FileMetadataDefinition
+from nodeum_sdk.models.file_metadata_definition_collection import FileMetadataDefinitionCollection
 from nodeum_sdk.models.frozen import Frozen
 from nodeum_sdk.models.greater_than import GreaterThan
 from nodeum_sdk.models.greater_than_all_of import GreaterThanAllOf
@@ -84,6 +96,7 @@ from nodeum_sdk.models.invalid import Invalid
 from nodeum_sdk.models.less_than import LessThan
 from nodeum_sdk.models.less_than_all_of import LessThanAllOf
 from nodeum_sdk.models.less_than_or_equal_to import LessThanOrEqualTo
+from nodeum_sdk.models.metadata_definition import MetadataDefinition
 from nodeum_sdk.models.mount_collection import MountCollection
 from nodeum_sdk.models.mount_info import MountInfo
 from nodeum_sdk.models.mount_notification import MountNotification
@@ -156,6 +169,14 @@ from nodeum_sdk.models.task_facet import TaskFacet
 from nodeum_sdk.models.task_facet_all_of import TaskFacetAllOf
 from nodeum_sdk.models.task_facet_bucket import TaskFacetBucket
 from nodeum_sdk.models.task_facet_buckets import TaskFacetBuckets
+from nodeum_sdk.models.task_facet_metadata_bucket import TaskFacetMetadataBucket
+from nodeum_sdk.models.task_facet_metadata_key_bucket import TaskFacetMetadataKeyBucket
+from nodeum_sdk.models.task_facet_metadata_key_bucket_all_of import TaskFacetMetadataKeyBucketAllOf
+from nodeum_sdk.models.task_facet_metadata_key_buckets import TaskFacetMetadataKeyBuckets
+from nodeum_sdk.models.task_facet_metadata_value_buckets import TaskFacetMetadataValueBuckets
+from nodeum_sdk.models.task_metadata_definition import TaskMetadataDefinition
+from nodeum_sdk.models.task_metadata_definition_all_of import TaskMetadataDefinitionAllOf
+from nodeum_sdk.models.task_metadata_definition_collection import TaskMetadataDefinitionCollection
 from nodeum_sdk.models.task_metadatum import TaskMetadatum
 from nodeum_sdk.models.task_metadatum_collection import TaskMetadatumCollection
 from nodeum_sdk.models.task_option import TaskOption

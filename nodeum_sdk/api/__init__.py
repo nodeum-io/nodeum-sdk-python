@@ -7,6 +7,7 @@ from nodeum_sdk.api.cloud_buckets_api import CloudBucketsApi
 from nodeum_sdk.api.cloud_connectors_api import CloudConnectorsApi
 from nodeum_sdk.api.containers_api import ContainersApi
 from nodeum_sdk.api.files_api import FilesApi
+from nodeum_sdk.api.metadata_api import MetadataApi
 from nodeum_sdk.api.mounts_api import MountsApi
 from nodeum_sdk.api.nas_api import NasApi
 from nodeum_sdk.api.nas_shares_api import NasSharesApi

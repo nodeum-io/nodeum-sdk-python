@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **int** |  | [optional] 
-**files_count** | **int** |  | [optional] 
-**file_size_sum** | **int** |  | [optional] 
-**cost** | **float** |  | [optional] 
+**count** | **int** |  | [optional] [readonly] 
+**files_count** | **int** |  | [optional] [readonly] 
+**file_size_sum** | **int** |  | [optional] [readonly] 
+**cost** | **float** |  | [optional] [readonly] 
 **on_secondary_nas** | [**BySecondaryTypeFacet**](BySecondaryTypeFacet.md) |  | [optional] 
 **on_secondary_public_cloud** | [**BySecondaryTypeFacet**](BySecondaryTypeFacet.md) |  | [optional] 
 **on_secondary_object_cloud** | [**BySecondaryTypeFacet**](BySecondaryTypeFacet.md) |  | [optional] 

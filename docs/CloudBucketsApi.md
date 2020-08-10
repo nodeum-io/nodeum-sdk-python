@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**update_cloud_bucket**](CloudBucketsApi.md#update_cloud_bucket) | **PUT** /cloud_buckets/{cloud_bucket_id} | Updates a specific cloud bucket.
 [**update_cloud_bucket_by_cloud_connector**](CloudBucketsApi.md#update_cloud_bucket_by_cloud_connector) | **PUT** /cloud_connectors/{cloud_connector_id}/cloud_buckets/{cloud_bucket_id} | Updates a specific cloud bucket.
 [**update_cloud_bucket_by_pool**](CloudBucketsApi.md#update_cloud_bucket_by_pool) | **PUT** /pools/{pool_id}/cloud_buckets/{cloud_bucket_id} | Updates a specific cloud bucket.
+[**update_config_file_cloud_bucket**](CloudBucketsApi.md#update_config_file_cloud_bucket) | **PUT** /cloud_buckets/{cloud_bucket_id}/config_file | Updates a specific cloud bucket.
 
 
 # **index_cloud_buckets**
@@ -1570,6 +1571,113 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A specific cloud bucket. |  -  |
+**404** | The requested resource was not found. The detailed error will be of type &#x60;not_found&#x60;. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_config_file_cloud_bucket**
+> str update_config_file_cloud_bucket(cloud_bucket_id, config_file)
+
+Updates a specific cloud bucket.
+
+**API Key Scope**: cloud_buckets / update_config_file
+
+### Example
+
+* Basic Authentication (BasicAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+config_file = '/path/to/file' # file | Config file to upload.
+
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_config_file_cloud_bucket(cloud_bucket_id, config_file)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_config_file_cloud_bucket: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.CloudBucketsApi(api_client)
+    cloud_bucket_id = 'cloud_bucket_id_example' # str | Numeric ID or name of cloud bucket.
+config_file = '/path/to/file' # file | Config file to upload.
+
+    try:
+        # Updates a specific cloud bucket.
+        api_response = api_instance.update_config_file_cloud_bucket(cloud_bucket_id, config_file)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CloudBucketsApi->update_config_file_cloud_bucket: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloud_bucket_id** | **str**| Numeric ID or name of cloud bucket. | 
+ **config_file** | **file**| Config file to upload. | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Remote URI |  -  |
 **404** | The requested resource was not found. The detailed error will be of type &#x60;not_found&#x60;. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

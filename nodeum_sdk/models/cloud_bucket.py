@@ -41,7 +41,8 @@ class CloudBucket(object):
         'file_count': 'int',
         'file_size_sum': 'int',
         'location': 'str',
-        'price': 'str'
+        'price': 'str',
+        'options': 'str'
     }
 
     attribute_map = {
@@ -52,10 +53,11 @@ class CloudBucket(object):
         'file_count': 'file_count',
         'file_size_sum': 'file_size_sum',
         'location': 'location',
-        'price': 'price'
+        'price': 'price',
+        'options': 'options'
     }
 
-    def __init__(self, id=None, cloud_connector_id=None, pool_id=None, name=None, file_count=None, file_size_sum=None, location=None, price=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, cloud_connector_id=None, pool_id=None, name=None, file_count=None, file_size_sum=None, location=None, price=None, options=None, local_vars_configuration=None):  # noqa: E501
         """CloudBucket - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class CloudBucket(object):
         self._file_size_sum = None
         self._location = None
         self._price = None
+        self._options = None
         self.discriminator = None
 
         if id is not None:
@@ -87,6 +90,8 @@ class CloudBucket(object):
             self.location = location
         if price is not None:
             self.price = price
+        if options is not None:
+            self.options = options
 
     @property
     def id(self):
@@ -255,6 +260,29 @@ class CloudBucket(object):
         """
 
         self._price = price
+
+    @property
+    def options(self):
+        """Gets the options of this CloudBucket.  # noqa: E501
+
+        S3FS mounting options, separated by comma  # noqa: E501
+
+        :return: The options of this CloudBucket.  # noqa: E501
+        :rtype: str
+        """
+        return self._options
+
+    @options.setter
+    def options(self, options):
+        """Sets the options of this CloudBucket.
+
+        S3FS mounting options, separated by comma  # noqa: E501
+
+        :param options: The options of this CloudBucket.  # noqa: E501
+        :type: str
+        """
+
+        self._options = options
 
     def to_dict(self):
         """Returns the model properties as a dict"""
