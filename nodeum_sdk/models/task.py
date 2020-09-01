@@ -256,7 +256,7 @@ class Task(object):
         :param workflow_action: The workflow_action of this Task.  # noqa: E501
         :type: str
         """
-        allowed_values = ["copy", "move", "scan", "rehydratation", "format", "check_consistency", "duplication", "cache_cleaning", "ejection", "get_index", "full_backup", "incremental_backup"]  # noqa: E501
+        allowed_values = ["copy", "move", "erase", "scan", "rehydratation", "format", "check_consistency", "duplication", "cache_cleaning", "ejection", "get_index", "full_backup", "incremental_backup"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and workflow_action not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `workflow_action` ({0}), must be one of {1}"  # noqa: E501

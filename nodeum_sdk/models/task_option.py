@@ -102,7 +102,7 @@ class TaskOption(object):
         :param type: The type of this TaskOption.  # noqa: E501
         :type: str
         """
-        allowed_values = ["file_checksum", "reset_file_date", "reset_folder_date", "rename_to", "execution_task_id", "selected_drive", "parallel_processing", "task_id", "full_report", "processing_order", "rehydration_usage_threshold", "rehydration_deleted_files_threshold", "learning_type", "learning_threshold", "tape_to_scratch", "eject_tape_after", "barcodes", "overwrite", "task_template"]  # noqa: E501
+        allowed_values = ["file_checksum", "reset_file_date", "reset_folder_date", "rename_to", "execution_task_id", "selected_drive", "parallel_processing", "task_id", "full_report", "processing_order", "rehydration_usage_threshold", "rehydration_deleted_files_threshold", "learning_type", "learning_threshold", "tape_to_scratch", "eject_tape_after", "barcodes", "overwrite", "soft_erase", "task_template"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

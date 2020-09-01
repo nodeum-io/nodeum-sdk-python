@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**destroy_tape**](TapesApi.md#destroy_tape) | **DELETE** /tapes/{tape_id} | Destroys a specific tape. Only when it&#39;s an orphan.
 [**index_tape_stats**](TapesApi.md#index_tape_stats) | **GET** /tape_stats | List all tape statistics.
 [**index_tapes**](TapesApi.md#index_tapes) | **GET** /tapes | Lists all tapes.
 [**index_tapes_by_pool**](TapesApi.md#index_tapes_by_pool) | **GET** /pools/{pool_id}/tapes | Lists all tapes.
@@ -18,6 +19,107 @@ Method | HTTP request | Description
 [**show_tape_stat_by_pool**](TapesApi.md#show_tape_stat_by_pool) | **GET** /pools/{pool_id}/tapes/{tape_id}/tape_stat | Display statistic for a specific tape.
 [**show_tape_stat_by_tape_library**](TapesApi.md#show_tape_stat_by_tape_library) | **GET** /tape_libraries/{tape_library_id}/tapes/{tape_id}/tape_stat | Display statistic for a specific tape.
 
+
+# **destroy_tape**
+> destroy_tape(tape_id)
+
+Destroys a specific tape. Only when it's an orphan.
+
+**API Key Scope**: tapes / destroy
+
+### Example
+
+* Basic Authentication (BasicAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapesApi(api_client)
+    tape_id = 'tape_id_example' # str | Numeric ID, or barcode of tape.
+
+    try:
+        # Destroys a specific tape. Only when it's an orphan.
+        api_instance.destroy_tape(tape_id)
+    except ApiException as e:
+        print("Exception when calling TapesApi->destroy_tape: %s\n" % e)
+```
+
+* Api Key Authentication (BearerAuth):
+```python
+from __future__ import print_function
+import time
+import nodeum_sdk
+from nodeum_sdk.rest import ApiException
+from pprint import pprint
+configuration = nodeum_sdk.Configuration()
+# Configure HTTP basic authorization: BasicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = nodeum_sdk.Configuration()
+# Configure API key authorization: BearerAuth
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# Defining host is optional and default to http://localhost/api/v2
+configuration.host = "http://localhost/api/v2"
+
+# Enter a context with an instance of the API client
+with nodeum_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = nodeum_sdk.TapesApi(api_client)
+    tape_id = 'tape_id_example' # str | Numeric ID, or barcode of tape.
+
+    try:
+        # Destroys a specific tape. Only when it's an orphan.
+        api_instance.destroy_tape(tape_id)
+    except ApiException as e:
+        print("Exception when calling TapesApi->destroy_tape: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tape_id** | **str**| Numeric ID, or barcode of tape. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth), [BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Tape destroyed. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **index_tape_stats**
 > TapeStatCollection index_tape_stats(limit=limit, offset=offset)

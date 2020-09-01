@@ -45,7 +45,10 @@ class NodeumFile(object):
         'modification_date': 'str',
         'access_date': 'str',
         'uid': 'int',
-        'gid': 'int'
+        'gid': 'int',
+        'in_cache': 'int',
+        'offline': 'int',
+        'extern': 'int'
     }
 
     attribute_map = {
@@ -60,10 +63,13 @@ class NodeumFile(object):
         'modification_date': 'modification_date',
         'access_date': 'access_date',
         'uid': 'uid',
-        'gid': 'gid'
+        'gid': 'gid',
+        'in_cache': 'in_cache',
+        'offline': 'offline',
+        'extern': 'extern'
     }
 
-    def __init__(self, id=None, name=None, parent=None, primary_id=None, type=None, permission=None, size=None, change_date=None, modification_date=None, access_date=None, uid=None, gid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, parent=None, primary_id=None, type=None, permission=None, size=None, change_date=None, modification_date=None, access_date=None, uid=None, gid=None, in_cache=None, offline=None, extern=None, local_vars_configuration=None):  # noqa: E501
         """NodeumFile - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +87,9 @@ class NodeumFile(object):
         self._access_date = None
         self._uid = None
         self._gid = None
+        self._in_cache = None
+        self._offline = None
+        self._extern = None
         self.discriminator = None
 
         if id is not None:
@@ -107,6 +116,12 @@ class NodeumFile(object):
             self.uid = uid
         if gid is not None:
             self.gid = gid
+        if in_cache is not None:
+            self.in_cache = in_cache
+        if offline is not None:
+            self.offline = offline
+        if extern is not None:
+            self.extern = extern
 
     @property
     def id(self):
@@ -365,6 +380,69 @@ class NodeumFile(object):
         """
 
         self._gid = gid
+
+    @property
+    def in_cache(self):
+        """Gets the in_cache of this NodeumFile.  # noqa: E501
+
+
+        :return: The in_cache of this NodeumFile.  # noqa: E501
+        :rtype: int
+        """
+        return self._in_cache
+
+    @in_cache.setter
+    def in_cache(self, in_cache):
+        """Sets the in_cache of this NodeumFile.
+
+
+        :param in_cache: The in_cache of this NodeumFile.  # noqa: E501
+        :type: int
+        """
+
+        self._in_cache = in_cache
+
+    @property
+    def offline(self):
+        """Gets the offline of this NodeumFile.  # noqa: E501
+
+
+        :return: The offline of this NodeumFile.  # noqa: E501
+        :rtype: int
+        """
+        return self._offline
+
+    @offline.setter
+    def offline(self, offline):
+        """Sets the offline of this NodeumFile.
+
+
+        :param offline: The offline of this NodeumFile.  # noqa: E501
+        :type: int
+        """
+
+        self._offline = offline
+
+    @property
+    def extern(self):
+        """Gets the extern of this NodeumFile.  # noqa: E501
+
+
+        :return: The extern of this NodeumFile.  # noqa: E501
+        :rtype: int
+        """
+        return self._extern
+
+    @extern.setter
+    def extern(self, extern):
+        """Sets the extern of this NodeumFile.
+
+
+        :param extern: The extern of this NodeumFile.  # noqa: E501
+        :type: int
+        """
+
+        self._extern = extern
 
     def to_dict(self):
         """Returns the model properties as a dict"""

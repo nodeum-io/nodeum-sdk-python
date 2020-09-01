@@ -39,7 +39,8 @@ class Pool(object):
         'comment': 'str',
         'type': 'str',
         'content': 'str',
-        'primary_id': 'int'
+        'primary_id': 'int',
+        'storage_id': 'int'
     }
 
     attribute_map = {
@@ -48,10 +49,11 @@ class Pool(object):
         'comment': 'comment',
         'type': 'type',
         'content': 'content',
-        'primary_id': 'primary_id'
+        'primary_id': 'primary_id',
+        'storage_id': 'storage_id'
     }
 
-    def __init__(self, id=None, name=None, comment=None, type=None, content=None, primary_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, comment=None, type=None, content=None, primary_id=None, storage_id=None, local_vars_configuration=None):  # noqa: E501
         """Pool - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class Pool(object):
         self._type = None
         self._content = None
         self._primary_id = None
+        self._storage_id = None
         self.discriminator = None
 
         if id is not None:
@@ -77,6 +80,8 @@ class Pool(object):
             self.content = content
         if primary_id is not None:
             self.primary_id = primary_id
+        if storage_id is not None:
+            self.storage_id = storage_id
 
     @property
     def id(self):
@@ -215,6 +220,29 @@ class Pool(object):
         """
 
         self._primary_id = primary_id
+
+    @property
+    def storage_id(self):
+        """Gets the storage_id of this Pool.  # noqa: E501
+
+        For pool of tapes, used to link to a tape library id  # noqa: E501
+
+        :return: The storage_id of this Pool.  # noqa: E501
+        :rtype: int
+        """
+        return self._storage_id
+
+    @storage_id.setter
+    def storage_id(self, storage_id):
+        """Sets the storage_id of this Pool.
+
+        For pool of tapes, used to link to a tape library id  # noqa: E501
+
+        :param storage_id: The storage_id of this Pool.  # noqa: E501
+        :type: int
+        """
+
+        self._storage_id = storage_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
